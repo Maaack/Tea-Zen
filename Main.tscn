@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://scenes/WrittenLogContainer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://theme/button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://theme/small_title_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://scenes/Clock/Clock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://theme/title_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://theme/digits_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/TaskControl/TaskControl.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -26,33 +27,75 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SteepButton" type="Button" parent="."]
-margin_left = 555.0
-margin_top = 339.0
-margin_right = 730.0
-margin_bottom = 384.0
-text = "Steep"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label" type="Label" parent="."]
-margin_left = 389.0
-margin_top = 227.0
-margin_right = 542.0
-margin_bottom = 255.0
+margin_left = 327.0
+margin_top = 235.0
+margin_right = 480.0
+margin_bottom = 263.0
+rect_pivot_offset = Vector2( 40, 173 )
 text = "Water Collected"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WaterCollected" type="Label" parent="."]
-margin_left = 406.0
-margin_top = 180.0
-margin_right = 521.0
-margin_bottom = 228.0
+margin_left = 344.0
+margin_top = 188.0
+margin_right = 459.0
+margin_bottom = 236.0
+rect_pivot_offset = Vector2( 23, 220 )
 custom_fonts/font = ExtResource( 7 )
 text = "0.0 L"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="."]
+margin_left = 321.0
+margin_top = 416.0
+margin_right = 474.0
+margin_bottom = 444.0
+rect_pivot_offset = Vector2( 313, -15 )
+text = "Leaves Collected"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeavesCollected" type="Label" parent="."]
+margin_left = 312.0
+margin_top = 369.0
+margin_right = 480.0
+margin_bottom = 417.0
+rect_pivot_offset = Vector2( 322, 32 )
+custom_fonts/font = ExtResource( 7 )
+text = "0.0 Kg"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="."]
+margin_left = 571.0
+margin_top = 417.0
+margin_right = 724.0
+margin_bottom = 445.0
+rect_pivot_offset = Vector2( 313, -15 )
+text = "Leaves Dried"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeavesDried" type="Label" parent="."]
+margin_left = 562.0
+margin_top = 370.0
+margin_right = 730.0
+margin_bottom = 418.0
+rect_pivot_offset = Vector2( 322, 32 )
+custom_fonts/font = ExtResource( 7 )
+text = "0.0 G"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -104,10 +147,10 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="."]
-margin_left = 761.0
-margin_top = 377.0
-margin_right = 862.0
-margin_bottom = 405.0
+margin_left = 875.0
+margin_top = 393.0
+margin_right = 976.0
+margin_bottom = 421.0
 text = "Tea Steeped"
 align = 1
 __meta__ = {
@@ -115,10 +158,10 @@ __meta__ = {
 }
 
 [node name="TeaSteeped" type="Label" parent="."]
-margin_left = 740.0
-margin_top = 326.0
-margin_right = 906.0
-margin_bottom = 374.0
+margin_left = 854.0
+margin_top = 342.0
+margin_right = 1020.0
+margin_bottom = 390.0
 custom_fonts/font = ExtResource( 7 )
 text = "0.0 L"
 align = 1
@@ -126,20 +169,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="."]
-margin_left = 301.0
-margin_top = 21.0
-margin_right = 634.0
-margin_bottom = 103.0
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -188.5
+margin_top = 16.0
+margin_right = 188.5
+margin_bottom = 98.0
 custom_fonts/font = ExtResource( 6 )
-text = "Tea Zen"
+text = "Tea Time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label6" type="Label" parent="."]
-margin_left = 232.0
-margin_top = 230.0
-margin_right = 312.0
-margin_bottom = 256.0
-text = "Collect"
+[node name="SmallTitle" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -191.0
+margin_top = 89.0
+margin_right = 186.0
+margin_bottom = 129.0
+custom_fonts/font = ExtResource( 4 )
+text = "All the time"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -170,144 +221,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label9" type="Label" parent="."]
-margin_left = 226.0
-margin_top = 410.0
-margin_right = 306.0
-margin_bottom = 436.0
-text = "Collect"
-align = 1
+[node name="SteepButton" type="Button" parent="."]
+margin_left = 771.0
+margin_top = 369.0
+margin_right = 829.0
+margin_bottom = 396.0
+text = "Steep"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="."]
-margin_left = 603.0
-margin_top = 229.0
-margin_right = 683.0
-margin_bottom = 255.0
-text = "Boil"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollectButtonContainer" type="HBoxContainer" parent="."]
-margin_left = 214.0
-margin_top = 197.0
-margin_right = 334.0
-margin_bottom = 225.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Collect1L" type="Button" parent="CollectButtonContainer"]
-margin_right = 37.0
-margin_bottom = 28.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-text = "1 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Collect10L" type="Button" parent="CollectButtonContainer"]
-margin_left = 41.0
-margin_right = 78.0
-margin_bottom = 28.0
-rect_pivot_offset = Vector2( 83, 43 )
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-text = "5 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Collect100L" type="Button" parent="CollectButtonContainer"]
-margin_left = 82.0
-margin_right = 120.0
-margin_bottom = 28.0
-rect_pivot_offset = Vector2( 83, 43 )
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-disabled = true
-text = "25 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BoilButtonContainer" type="HBoxContainer" parent="."]
-margin_left = 582.0
-margin_top = 193.0
-margin_right = 702.0
-margin_bottom = 221.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Boil1L" type="Button" parent="BoilButtonContainer"]
-margin_right = 37.0
-margin_bottom = 28.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-text = "1 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Boil5L" type="Button" parent="BoilButtonContainer"]
-margin_left = 41.0
-margin_right = 78.0
-margin_bottom = 28.0
-rect_pivot_offset = Vector2( 83, 43 )
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-disabled = true
-text = "5 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Boil25L" type="Button" parent="BoilButtonContainer"]
-margin_left = 82.0
-margin_right = 120.0
-margin_bottom = 28.0
-rect_pivot_offset = Vector2( 83, 43 )
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 4 )
-disabled = true
-text = "25 L"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollectLeavesButtonContainer" type="HBoxContainer" parent="."]
-margin_left = 216.0
-margin_top = 378.0
-margin_right = 319.0
-margin_bottom = 405.0
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="CollectLeavesNear" type="Button" parent="CollectLeavesButtonContainer"]
-margin_right = 49.0
-margin_bottom = 27.0
-size_flags_horizontal = 3
-text = "Near"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollectLeavesFar" type="Button" parent="CollectLeavesButtonContainer"]
-margin_left = 53.0
-margin_right = 103.0
-margin_bottom = 27.0
-size_flags_horizontal = 3
-text = "Far"
+[node name="DryButton" type="Button" parent="."]
+margin_left = 495.0
+margin_top = 388.0
+margin_right = 553.0
+margin_bottom = 415.0
+text = "Dry"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -319,61 +248,30 @@ margin_top = 460.0
 margin_right = 1022.0
 margin_bottom = -1.0
 
-[node name="CollectClock" parent="." instance=ExtResource( 5 )]
-margin_left = 218.0
-margin_top = 140.0
-margin_right = 348.0
-margin_bottom = 274.0
-clock_color = Color( 0, 0, 0, 0.219608 )
-shadow_color = Color( 1, 1, 1, 0 )
-wait_time = 5.0
-
-[node name="CollectLeavesClock" parent="." instance=ExtResource( 5 )]
-margin_left = 202.0
-margin_top = 324.0
-margin_right = 332.0
-margin_bottom = 458.0
-clock_color = Color( 0, 0, 0, 0.219608 )
-shadow_color = Color( 1, 1, 1, 0 )
-wait_time = 5.0
-
-[node name="BoilClock" parent="." instance=ExtResource( 5 )]
-margin_left = 582.0
-margin_top = 143.0
-margin_right = 712.0
-margin_bottom = 277.0
-clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
-shadow_color = Color( 1, 1, 1, 0 )
-wait_time = 5.0
-
 [node name="SteepClock" parent="." instance=ExtResource( 5 )]
-margin_left = 578.0
-margin_top = 304.0
-margin_right = 708.0
-margin_bottom = 438.0
+margin_left = 736.0
+margin_top = 314.0
+margin_right = 866.0
+margin_bottom = 448.0
 clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
 shadow_color = Color( 1, 1, 1, 0 )
 wait_time = 5.0
 
-[node name="CollectingLevel" type="Label" parent="."]
-visible = false
-margin_left = 237.0
-margin_top = 182.0
-margin_right = 306.0
-margin_bottom = 230.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="DryClock" parent="." instance=ExtResource( 5 )]
+margin_left = 461.0
+margin_top = 329.0
+margin_right = 591.0
+margin_bottom = 463.0
+clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
+shadow_color = Color( 1, 1, 1, 0 )
+wait_time = 5.0
 
-[node name="CollectingLeavesLevel" type="Label" parent="."]
+[node name="DryingLevel" type="Label" parent="."]
 visible = false
-margin_left = 234.0
-margin_top = 364.0
-margin_right = 303.0
-margin_bottom = 412.0
+margin_left = 490.0
+margin_top = 371.0
+margin_right = 559.0
+margin_bottom = 419.0
 custom_fonts/font = ExtResource( 7 )
 text = "0.0 Kg"
 align = 1
@@ -381,23 +279,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BoilingLevel" type="Label" parent="."]
-visible = false
-margin_left = 610.0
-margin_top = 178.0
-margin_right = 679.0
-margin_bottom = 226.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="WaterCollectControl" parent="." instance=ExtResource( 8 )]
+margin_left = 237.0
+margin_top = 200.0
+margin_right = 237.0
+margin_bottom = 200.0
+task_name = "Collect"
+task_options = [ "1 L" ]
+button_min_size = 32.0
+
+[node name="WaterBoilControl" parent="." instance=ExtResource( 8 )]
+margin_left = 573.0
+margin_top = 207.0
+margin_right = 573.0
+margin_bottom = 207.0
+task_name = "Boil"
+task_options = [ "1 L" ]
+button_min_size = 32.0
+
+[node name="LeavesCollectControl" parent="." instance=ExtResource( 8 )]
+margin_left = 235.0
+margin_top = 379.0
+margin_right = 235.0
+margin_bottom = 379.0
+task_name = "Collect"
+task_options = [ "Near", "Far" ]
+button_min_size = 48.0
 
 [connection signal="pressed" from="SteepButton" to="." method="_on_SteepButton_pressed"]
-[connection signal="pressed" from="CollectButtonContainer/Collect1L" to="." method="_on_Collect1L_pressed"]
-[connection signal="pressed" from="CollectButtonContainer/Collect10L" to="." method="_on_Collect10L_pressed"]
-[connection signal="pressed" from="BoilButtonContainer/Boil1L" to="." method="_on_Boil1L_pressed"]
-[connection signal="pressed" from="BoilButtonContainer/Boil5L" to="." method="_on_Boil5L_pressed"]
-[connection signal="pressed" from="CollectLeavesButtonContainer/CollectLeavesNear" to="." method="_on_CollectLeavesNear_pressed"]
-[connection signal="pressed" from="CollectLeavesButtonContainer/CollectLeavesFar" to="." method="_on_CollectLeavesFar_pressed"]
+[connection signal="pressed" from="DryButton" to="." method="_on_DryButton_pressed"]
+[connection signal="button_pressed" from="WaterCollectControl" to="." method="_on_WaterCollectControl_button_pressed"]
+[connection signal="button_pressed" from="WaterBoilControl" to="." method="_on_WaterBoilControl_button_pressed"]
+[connection signal="button_pressed" from="LeavesCollectControl" to="." method="_on_LeavesCollectControl2_button_pressed"]
