@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://theme/title_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://theme/digits_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/TaskControl/TaskControl.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/InventoryReadout/InventoryReadout.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -24,148 +25,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="."]
-margin_left = 327.0
-margin_top = 235.0
-margin_right = 480.0
-margin_bottom = 263.0
-rect_pivot_offset = Vector2( 40, 173 )
-text = "Water Collected"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WaterCollected" type="Label" parent="."]
-margin_left = 344.0
-margin_top = 188.0
-margin_right = 459.0
-margin_bottom = 236.0
-rect_pivot_offset = Vector2( 23, 220 )
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label10" type="Label" parent="."]
-margin_left = 321.0
-margin_top = 416.0
-margin_right = 474.0
-margin_bottom = 444.0
-rect_pivot_offset = Vector2( 313, -15 )
-text = "Leaves Collected"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LeavesCollected" type="Label" parent="."]
-margin_left = 312.0
-margin_top = 369.0
-margin_right = 480.0
-margin_bottom = 417.0
-rect_pivot_offset = Vector2( 322, 32 )
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 Kg"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label11" type="Label" parent="."]
-margin_left = 571.0
-margin_top = 417.0
-margin_right = 724.0
-margin_bottom = 445.0
-rect_pivot_offset = Vector2( 313, -15 )
-text = "Leaves Dried"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LeavesDried" type="Label" parent="."]
-margin_left = 562.0
-margin_top = 370.0
-margin_right = 730.0
-margin_bottom = 418.0
-rect_pivot_offset = Vector2( 322, 32 )
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 G"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 49.0
-margin_top = 228.0
-margin_right = 152.0
-margin_bottom = 256.0
-text = "Well Water"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WellWaterLevel" type="Label" parent="."]
-margin_left = 47.0
-margin_top = 179.0
-margin_right = 155.0
-margin_bottom = 227.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label3" type="Label" parent="."]
-margin_left = 744.0
-margin_top = 234.0
-margin_right = 874.0
-margin_bottom = 262.0
-text = "Water Boiled"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="WaterBoiled" type="Label" parent="."]
-margin_left = 730.0
-margin_top = 182.0
-margin_right = 868.0
-margin_bottom = 230.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="."]
-margin_left = 875.0
-margin_top = 393.0
-margin_right = 976.0
-margin_bottom = 421.0
-text = "Tea Steeped"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TeaSteeped" type="Label" parent="."]
-margin_left = 854.0
-margin_top = 342.0
-margin_right = 1020.0
-margin_bottom = 390.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 L"
-align = 1
-__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -222,21 +81,11 @@ __meta__ = {
 }
 
 [node name="SteepButton" type="Button" parent="."]
-margin_left = 771.0
-margin_top = 369.0
-margin_right = 829.0
-margin_bottom = 396.0
+margin_left = 765.0
+margin_top = 387.0
+margin_right = 823.0
+margin_bottom = 414.0
 text = "Steep"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DryButton" type="Button" parent="."]
-margin_left = 495.0
-margin_top = 388.0
-margin_right = 553.0
-margin_bottom = 415.0
-text = "Dry"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -257,57 +106,92 @@ clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
 shadow_color = Color( 1, 1, 1, 0 )
 wait_time = 5.0
 
-[node name="DryClock" parent="." instance=ExtResource( 5 )]
-margin_left = 461.0
-margin_top = 329.0
-margin_right = 591.0
-margin_bottom = 463.0
-clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
-shadow_color = Color( 1, 1, 1, 0 )
-wait_time = 5.0
-
-[node name="DryingLevel" type="Label" parent="."]
-visible = false
-margin_left = 490.0
-margin_top = 371.0
-margin_right = 559.0
-margin_bottom = 419.0
-custom_fonts/font = ExtResource( 7 )
-text = "0.0 Kg"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="WaterCollectControl" parent="." instance=ExtResource( 8 )]
-margin_left = 237.0
-margin_top = 200.0
-margin_right = 237.0
-margin_bottom = 200.0
+margin_left = -326.0
+margin_top = -166.0
+margin_right = -196.0
+margin_bottom = -36.0
 task_name = "Collect"
-task_options = [ "1 L" ]
+task_options = [ "5 L" ]
 button_min_size = 32.0
 
 [node name="WaterBoilControl" parent="." instance=ExtResource( 8 )]
-margin_left = 573.0
-margin_top = 207.0
-margin_right = 573.0
-margin_bottom = 207.0
+margin_left = -22.0
+margin_top = -161.0
+margin_right = 108.0
+margin_bottom = -31.0
 task_name = "Boil"
 task_options = [ "1 L" ]
 button_min_size = 32.0
 
 [node name="LeavesCollectControl" parent="." instance=ExtResource( 8 )]
-margin_left = 235.0
-margin_top = 379.0
-margin_right = 235.0
-margin_bottom = 379.0
+margin_left = -346.0
+margin_top = 15.0
+margin_right = -216.0
+margin_bottom = 145.0
 task_name = "Collect"
 task_options = [ "Near", "Far" ]
 button_min_size = 48.0
 
+[node name="LeavesDriedControl" parent="." instance=ExtResource( 8 )]
+margin_left = -37.0
+margin_top = 20.0
+margin_right = 93.0
+margin_bottom = 150.0
+task_name = "Dry"
+task_options = [ "10 Kg" ]
+button_min_size = 52.0
+
+[node name="WellWaterReadout" parent="." instance=ExtResource( 9 )]
+margin_left = -456.0
+margin_top = -121.0
+margin_right = -326.0
+margin_bottom = -45.0
+stock_name = "Well Water"
+stock_measure = "L"
+
+[node name="WaterCollectedReadout" parent="." instance=ExtResource( 9 )]
+margin_left = -179.0
+margin_top = -118.0
+margin_right = -13.0
+margin_bottom = -42.0
+stock_name = "Water Collected"
+stock_measure = "L"
+
+[node name="WaterBoiledReadout" parent="." instance=ExtResource( 9 )]
+margin_left = 104.0
+margin_top = -120.0
+margin_right = 270.0
+margin_bottom = -44.0
+stock_name = "Water Boiled"
+stock_measure = "L"
+
+[node name="LeavesCollectedReadout" parent="." instance=ExtResource( 9 )]
+margin_left = -196.0
+margin_top = 66.0
+margin_right = -30.0
+margin_bottom = 142.0
+stock_name = "Leaves Collected"
+stock_measure = "Kg"
+
+[node name="LeavesDriedReadout" parent="." instance=ExtResource( 9 )]
+margin_left = 59.0
+margin_top = 71.0
+margin_right = 225.0
+margin_bottom = 147.0
+stock_name = "Leaves Dried"
+stock_measure = "G"
+
+[node name="TeaSteepedReadout" parent="." instance=ExtResource( 9 )]
+margin_left = 315.0
+margin_top = 64.0
+margin_right = 481.0
+margin_bottom = 140.0
+stock_name = "Tea Steeped"
+stock_measure = "L"
+
 [connection signal="pressed" from="SteepButton" to="." method="_on_SteepButton_pressed"]
-[connection signal="pressed" from="DryButton" to="." method="_on_DryButton_pressed"]
 [connection signal="button_pressed" from="WaterCollectControl" to="." method="_on_WaterCollectControl_button_pressed"]
 [connection signal="button_pressed" from="WaterBoilControl" to="." method="_on_WaterBoilControl_button_pressed"]
 [connection signal="button_pressed" from="LeavesCollectControl" to="." method="_on_LeavesCollectControl2_button_pressed"]
+[connection signal="button_pressed" from="LeavesDriedControl" to="." method="_on_LeavesDriedControl_button_pressed"]

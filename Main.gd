@@ -44,12 +44,12 @@ func _ready():
 
 func _physics_process(delta):
 	sources[Items.COLD_WATER] += well_refill_rate
-	$WellWaterLevel.text = "%.1f L" % sources[Items.COLD_WATER]
-	$WaterCollected.text = "%.1f L" % get_water_collected()
-	$WaterBoiled.text = "%.1f L" % get_water_boiled()
-	$TeaSteeped.text = "%.1f L" % get_tea_steeped()
-	$LeavesCollected.text = "%.1f Kg" % inventory[Items.RAW_LEAVES]
-	$LeavesDried.text = "%.1f G" % inventory[Items.DRIED_LEAVES]
+	$WellWaterReadout.stock_quantity = sources[Items.COLD_WATER]
+	$WaterCollectedReadout.stock_quantity = get_water_collected()
+	$WaterBoiledReadout.stock_quantity = get_water_boiled()
+	$LeavesCollectedReadout.stock_quantity = inventory[Items.RAW_LEAVES]
+	$LeavesDriedReadout.stock_quantity = inventory[Items.DRIED_LEAVES]
+	$TeaSteepedReadout.stock_quantity = get_tea_steeped()
 
 func _disable_buttons(buttons_list : Array, disabled : bool = true) -> void:
 	for button in buttons_list:
@@ -106,32 +106,17 @@ func _on_SteepButton_pressed():
 	tea_steeped_counter += 1
 	$SteepButton.disabled = false
 
-func _on_Collect1L_pressed():
-	_new_collect_water_job(1.0, 10.0)
-
-func _on_Collect10L_pressed():
-	_new_collect_water_job(5.0, 42.0)
-
-func _on_Boil1L_pressed():
-	_new_boil_job(1.0, 5.0)
-
-func _on_Boil5L_pressed():
-	_new_boil_job(5.0, 21.0)
-
-func _on_CollectLeavesNear_pressed():
-	_new_collect_leaves_job(0.25, 5.0)
-
-func _on_CollectLeavesFar_pressed():
-	_new_collect_leaves_job(0.5, 20.0)
-
 func _on_DryButton_pressed():
 	_new_dry_leaves_job(10.0, 20)
 
 func _on_WaterCollectControl_button_pressed(button_text):
-	_new_job_2(10.0, 1.0, "L", $WaterCollectControl, sources, inventory, Items.COLD_WATER, Items.COLD_WATER)
+	_new_job_2(10.0, 5.0, "L", $WaterCollectControl, sources, inventory, Items.COLD_WATER, Items.COLD_WATER)
 
 func _on_LeavesCollectControl2_button_pressed(button_text):
 	_new_job_2(5.0, .25, "Kg", $LeavesCollectControl, sources, inventory, Items.RAW_LEAVES, Items.RAW_LEAVES)
 
 func _on_WaterBoilControl_button_pressed(button_text):
 	_new_job_2(5.0, 1.0, "L", $WaterBoilControl, inventory, inventory, Items.COLD_WATER, Items.HOT_WATER)
+
+func _on_LeavesDriedControl_button_pressed(button_text):
+	_new_job_2(20.0, 10.0, "Kg", $LeavesDriedControl, inventory, inventory, Items.RAW_LEAVES, Items.DRIED_LEAVES)
