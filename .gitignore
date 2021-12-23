@@ -1,4 +1,5 @@
 .import/
+.idea/
 *.import
 *.png.import
 export.cfg

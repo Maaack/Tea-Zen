@@ -1,14 +1,22 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://scenes/WrittenLogContainer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://theme/small_title_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scenes/Clock/Clock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Resources/RecipeProcessor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://theme/title_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://theme/digits_font.tres" type="DynamicFont" id=7]
 [ext_resource path="res://scenes/TaskControl/TaskControl.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/InventoryReadout/InventoryReadout.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Resources/ResourceGenerator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://resources/quantities/ColdWater.tres" type="Resource" id=11]
+[ext_resource path="res://scenes/Resources/ResourceConverter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://resources/quantities/RawLeaves.tres" type="Resource" id=13]
+[ext_resource path="res://scenes/Resources/ResourceContainer.tscn" type="PackedScene" id=14]
+[ext_resource path="res://resources/recipes/BlackTeaRecipe.tres" type="Resource" id=15]
+[ext_resource path="res://resources/quantities/HotWater.tres" type="Resource" id=16]
+[ext_resource path="res://resources/quantities/BlackTeaLeaves.tres" type="Resource" id=17]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -44,12 +52,12 @@ __meta__ = {
 [node name="SmallTitle" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -191.0
+margin_left = -188.5
 margin_top = 89.0
-margin_right = 186.0
+margin_right = 188.5
 margin_bottom = 129.0
 custom_fonts/font = ExtResource( 4 )
-text = "All the time"
+text = "All of the time"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -80,31 +88,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SteepButton" type="Button" parent="."]
-margin_left = 765.0
-margin_top = 387.0
-margin_right = 823.0
-margin_bottom = 414.0
-text = "Steep"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="WrittenLogContainer" parent="." instance=ExtResource( 3 )]
 anchor_right = 0.0
 margin_left = 563.0
 margin_top = 460.0
 margin_right = 1022.0
 margin_bottom = -1.0
-
-[node name="SteepClock" parent="." instance=ExtResource( 5 )]
-margin_left = 736.0
-margin_top = 314.0
-margin_right = 866.0
-margin_bottom = 448.0
-clock_color = Color( 0.231373, 0.231373, 0.231373, 0.501961 )
-shadow_color = Color( 1, 1, 1, 0 )
-wait_time = 5.0
 
 [node name="WaterCollectControl" parent="." instance=ExtResource( 8 )]
 margin_left = -326.0
@@ -142,56 +131,96 @@ task_name = "Dry"
 task_options = [ "10 Kg" ]
 button_min_size = 52.0
 
+[node name="TeaSteepControl" parent="." instance=ExtResource( 8 )]
+margin_left = 216.0
+margin_top = 25.0
+margin_right = 346.0
+margin_bottom = 155.0
+task_name = "Steep"
+task_options = [ "1 L" ]
+button_min_size = 32.0
+
 [node name="WellWaterReadout" parent="." instance=ExtResource( 9 )]
 margin_left = -456.0
 margin_top = -121.0
 margin_right = -326.0
 margin_bottom = -45.0
-stock_name = "Well Water"
-stock_measure = "L"
+inventory_name = "Well Water"
+inventory_measure = "L"
 
 [node name="WaterCollectedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = -179.0
 margin_top = -118.0
 margin_right = -13.0
 margin_bottom = -42.0
-stock_name = "Water Collected"
-stock_measure = "L"
+inventory_name = "Water Collected"
+inventory_measure = "L"
 
 [node name="WaterBoiledReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 104.0
 margin_top = -120.0
 margin_right = 270.0
 margin_bottom = -44.0
-stock_name = "Water Boiled"
-stock_measure = "L"
+inventory_name = "Water Boiled"
+inventory_measure = "L"
 
 [node name="LeavesCollectedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = -196.0
 margin_top = 66.0
 margin_right = -30.0
 margin_bottom = 142.0
-stock_name = "Leaves Collected"
-stock_measure = "Kg"
+inventory_name = "Leaves Collected"
+inventory_measure = "Kg"
 
 [node name="LeavesDriedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 59.0
 margin_top = 71.0
 margin_right = 225.0
 margin_bottom = 147.0
-stock_name = "Leaves Dried"
-stock_measure = "G"
+inventory_name = "Leaves Dried"
+inventory_measure = "G"
 
 [node name="TeaSteepedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 315.0
 margin_top = 64.0
 margin_right = 481.0
 margin_bottom = 140.0
-stock_name = "Tea Steeped"
-stock_measure = "L"
+inventory_name = "Tea Steeped"
+inventory_measure = "L"
 
-[connection signal="pressed" from="SteepButton" to="." method="_on_SteepButton_pressed"]
+[node name="Well" parent="." instance=ExtResource( 10 )]
+quantity_data = ExtResource( 11 )
+start = 10.0
+rate = 0.025
+
+[node name="TeaPlantsNear" parent="." instance=ExtResource( 10 )]
+quantity_data = ExtResource( 13 )
+start = 3.0
+rate = 0.1
+
+[node name="WaterBucket" parent="." instance=ExtResource( 12 )]
+input_quantity = ExtResource( 11 )
+output_quantity = ExtResource( 11 )
+
+[node name="TeaLeafBag" parent="." instance=ExtResource( 12 )]
+input_quantity = ExtResource( 13 )
+output_quantity = ExtResource( 13 )
+
+[node name="TeaDryerBed" parent="." instance=ExtResource( 12 )]
+input_quantity = ExtResource( 13 )
+output_quantity = ExtResource( 17 )
+
+[node name="WaterKettle" parent="." instance=ExtResource( 12 )]
+input_quantity = ExtResource( 11 )
+output_quantity = ExtResource( 16 )
+
+[node name="Inventory" parent="." instance=ExtResource( 14 )]
+
+[node name="Teapot" parent="." instance=ExtResource( 5 )]
+recipe_data = ExtResource( 15 )
+
 [connection signal="button_pressed" from="WaterCollectControl" to="." method="_on_WaterCollectControl_button_pressed"]
 [connection signal="button_pressed" from="WaterBoilControl" to="." method="_on_WaterBoilControl_button_pressed"]
 [connection signal="button_pressed" from="LeavesCollectControl" to="." method="_on_LeavesCollectControl2_button_pressed"]
 [connection signal="button_pressed" from="LeavesDriedControl" to="." method="_on_LeavesDriedControl_button_pressed"]
+[connection signal="button_pressed" from="TeaSteepControl" to="." method="_on_TeaSteepControl_button_pressed"]

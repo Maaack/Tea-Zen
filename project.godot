@@ -13,9 +13,39 @@ _global_script_classes=[ {
 "class": "ClockTimer",
 "language": "GDScript",
 "path": "res://scenes/Clock/Clock.gd"
+}, {
+"base": "Resource",
+"class": "ContainerData",
+"language": "GDScript",
+"path": "res://resources/ContainerData.gd"
+}, {
+"base": "ContainerData",
+"class": "LimitedContainerData",
+"language": "GDScript",
+"path": "res://resources/LimitedContainerData.gd"
+}, {
+"base": "UnitData",
+"class": "QuantityData",
+"language": "GDScript",
+"path": "res://resources/QuantityData.gd"
+}, {
+"base": "Resource",
+"class": "RecipeData",
+"language": "GDScript",
+"path": "res://resources/RecipeData.gd"
+}, {
+"base": "Resource",
+"class": "UnitData",
+"language": "GDScript",
+"path": "res://resources/UnitData.gd"
 } ]
 _global_script_class_icons={
-"ClockTimer": ""
+"ClockTimer": "",
+"ContainerData": "",
+"LimitedContainerData": "",
+"QuantityData": "",
+"RecipeData": "",
+"UnitData": ""
 }
 
 [application]

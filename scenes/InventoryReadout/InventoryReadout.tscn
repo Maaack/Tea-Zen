@@ -18,7 +18,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StockNameLabel" type="Label" parent="."]
+[node name="NameLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -28,13 +28,13 @@ margin_top = -28.0
 margin_right = 65.0
 grow_horizontal = 2
 size_flags_horizontal = 3
-text = "Stock Name"
+text = "Inventory Name"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StockQuantityLabel" type="Label" parent="."]
+[node name="QuantityLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -65.0
@@ -43,7 +43,7 @@ margin_bottom = 48.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "0.0 Kg/L"
+text = "0.00 Kg/L"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

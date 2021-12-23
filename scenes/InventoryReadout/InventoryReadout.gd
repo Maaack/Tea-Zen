@@ -1,24 +1,24 @@
 tool
 extends Control
 
-const STOCK_STRING = "%.1f %s"
-export(String) var stock_name : String = 'Stock Name' setget set_stock_name
-export(String) var stock_measure : String = 'Kg/L' setget set_stock_measure
-export(float) var stock_quantity : float = 0.0 setget set_stock_quantity
+const INVENTORY_STRING = "%.2f %s"
+export(String) var inventory_name : String = 'Inventory Name' setget set_inventory_name
+export(String) var inventory_measure : String = 'Kg/L' setget set_inventory_measure
+export(float) var inventory_quantity : float = 0.0 setget set_inventory_quantity
 
 func _clear_buttons() -> void:
 	for child in $ButtonContainer.get_children():
 		child.queue_free()
 
-func set_stock_name(value : String) -> void:
-	stock_name = value
-	$StockNameLabel.text = stock_name
+func set_inventory_name(value : String) -> void:
+	inventory_name = value
+	$NameLabel.text = inventory_name
 
-func set_stock_measure(value : String) -> void:
-	stock_measure = value
-	$StockQuantityLabel.text = STOCK_STRING % [stock_quantity, stock_measure]
+func set_inventory_measure(value : String) -> void:
+	inventory_measure = value
+	$QuantityLabel.text = INVENTORY_STRING % [inventory_quantity, inventory_measure]
 
-func set_stock_quantity(value : float) -> void:
-	stock_quantity = value
-	$StockQuantityLabel.text = STOCK_STRING % [stock_quantity, stock_measure]
+func set_inventory_quantity(value : float) -> void:
+	inventory_quantity = value
+	$QuantityLabel.text = INVENTORY_STRING % [inventory_quantity, inventory_measure]
 
