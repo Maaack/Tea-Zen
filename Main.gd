@@ -6,35 +6,9 @@ const BLACK_TEA_KEY = "Black Tea"
 const RAW_LEAVES_KEY = "Raw Leaves"
 const BLACK_TEA_LEAVES_KEY = "Black Tea Leaves"
 
-func get_water_collected() -> float:
-	return get_inventory_quantity(COLD_WATER_KEY)
-
-func get_water_boiled() -> float:
-	return get_inventory_quantity(HOT_WATER_KEY)
-
-func get_tea_steeped() -> float:
-	return get_inventory_quantity(BLACK_TEA_KEY)
-
-func get_inventory_data(key : String) -> QuantityData:
-	return $Inventory.get_container_data(key)
-
-func add_inventory_quantity(key : String, quantity : float) -> QuantityData:
-	return $Inventory.add_container_quantity(key, quantity)
-
-func get_inventory_quantity(key : String) -> float:
-	return $Inventory.get_container_quantity(key)
-
 func _ready():
 	$WrittenLogContainer.add_text("I've reached the oasis!")
 	$WrittenLogContainer.add_text("It's time for tea!")
-
-func _physics_process(delta):
-	$WellWaterReadout.inventory_quantity = $Well.get_quantity()
-	$WaterCollectedReadout.inventory_quantity = get_water_collected()
-	$WaterBoiledReadout.inventory_quantity = get_water_boiled()
-	$LeavesCollectedReadout.inventory_quantity = get_inventory_quantity(RAW_LEAVES_KEY)
-	$LeavesDriedReadout.inventory_quantity = get_inventory_quantity(BLACK_TEA_LEAVES_KEY)
-	$TeaSteepedReadout.inventory_quantity = get_tea_steeped()
 
 func _new_job(job_time: float, job_amount : float, job_controller : Node, converter_node: Node, source_container : ContainerData, destination_container : ContainerData) -> void:
 	if converter_node.running:

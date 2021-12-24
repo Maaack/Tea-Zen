@@ -28,8 +28,3 @@ func _get_new_quantity(key : String) -> QuantityData:
 			if quantity_data.name == key:
 				return quantity_data.duplicate()
 	return null
-
-func ad_container_quantity(key : String, quantity : float) -> void:
-	var quantity_data : QuantityData = get_container_data(key)
-	quantity_data.quantity += quantity
-

@@ -1,8 +1,16 @@
 class_name QuantityData
 extends UnitData
 
+const PRECISION_FLOAT = 0.0001
+
 export(String) var measure
-export(float) var quantity = 0.0
+export(float) var quantity = 0.0 setget set_quantity, get_quantity
+
+func set_quantity(value : float) -> void:
+	quantity = value
+
+func get_quantity() -> float:
+	return stepify(quantity, PRECISION_FLOAT)
 
 func _to_string():
 	return "%s, %f %s" % [._to_string(), quantity, measure]

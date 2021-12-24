@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://resources/recipes/BlackTeaRecipe.tres" type="Resource" id=15]
 [ext_resource path="res://resources/quantities/HotWater.tres" type="Resource" id=16]
 [ext_resource path="res://resources/quantities/BlackTeaLeaves.tres" type="Resource" id=17]
+[ext_resource path="res://resources/quantities/BlackTea.tres" type="Resource" id=18]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -145,48 +146,54 @@ margin_left = -456.0
 margin_top = -121.0
 margin_right = -326.0
 margin_bottom = -45.0
-inventory_name = "Well Water"
-inventory_measure = "L"
+quantity_type = ExtResource( 11 )
+inventory_node_path = NodePath("../Well")
+name_override = "Well Water"
 
 [node name="WaterCollectedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = -179.0
 margin_top = -118.0
 margin_right = -13.0
 margin_bottom = -42.0
-inventory_name = "Water Collected"
-inventory_measure = "L"
+quantity_type = ExtResource( 11 )
+inventory_node_path = NodePath("../Inventory")
+name_override = "Collected Water"
 
 [node name="WaterBoiledReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 104.0
 margin_top = -120.0
 margin_right = 270.0
 margin_bottom = -44.0
-inventory_name = "Water Boiled"
-inventory_measure = "L"
+quantity_type = ExtResource( 16 )
+inventory_node_path = NodePath("../Inventory")
+name_override = "Boiled Water"
 
 [node name="LeavesCollectedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = -196.0
 margin_top = 66.0
 margin_right = -30.0
 margin_bottom = 142.0
-inventory_name = "Leaves Collected"
-inventory_measure = "Kg"
+quantity_type = ExtResource( 13 )
+inventory_node_path = NodePath("../Inventory")
+name_override = "Collected Leaves"
 
 [node name="LeavesDriedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 59.0
 margin_top = 71.0
 margin_right = 225.0
 margin_bottom = 147.0
-inventory_name = "Leaves Dried"
-inventory_measure = "G"
+quantity_type = ExtResource( 17 )
+inventory_node_path = NodePath("../Inventory")
+name_override = "Dried Leaves"
 
 [node name="TeaSteepedReadout" parent="." instance=ExtResource( 9 )]
 margin_left = 315.0
 margin_top = 64.0
 margin_right = 481.0
 margin_bottom = 140.0
-inventory_name = "Tea Steeped"
-inventory_measure = "L"
+quantity_type = ExtResource( 18 )
+inventory_node_path = NodePath("../Inventory")
+name_override = "Black Tea"
 
 [node name="Well" parent="." instance=ExtResource( 10 )]
 quantity_data = ExtResource( 11 )
