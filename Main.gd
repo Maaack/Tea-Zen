@@ -1,10 +1,5 @@
 extends Control
 
-const COLD_WATER_KEY = "Cold Water"
-const HOT_WATER_KEY = "Hot Water"
-const BLACK_TEA_KEY = "Black Tea"
-const RAW_LEAVES_KEY = "Raw Leaves"
-const BLACK_TEA_LEAVES_KEY = "Black Tea Leaves"
 
 func _ready():
 	$WrittenLogContainer.add_text("I've reached the oasis!")
