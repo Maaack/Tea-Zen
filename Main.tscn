@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://resources/quantities/HotWater.tres" type="Resource" id=16]
 [ext_resource path="res://resources/quantities/BlackTeaLeaves.tres" type="Resource" id=17]
 [ext_resource path="res://resources/quantities/BlackTea.tres" type="Resource" id=18]
+[ext_resource path="res://scenes/InventoryList/InventoryList.tscn" type="PackedScene" id=19]
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -66,10 +67,9 @@ __meta__ = {
 
 [node name="Label8" type="Label" parent="."]
 margin_left = 50.0
-margin_top = 401.0
+margin_top = 385.0
 margin_right = 153.0
-margin_bottom = 429.0
-rect_pivot_offset = Vector2( 0, 125 )
+margin_bottom = 413.0
 text = "Leaves"
 align = 1
 __meta__ = {
@@ -78,10 +78,9 @@ __meta__ = {
 
 [node name="WellWaterLevel2" type="Label" parent="."]
 margin_left = 48.0
-margin_top = 352.0
+margin_top = 336.0
 margin_right = 156.0
-margin_bottom = 400.0
-rect_pivot_offset = Vector2( 51, 174 )
+margin_bottom = 384.0
 custom_fonts/font = ExtResource( 7 )
 text = "High"
 align = 1
@@ -91,106 +90,106 @@ __meta__ = {
 
 [node name="WrittenLogContainer" parent="." instance=ExtResource( 3 )]
 anchor_right = 0.0
-margin_left = 563.0
-margin_top = 460.0
-margin_right = 1022.0
-margin_bottom = -1.0
+margin_left = 16.0
+margin_top = 440.0
+margin_right = 475.0
+margin_bottom = -21.0
 
 [node name="WaterCollectControl" parent="." instance=ExtResource( 8 )]
-margin_left = -326.0
-margin_top = -166.0
-margin_right = -196.0
-margin_bottom = -36.0
+margin_left = -336.0
+margin_top = -140.0
+margin_right = -206.0
+margin_bottom = -10.0
 task_name = "Collect"
 task_options = [ "5 L" ]
 button_min_size = 32.0
 
 [node name="WaterBoilControl" parent="." instance=ExtResource( 8 )]
-margin_left = -22.0
-margin_top = -161.0
-margin_right = 108.0
-margin_bottom = -31.0
+margin_left = -40.0
+margin_top = -140.0
+margin_right = 90.0
+margin_bottom = -10.0
 task_name = "Boil"
 task_options = [ "1 L" ]
 button_min_size = 32.0
 
 [node name="LeavesCollectControl" parent="." instance=ExtResource( 8 )]
-margin_left = -346.0
-margin_top = 15.0
-margin_right = -216.0
-margin_bottom = 145.0
+margin_left = -336.0
+margin_top = -12.0
+margin_right = -206.0
+margin_bottom = 118.0
 task_name = "Collect"
 task_options = [ "Near", "Far" ]
 button_min_size = 48.0
 
 [node name="LeavesDriedControl" parent="." instance=ExtResource( 8 )]
-margin_left = -37.0
-margin_top = 20.0
-margin_right = 93.0
-margin_bottom = 150.0
+margin_left = -40.0
+margin_top = -12.0
+margin_right = 90.0
+margin_bottom = 118.0
 task_name = "Dry"
 task_options = [ "10 Kg" ]
 button_min_size = 52.0
 
 [node name="TeaSteepControl" parent="." instance=ExtResource( 8 )]
-margin_left = 216.0
-margin_top = 25.0
-margin_right = 346.0
-margin_bottom = 155.0
+margin_left = -40.0
+margin_top = 116.0
+margin_right = 90.0
+margin_bottom = 246.0
 task_name = "Steep"
 task_options = [ "1 L" ]
 button_min_size = 32.0
 
 [node name="WellWaterReadout" parent="." instance=ExtResource( 9 )]
-margin_left = -456.0
-margin_top = -121.0
-margin_right = -326.0
-margin_bottom = -45.0
+margin_left = -488.0
+margin_top = -92.0
+margin_right = -340.0
+margin_bottom = -16.0
 quantity_type = ExtResource( 11 )
 inventory_node_path = NodePath("../Well")
 name_override = "Well Water"
 
 [node name="WaterCollectedReadout" parent="." instance=ExtResource( 9 )]
-margin_left = -179.0
-margin_top = -118.0
-margin_right = -13.0
-margin_bottom = -42.0
+margin_left = -208.0
+margin_top = -92.0
+margin_right = -42.0
+margin_bottom = -16.0
 quantity_type = ExtResource( 11 )
 inventory_node_path = NodePath("../Inventory")
 name_override = "Collected Water"
 
 [node name="WaterBoiledReadout" parent="." instance=ExtResource( 9 )]
-margin_left = 104.0
-margin_top = -120.0
-margin_right = 270.0
-margin_bottom = -44.0
+margin_left = 88.0
+margin_top = -92.0
+margin_right = 254.0
+margin_bottom = -16.0
 quantity_type = ExtResource( 16 )
 inventory_node_path = NodePath("../Inventory")
 name_override = "Boiled Water"
 
 [node name="LeavesCollectedReadout" parent="." instance=ExtResource( 9 )]
-margin_left = -196.0
-margin_top = 66.0
-margin_right = -30.0
-margin_bottom = 142.0
+margin_left = -208.0
+margin_top = 36.0
+margin_right = -42.0
+margin_bottom = 112.0
 quantity_type = ExtResource( 13 )
 inventory_node_path = NodePath("../Inventory")
 name_override = "Collected Leaves"
 
 [node name="LeavesDriedReadout" parent="." instance=ExtResource( 9 )]
-margin_left = 59.0
-margin_top = 71.0
-margin_right = 225.0
-margin_bottom = 147.0
+margin_left = 88.0
+margin_top = 36.0
+margin_right = 254.0
+margin_bottom = 112.0
 quantity_type = ExtResource( 17 )
 inventory_node_path = NodePath("../Inventory")
 name_override = "Dried Leaves"
 
 [node name="TeaSteepedReadout" parent="." instance=ExtResource( 9 )]
-margin_left = 315.0
-margin_top = 64.0
-margin_right = 481.0
-margin_bottom = 140.0
+margin_left = 88.0
+margin_top = 164.0
+margin_right = 254.0
+margin_bottom = 240.0
 quantity_type = ExtResource( 18 )
 inventory_node_path = NodePath("../Inventory")
 name_override = "Black Tea"
@@ -225,6 +224,13 @@ output_quantity = ExtResource( 16 )
 
 [node name="Teapot" parent="." instance=ExtResource( 5 )]
 recipe_data = ExtResource( 15 )
+
+[node name="InventoryList" parent="." instance=ExtResource( 19 )]
+margin_left = 736.0
+margin_top = 16.0
+margin_right = 1023.0
+margin_bottom = 44.0
+inventory_node_path = NodePath("../Inventory")
 
 [connection signal="button_pressed" from="WaterCollectControl" to="." method="_on_WaterCollectControl_button_pressed"]
 [connection signal="button_pressed" from="WaterBoilControl" to="." method="_on_WaterBoilControl_button_pressed"]

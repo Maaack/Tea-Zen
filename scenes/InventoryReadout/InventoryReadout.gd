@@ -1,5 +1,5 @@
 tool
-extends Control
+extends VBoxContainer
 
 const INVENTORY_STRING = "%.2f %s"
 

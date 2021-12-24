@@ -38,6 +38,8 @@ func copy_from(value : UnitData):
 		return
 	if value.has_method('set_quantity'):
 		quantity = value.quantity
+	if value.get('measure'):
+		measure = value.measure
 	.copy_from(value)
 
 func add(value, conserve_quantities:bool=true):
