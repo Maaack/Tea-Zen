@@ -1,0 +1,31 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "/* 
+This shader is under MIT license.
+*/
+
+shader_type canvas_item;
+
+uniform sampler2D mask_sampler;
+uniform vec2 region_offset = vec2(0.0);
+uniform vec2 region_scale = vec2(1.0);
+uniform bool flip_mask_h = false;
+uniform bool flip_mask_v = false;
+
+void fragment()
+{
+	vec4 screen_color = texture(SCREEN_TEXTURE, SCREEN_UV);
+	vec4 texture_color = texture(TEXTURE, UV);
+	vec2 mask_uv = ((UV / TEXTURE_PIXEL_SIZE) - region_offset) * region_scale * TEXTURE_PIXEL_SIZE;
+	if (flip_mask_h) {
+		mask_uv.x = 0.5 - (mask_uv.x - 0.5);
+	}
+	if (flip_mask_v) {
+		mask_uv.y = 0.5 - (mask_uv.y - 0.5);
+	}
+	vec4 mask_color = texture(mask_sampler, mask_uv);
+	vec4 base_color = 1.0 - (1.0 - texture_color) * (1.0 - mask_color);
+	//COLOR = mask_color;
+	COLOR = screen_color * base_color;
+}"

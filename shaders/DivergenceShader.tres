@@ -1,0 +1,35 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "/* 
+This shader is under MIT license.
+*/
+
+shader_type canvas_item;
+
+uniform float divergenceScale = 0.5;
+
+float divergence(sampler2D sampler, vec2 uv, vec2 texelSize, float scale)
+{
+	vec2 xOffset = vec2(texelSize.x, 0.0);
+	vec2 yOffset = vec2(0.0, texelSize.y);
+
+	vec4 left = texture(sampler, uv - xOffset);
+	vec4 right = texture(sampler, uv + xOffset);
+	vec4 bottom = texture(sampler, uv - yOffset);
+	vec4 top = texture(sampler, uv + yOffset);
+	
+	// du / dx , du / dy
+	vec4 duDx = (right - left);
+	vec4 duDy = (top - bottom);
+	
+	float div = (duDx.x + duDy.y) * scale;
+	
+	return div;
+	
+}
+
+void fragment () {
+	COLOR = vec4(divergence(TEXTURE, UV, TEXTURE_PIXEL_SIZE, divergenceScale), 0.0, 0.0, 1.0);
+}
+"

@@ -1,0 +1,70 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "/* 
+This shader is under MIT license.
+*/
+
+shader_type canvas_item;
+
+uniform highp sampler2D velocity;
+uniform highp float deltaTime = 0.05;
+uniform sampler2D brushTexture;
+uniform vec4 brushColor : hint_color = vec4(0.0);
+uniform vec2 brushCenterUV;
+uniform vec2 brushScale = vec2(0.1);
+uniform bool brushOn = false;
+
+bool hasBrush(vec2 uv){
+	return (brushOn && abs(uv.x - brushCenterUV.x) < brushScale.x / 2.0 && abs(uv.y - brushCenterUV.y) < brushScale.y / 2.0);
+}
+
+float getBrushAlpha(vec2 uv){
+	ivec2 brushSize = textureSize(brushTexture, 0);
+	if (brushSize.x == 0) {
+		return brushColor.a;
+	}
+	vec2 brushOffset = vec2(0.5) * brushScale;
+	vec2 brushUV = ((brushOffset + brushCenterUV - uv) / brushScale);
+	float brushAlpha = texture(brushTexture, brushUV).a;
+	return brushAlpha * brushColor.a;
+}
+
+vec4 getBrushColor(vec2 uv){
+	ivec2 brushSize = textureSize(brushTexture, 0);
+	if (brushSize.x == 0) {
+		return brushColor;
+	}
+	vec2 brushOffset = vec2(0.5) * brushScale;
+	vec2 brushUV = ((brushOffset + brushCenterUV - uv) / brushScale);
+	vec4 finalColor = texture(brushTexture, brushUV);
+	finalColor.rgb -= vec3(0.5);
+	finalColor.rgb *= 2.0;
+	finalColor.r = 0.0;
+	finalColor.g = clamp(finalColor.g, -1.0, 1.0);
+	return finalColor;
+}
+
+vec4 bilerp(sampler2D sampler, vec2 uv, vec2 texelSize) {
+	vec2 st = uv / texelSize - 0.5;
+	vec2 uvInt = floor(st);
+	vec2 uvFrac = fract(st);
+
+	vec4 a = texture(sampler, (uvInt + vec2(0.5, 0.5)) * texelSize);
+	vec4 b = texture(sampler, (uvInt + vec2(1.5, 0.5)) * texelSize);
+	vec4 c = texture(sampler, (uvInt + vec2(0.5, 1.5)) * texelSize);
+	vec4 d = texture(sampler, (uvInt + vec2(1.5, 1.5)) * texelSize);
+	vec4 abMix = mix(a, b, uvFrac.x);
+	vec4 cdMix = mix(c, d, uvFrac.x);
+	return mix(abMix, cdMix, uvFrac.y);
+}
+
+void fragment()
+{
+	vec2 coord = UV.xy - deltaTime * bilerp(velocity, UV, TEXTURE_PIXEL_SIZE).xy;
+	vec4 finalColor = bilerp(TEXTURE, coord, TEXTURE_PIXEL_SIZE);
+	if (hasBrush(UV)){
+		finalColor = mix(finalColor, getBrushColor(UV), getBrushAlpha(UV));
+	}
+	COLOR = finalColor;
+}"
