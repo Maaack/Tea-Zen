@@ -5,7 +5,7 @@
 [ext_resource path="res://theme/small_title_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/FluidSimulators/MainMenuFluidSimulator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://shaders/MultiplyThree.tres" type="Shader" id=5]
-[ext_resource path="res://scenes/MouseControl/MouseControl.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/MouseControl/MouseMotionControl.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=7]
 [ext_resource path="res://assets/textures/RoundedSideMask.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/AngledCornerMask.png" type="Texture" id=9]
@@ -47,7 +47,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/Node2D/BackBufferCopy/Sprite:modulate")
+tracks/2/path = NodePath("Control/Node2D/Sprite:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -71,7 +71,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/Node2D/BackBufferCopy5/Sprite:modulate")
+tracks/4/path = NodePath("Control/Node2D/Sprite3:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -155,7 +155,7 @@ resource_name = "Rotation"
 length = 9.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Node2D/BackBufferCopy10/Sprite:material:shader_param/region_offset")
+tracks/0/path = NodePath("Node2D/Sprite5:material:shader_param/region_offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -167,7 +167,7 @@ tracks/0/keys = {
 "values": [ Vector2( 80, 64 ), Vector2( 160, 48 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Node2D/BackBufferCopy10/Sprite:region_rect")
+tracks/1/path = NodePath("Node2D/Sprite5:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -203,7 +203,7 @@ tracks/3/keys = {
 "values": [ Rect2( 80, 64, 256, 128 ), Rect2( 160, 64, 256, 128 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Node2D/BackBufferCopy10/Sprite:modulate")
+tracks/4/path = NodePath("Node2D/Sprite5:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -342,14 +342,6 @@ shader_param/mask_sampler = ExtResource( 9 )
 [sub_resource type="ViewportTexture" id=14]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
 
-[sub_resource type="ShaderMaterial" id=17]
-shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 0, 48 )
-shader_param/region_scale = Vector2( 4, 4 )
-shader_param/flip_mask_h = false
-shader_param/flip_mask_v = false
-shader_param/mask_sampler = ExtResource( 9 )
-
 [sub_resource type="ShaderMaterial" id=13]
 shader = ExtResource( 5 )
 shader_param/region_offset = Vector2( 0, 112 )
@@ -360,14 +352,6 @@ shader_param/mask_sampler = ExtResource( 9 )
 
 [sub_resource type="ViewportTexture" id=15]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
-
-[sub_resource type="ShaderMaterial" id=18]
-shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 0, 100 )
-shader_param/region_scale = Vector2( 4, 4 )
-shader_param/flip_mask_h = false
-shader_param/flip_mask_v = true
-shader_param/mask_sampler = ExtResource( 9 )
 
 [sub_resource type="ShaderMaterial" id=21]
 shader = ExtResource( 5 )
@@ -380,17 +364,6 @@ shader_param/mask_sampler = ExtResource( 9 )
 [sub_resource type="ViewportTexture" id=22]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
 
-[sub_resource type="ShaderMaterial" id=23]
-shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 384, 48 )
-shader_param/region_scale = Vector2( 4, 4 )
-shader_param/flip_mask_h = true
-shader_param/flip_mask_v = false
-shader_param/mask_sampler = ExtResource( 9 )
-
-[sub_resource type="ViewportTexture" id=24]
-viewport_path = NodePath("FluidSimulator/DyeViewport")
-
 [sub_resource type="ShaderMaterial" id=25]
 shader = ExtResource( 5 )
 shader_param/region_offset = Vector2( 384, 112 )
@@ -400,6 +373,44 @@ shader_param/flip_mask_v = true
 shader_param/mask_sampler = ExtResource( 9 )
 
 [sub_resource type="ViewportTexture" id=26]
+viewport_path = NodePath("FluidSimulator/DyeViewport")
+
+[sub_resource type="ShaderMaterial" id=31]
+shader = ExtResource( 5 )
+shader_param/region_offset = Vector2( 80, 64 )
+shader_param/region_scale = Vector2( 2, 4 )
+shader_param/flip_mask_h = false
+shader_param/flip_mask_v = false
+shader_param/mask_sampler = ExtResource( 8 )
+
+[sub_resource type="ViewportTexture" id=32]
+viewport_path = NodePath("FluidSimulator/DyeViewport")
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 5 )
+shader_param/region_offset = Vector2( 0, 48 )
+shader_param/region_scale = Vector2( 4, 4 )
+shader_param/flip_mask_h = false
+shader_param/flip_mask_v = false
+shader_param/mask_sampler = ExtResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=18]
+shader = ExtResource( 5 )
+shader_param/region_offset = Vector2( 0, 100 )
+shader_param/region_scale = Vector2( 4, 4 )
+shader_param/flip_mask_h = false
+shader_param/flip_mask_v = true
+shader_param/mask_sampler = ExtResource( 9 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 5 )
+shader_param/region_offset = Vector2( 384, 48 )
+shader_param/region_scale = Vector2( 4, 4 )
+shader_param/flip_mask_h = true
+shader_param/flip_mask_v = false
+shader_param/mask_sampler = ExtResource( 9 )
+
+[sub_resource type="ViewportTexture" id=24]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=28]
@@ -424,17 +435,6 @@ shader_param/mask_sampler = ExtResource( 8 )
 [sub_resource type="ViewportTexture" id=30]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
 
-[sub_resource type="ShaderMaterial" id=31]
-shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 80, 64 )
-shader_param/region_scale = Vector2( 2, 4 )
-shader_param/flip_mask_h = false
-shader_param/flip_mask_v = false
-shader_param/mask_sampler = ExtResource( 8 )
-
-[sub_resource type="ViewportTexture" id=32]
-viewport_path = NodePath("FluidSimulator/DyeViewport")
-
 [sub_resource type="ViewportTexture" id=12]
 viewport_path = NodePath("FluidSimulator/VelocityForcesViewport")
 
@@ -451,7 +451,6 @@ __meta__ = {
 }
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 4 )]
-scale_brush_force = 0.25
 
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Intro"
@@ -500,15 +499,7 @@ expand = true
 
 [node name="Node2D" type="Node2D" parent="Control"]
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="Control/Node2D"]
-copy_mode = 2
-rect = Rect2( 0, 0, 400, 400 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy"]
+[node name="Sprite" type="Sprite" parent="Control/Node2D"]
 modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 16 )
 scale = Vector2( 2, 2 )
@@ -516,6 +507,46 @@ texture = SubResource( 14 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 64, 128, 128 )
+
+[node name="Sprite2" type="Sprite" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.752941 )
+material = SubResource( 13 )
+position = Vector2( 0, 344 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 15 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 112, 128, 128 )
+
+[node name="Sprite3" type="Sprite" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 21 )
+position = Vector2( 768, 0 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 22 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 384, 64, 128, 128 )
+
+[node name="Sprite4" type="Sprite" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0.752941 )
+material = SubResource( 25 )
+position = Vector2( 768, 344 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 26 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 384, 112, 128, 128 )
+
+[node name="Sprite5" type="Sprite" parent="Control/Node2D"]
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 31 )
+position = Vector2( 248, 0 )
+scale = Vector2( 2, 2 )
+texture = SubResource( 32 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 80, 48, 256, 128 )
 
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -533,24 +564,6 @@ texture = SubResource( 14 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 48, 128, 128 )
-
-[node name="BackBufferCopy3" type="BackBufferCopy" parent="Control/Node2D"]
-copy_mode = 2
-rect = Rect2( 0, 200, 400, 400 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy3"]
-modulate = Color( 1, 1, 1, 0.752941 )
-material = SubResource( 13 )
-position = Vector2( 0, 344 )
-scale = Vector2( 2, 2 )
-texture = SubResource( 15 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 112, 128, 128 )
 
 [node name="BackBufferCopy4" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -570,25 +583,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 0, 100, 128, 128 )
 
-[node name="BackBufferCopy5" type="BackBufferCopy" parent="Control/Node2D"]
-position = Vector2( 624, -200 )
-copy_mode = 2
-rect = Rect2( 0, 200, 400, 400 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy5"]
-modulate = Color( 1, 1, 1, 0 )
-material = SubResource( 21 )
-position = Vector2( 144, 200 )
-scale = Vector2( 2, 2 )
-texture = SubResource( 22 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 384, 64, 128, 128 )
-
 [node name="BackBufferCopy6" type="BackBufferCopy" parent="Control/Node2D"]
 position = Vector2( 624, -200 )
 copy_mode = 2
@@ -607,24 +601,6 @@ texture = SubResource( 24 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 384, 48, 128, 128 )
-
-[node name="BackBufferCopy7" type="BackBufferCopy" parent="Control/Node2D"]
-copy_mode = 2
-rect = Rect2( 624, 200, 400, 400 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy7"]
-modulate = Color( 1, 1, 1, 0.752941 )
-material = SubResource( 25 )
-position = Vector2( 768, 344 )
-scale = Vector2( 2, 2 )
-texture = SubResource( 26 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 384, 112, 128, 128 )
 
 [node name="BackBufferCopy8" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -661,24 +637,6 @@ texture = SubResource( 30 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 80, 64, 256, 128 )
-
-[node name="BackBufferCopy10" type="BackBufferCopy" parent="Control/Node2D"]
-copy_mode = 2
-rect = Rect2( 256, 0, 520, 300 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy10"]
-modulate = Color( 1, 1, 1, 0 )
-material = SubResource( 31 )
-position = Vector2( 248, 0 )
-scale = Vector2( 2, 2 )
-texture = SubResource( 32 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 80, 48, 256, 128 )
 
 [node name="VelocitySprite" type="Sprite" parent="Control"]
 visible = false
@@ -727,8 +685,9 @@ custom_fonts/font = ExtResource( 3 )
 text = "All of the time"
 align = 1
 
-[node name="MouseControl" parent="Control" instance=ExtResource( 6 )]
-visible = false
+[node name="MouseMotionControl" parent="Control" instance=ExtResource( 6 )]
+margin_top = -176.0
+margin_bottom = 1016.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
@@ -754,7 +713,7 @@ margin_right = 256.0
 margin_bottom = 64.0
 text = "Out of time"
 
-[connection signal="force_applied" from="Control/MouseControl" to="." method="_on_MouseControl_force_applied"]
-[connection signal="force_released" from="Control/MouseControl" to="." method="_on_MouseControl_force_released"]
+[connection signal="force_applied" from="Control/MouseMotionControl" to="." method="_on_MouseMotionControl_force_applied"]
+[connection signal="force_released" from="Control/MouseMotionControl" to="." method="_on_MouseMotionControl_force_released"]
 [connection signal="pressed" from="Control/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

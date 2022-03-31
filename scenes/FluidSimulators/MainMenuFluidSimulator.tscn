@@ -1,26 +1,32 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/FluidSimulators/MainMenuFluidSimulator.gd" type="Script" id=1]
 [ext_resource path="res://scenes/NestedViewports/NestedViewportControl.tscn" type="PackedScene" id=2]
 [ext_resource path="res://shaders/ViscosityShader.tres" type="Shader" id=3]
 [ext_resource path="res://shaders/AdvectPaintShader.tres" type="Shader" id=4]
 [ext_resource path="res://shaders/VelocityForcesShader.tres" type="Shader" id=5]
-[ext_resource path="res://assets/brushes/VelocityUpBrush128x2.png" type="Texture" id=6]
+[ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x2.png" type="Texture" id=6]
 [ext_resource path="res://assets/brushes/WhiteBrush128x2.png" type="Texture" id=7]
-[ext_resource path="res://shaders/AdvectVelocityShader.tres" type="Shader" id=8]
+[ext_resource path="res://assets/brushes/SofterBrush.png" type="Texture" id=8]
 [ext_resource path="res://shaders/DivergenceShader.tres" type="Shader" id=9]
 [ext_resource path="res://scenes/NestedViewports/PressureViewport.gd" type="Script" id=10]
 [ext_resource path="res://shaders/PressureShader.tres" type="Shader" id=11]
 [ext_resource path="res://shaders/GradientSubtractionShader.tres" type="Shader" id=12]
+[ext_resource path="res://shaders/VelocityTwoBrushesShader.tres" type="Shader" id=13]
 
 [sub_resource type="ShaderMaterial" id=8]
-shader = ExtResource( 8 )
+shader = ExtResource( 13 )
 shader_param/deltaTime = 0.05
 shader_param/brushColor = Color( 0, 0, 0, 0 )
 shader_param/brushCenterUV = null
 shader_param/brushScale = Vector2( 1, 0.004 )
 shader_param/brushOn = false
+shader_param/brushColor2 = Color( 0, 0, 0, 0 )
+shader_param/brushCenterUV2 = null
+shader_param/brushScale2 = Vector2( 0.1, 0.1 )
+shader_param/brushOn2 = false
 shader_param/brushTexture = ExtResource( 6 )
+shader_param/brushTexture2 = ExtResource( 8 )
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )

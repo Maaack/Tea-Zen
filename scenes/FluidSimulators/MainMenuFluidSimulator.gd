@@ -1,10 +1,7 @@
 extends Node
 
 
-export var scale_brush_force : float = 0.1
-
 func apply_velocity_force(position, vector, cascade : bool = false):
-	vector *= scale_brush_force
 	$VelocityViewport/Sprite.material.set_shader_param("brushCenterUV", position)
 	$VelocityViewport/Sprite.material.set_shader_param("brushColor", Color(vector.x, vector.y, 0.0, 1.0))
 	$VelocityViewport/Sprite.material.set_shader_param("brushOn", true)
@@ -16,6 +13,15 @@ func release_velocity_force(cascade : bool = false):
 	$VelocityViewport/Sprite.material.set_shader_param("brushColor", Color.black)
 	if (cascade):
 		release_dye_paint()
+
+func apply_velocity_force_2(position, vector):
+	$VelocityViewport/Sprite.material.set_shader_param("brushCenterUV2", position)
+	$VelocityViewport/Sprite.material.set_shader_param("brushColor2", Color(vector.x, vector.y, 0.0, 1.0))
+	$VelocityViewport/Sprite.material.set_shader_param("brushOn2", true)
+
+func release_velocity_force_2():
+	$VelocityViewport/Sprite.material.set_shader_param("brushOn2", false)
+	$VelocityViewport/Sprite.material.set_shader_param("brushColor2", Color.black)
 
 func apply_dye_paint(position, vector, cascade : bool = false):
 	$DyeViewport/Sprite.material.set_shader_param("brushCenterUV", position)

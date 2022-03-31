@@ -133,7 +133,6 @@ viewport_path = NodePath("FluidSimulator/PressureViewport")
 script = ExtResource( 3 )
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 16 )]
-scale_brush_force = 0.25
 
 [node name="BrushAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "FullScreenBrushOff"
