@@ -4,11 +4,6 @@ var steeping_tea : bool = true setget set_steeping_tea
 var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
 
-var velocity_mixed_up_texture: Texture = preload("res://assets/brushes/VelocityMixedUpBrush128x2.png")
-var velocity_up_texture: Texture = preload("res://assets/brushes/VelocityUpBrush128x2.png")
-var white_texture: Texture = preload("res://assets/brushes/WhiteBrush128x2.png")
-var tea_texture: Texture = preload("res://assets/brushes/MainMenuBackgroundBrush.png")
-
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
 	
@@ -27,3 +22,16 @@ func _process(delta):
 		brush_offset += Vector2(rand_range(-0.02, 0.02), 0.0)
 		$FluidSimulator.apply_velocity_force(velocity_brush_position + brush_offset, Vector2.ZERO)
 	$FluidSimulator.apply_dye_paint(dye_brush_position + brush_offset, Vector2.ZERO)
+
+
+func _on_QuitButton_pressed():
+	$MenuAnimationPlayer.play("Outro")
+	yield($MenuAnimationPlayer, "animation_finished")
+	get_tree().quit()
+
+
+func _on_StartButton_pressed():
+	$MenuAnimationPlayer.play("Outro")
+	yield($MenuAnimationPlayer, "animation_finished")
+	get_tree().change_scene("res://Main.tscn")
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://theme/title_font.tres" type="DynamicFont" id=2]
@@ -10,17 +10,20 @@
 [ext_resource path="res://assets/textures/RoundedSideMask.png" type="Texture" id=8]
 [ext_resource path="res://assets/textures/AngledCornerMask.png" type="Texture" id=9]
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x128.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/P1020509_Standard.jpg" type="Texture" id=11]
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush.png" type="Texture" id=12]
 [ext_resource path="res://assets/brushes/WhiteBrush128x2.png" type="Texture" id=13]
 [ext_resource path="res://assets/brushes/VelocityUpBrush128x2.png" type="Texture" id=14]
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x2.png" type="Texture" id=15]
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush2.png" type="Texture" id=16]
+[ext_resource path="res://assets/brushes/MainMenuBackgroundBrush3.png" type="Texture" id=17]
+[ext_resource path="res://assets/brushes/MainMenuBackgroundBrush4.png" type="Texture" id=18]
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=54]
 resource_name = "Intro"
-length = 6.0
+length = 5.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Title:modulate")
+tracks/0/path = NodePath("Control/Title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -32,144 +35,124 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SmallTitle:modulate")
+tracks/1/path = NodePath("Control/SmallTitle:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 2.5, 4 ),
+"times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Node2D/BackBufferCopy/Sprite:modulate")
+tracks/2/path = NodePath("Control/Node2D/BackBufferCopy/Sprite:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 3.5, 5 ),
+"times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Node2D/BackBufferCopy2/Sprite:modulate")
+tracks/3/path = NodePath("Control/Node2D/BackBufferCopy2/Sprite:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 3.5, 5 ),
+"times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.25098 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Node2D/BackBufferCopy5/Sprite:modulate")
+tracks/4/path = NodePath("Control/Node2D/BackBufferCopy5/Sprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 3.5, 5 ),
+"times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Node2D/BackBufferCopy6/Sprite:modulate")
+tracks/5/path = NodePath("Control/Node2D/BackBufferCopy6/Sprite:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 3.5, 5 ),
+"times": PoolRealArray( 0, 2, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/VBoxContainer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.5, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
-[sub_resource type="Animation" id=20]
-length = 0.001
+[sub_resource type="Animation" id=55]
+resource_name = "Outro"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Title:modulate")
+tracks/0/path = NodePath("Control/Title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SmallTitle:modulate")
+tracks/1/path = NodePath("Control/SmallTitle:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Node2D/BackBufferCopy/Sprite:modulate")
+tracks/2/path = NodePath("Control/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Node2D/BackBufferCopy2/Sprite:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.25098 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Node2D/BackBufferCopy5/Sprite:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.501961 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Node2D/BackBufferCopy6/Sprite:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.501961 ) ]
-}
+
+[sub_resource type="Animation" id=19]
+resource_name = "Intro"
+length = 3.0
 
 [sub_resource type="Animation" id=33]
 resource_name = "Rotation"
-length = 10.0
+length = 9.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Node2D/BackBufferCopy10/Sprite:material:shader_param/region_offset")
@@ -181,7 +164,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 224, 100 ), Vector2( 288, 100 ) ]
+"values": [ Vector2( 80, 64 ), Vector2( 160, 48 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Node2D/BackBufferCopy10/Sprite:region_rect")
@@ -193,7 +176,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 224, 100, 128, 64 ), Rect2( 288, 100, 128, 64 ) ]
+"values": [ Rect2( 80, 48, 256, 128 ), Rect2( 160, 48, 256, 128 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Node2D/BackBufferCopy9/Sprite:material:shader_param/region_offset")
@@ -205,7 +188,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 224, 112 ), Vector2( 288, 112 ) ]
+"values": [ Vector2( 80, 64 ), Vector2( 160, 64 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Node2D/BackBufferCopy9/Sprite:region_rect")
@@ -217,7 +200,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Rect2( 224, 112, 128, 64 ), Rect2( 288, 112, 128, 64 ) ]
+"values": [ Rect2( 80, 64, 256, 128 ), Rect2( 160, 64, 256, 128 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Node2D/BackBufferCopy10/Sprite:modulate")
@@ -226,7 +209,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 3, 5.1, 8 ),
+"times": PoolRealArray( 0, 2, 6, 8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0 ) ]
@@ -238,7 +221,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 3, 5.1, 8 ),
+"times": PoolRealArray( 0, 2, 6, 8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0 ) ]
@@ -246,8 +229,9 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id=39]
 resource_name = "AlternateBrushes"
-length = 20.0
+length = 36.0
 loop = true
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("FluidSimulator/DyeViewport/Sprite:material:shader_param/brushTexture")
 tracks/0/interp = 1
@@ -255,10 +239,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 9, 18 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 9, 18, 27, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ), ExtResource( 16 ), ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 13 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("FluidSimulator/VelocityViewport/Sprite:material:shader_param/brushTexture")
@@ -267,10 +251,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 9, 18 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 9, 18, 27, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 14 ) ]
+"values": [ ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 14 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -279,9 +263,18 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 18 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 9, 18, 27, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "values": [ {
+"args": [ true ],
+"method": "set_steeping_tea"
+}, {
+"args": [ true ],
+"method": "set_steeping_tea"
+}, {
+"args": [ true ],
+"method": "set_steeping_tea"
+}, {
 "args": [ true ],
 "method": "set_steeping_tea"
 }, {
@@ -340,7 +333,7 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=16]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 0, 72 )
+shader_param/region_offset = Vector2( 0, 64 )
 shader_param/region_scale = Vector2( 4, 4 )
 shader_param/flip_mask_h = false
 shader_param/flip_mask_v = false
@@ -351,7 +344,7 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 0, 64 )
+shader_param/region_offset = Vector2( 0, 48 )
 shader_param/region_scale = Vector2( 4, 4 )
 shader_param/flip_mask_h = false
 shader_param/flip_mask_v = false
@@ -378,7 +371,7 @@ shader_param/mask_sampler = ExtResource( 9 )
 
 [sub_resource type="ShaderMaterial" id=21]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 384, 72 )
+shader_param/region_offset = Vector2( 384, 64 )
 shader_param/region_scale = Vector2( 4, 4 )
 shader_param/flip_mask_h = true
 shader_param/flip_mask_v = false
@@ -389,7 +382,7 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=23]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 384, 64 )
+shader_param/region_offset = Vector2( 384, 48 )
 shader_param/region_scale = Vector2( 4, 4 )
 shader_param/flip_mask_h = true
 shader_param/flip_mask_v = false
@@ -422,8 +415,8 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=29]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 249.6, 112 )
-shader_param/region_scale = Vector2( 4, 8 )
+shader_param/region_offset = Vector2( 80, 64 )
+shader_param/region_scale = Vector2( 2, 4 )
 shader_param/flip_mask_h = false
 shader_param/flip_mask_v = false
 shader_param/mask_sampler = ExtResource( 8 )
@@ -433,8 +426,8 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 
 [sub_resource type="ShaderMaterial" id=31]
 shader = ExtResource( 5 )
-shader_param/region_offset = Vector2( 249.6, 100 )
-shader_param/region_scale = Vector2( 4, 8 )
+shader_param/region_offset = Vector2( 80, 64 )
+shader_param/region_scale = Vector2( 2, 4 )
 shader_param/flip_mask_h = false
 shader_param/flip_mask_v = false
 shader_param/mask_sampler = ExtResource( 8 )
@@ -445,17 +438,30 @@ viewport_path = NodePath("FluidSimulator/DyeViewport")
 [sub_resource type="ViewportTexture" id=12]
 viewport_path = NodePath("FluidSimulator/VelocityForcesViewport")
 
+[sub_resource type="ViewportTexture" id=52]
+viewport_path = NodePath("FluidSimulator/DivergenceViewport")
+
+[sub_resource type="ViewportTexture" id=53]
+viewport_path = NodePath("FluidSimulator/PressureViewport")
+
 [node name="MainMenu" type="Node"]
 script = ExtResource( 7 )
+__meta__ = {
+"_edit_vertical_guides_": [ 512.0 ]
+}
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 4 )]
 scale_brush_force = 0.25
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="MenuAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
+anims/Intro = SubResource( 54 )
+anims/Outro = SubResource( 55 )
+
+[node name="PanningTeaAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Control")
 autoplay = "Intro"
 anims/Intro = SubResource( 19 )
-anims/RESET = SubResource( 20 )
 anims/Rotation = SubResource( 33 )
 next/Intro = "Rotation"
 
@@ -485,6 +491,13 @@ anchor_bottom = 1.0
 texture = SubResource( 6 )
 stretch_mode = 1
 
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0.45098 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+expand = true
+
 [node name="Node2D" type="Node2D" parent="Control"]
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="Control/Node2D"]
@@ -496,13 +509,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy"]
-self_modulate = Color( 1, 1, 1, 0.498039 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 16 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 14 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 72, 128, 128 )
+region_rect = Rect2( 0, 64, 128, 128 )
 
 [node name="BackBufferCopy2" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -513,13 +526,13 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy2"]
-modulate = Color( 1, 1, 1, 0.25098 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 17 )
 scale = Vector2( 3, 3 )
 texture = SubResource( 14 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 64, 128, 128 )
+region_rect = Rect2( 0, 48, 128, 128 )
 
 [node name="BackBufferCopy3" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -567,14 +580,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy5"]
-modulate = Color( 1, 1, 1, 0.501961 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 21 )
 position = Vector2( 144, 200 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 22 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 384, 72, 128, 128 )
+region_rect = Rect2( 384, 64, 128, 128 )
 
 [node name="BackBufferCopy6" type="BackBufferCopy" parent="Control/Node2D"]
 position = Vector2( 624, -200 )
@@ -586,14 +599,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy6"]
-modulate = Color( 1, 1, 1, 0.501961 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 23 )
 position = Vector2( 16, 200 )
 scale = Vector2( 3, 3 )
 texture = SubResource( 24 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 384, 64, 128, 128 )
+region_rect = Rect2( 384, 48, 128, 128 )
 
 [node name="BackBufferCopy7" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -640,14 +653,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy9"]
-modulate = Color( 1, 1, 1, 0.401569 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 29 )
-position = Vector2( 312, 0 )
+position = Vector2( 120, 0 )
 scale = Vector2( 3, 3 )
 texture = SubResource( 30 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 249.6, 112, 128, 64 )
+region_rect = Rect2( 80, 64, 256, 128 )
 
 [node name="BackBufferCopy10" type="BackBufferCopy" parent="Control/Node2D"]
 copy_mode = 2
@@ -658,19 +671,37 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Control/Node2D/BackBufferCopy10"]
-modulate = Color( 1, 1, 1, 0.401569 )
+modulate = Color( 1, 1, 1, 0 )
 material = SubResource( 31 )
-position = Vector2( 376, 0 )
+position = Vector2( 248, 0 )
 scale = Vector2( 2, 2 )
 texture = SubResource( 32 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 249.6, 100, 128, 64 )
+region_rect = Rect2( 80, 48, 256, 128 )
 
 [node name="VelocitySprite" type="Sprite" parent="Control"]
 visible = false
 position = Vector2( 512, 88 )
 texture = SubResource( 12 )
+centered = false
+
+[node name="VelocitySprite2" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 512, 88 )
+texture = SubResource( 52 )
+centered = false
+
+[node name="VelocitySprite4" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 512, 88 )
+texture = SubResource( 53 )
+centered = false
+
+[node name="VelocitySprite3" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 512, 88 )
+texture = SubResource( 53 )
 centered = false
 
 [node name="Title" type="Label" parent="Control"]
@@ -699,5 +730,31 @@ align = 1
 [node name="MouseControl" parent="Control" instance=ExtResource( 6 )]
 visible = false
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -12.0
+margin_right = 128.0
+margin_bottom = 148.0
+rect_min_size = Vector2( 196, 0 )
+custom_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="Control/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 24.0
+text = "Start Tea Party"
+
+[node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+margin_top = 40.0
+margin_right = 256.0
+margin_bottom = 64.0
+text = "Out of time"
+
 [connection signal="force_applied" from="Control/MouseControl" to="." method="_on_MouseControl_force_applied"]
 [connection signal="force_released" from="Control/MouseControl" to="." method="_on_MouseControl_force_released"]
+[connection signal="pressed" from="Control/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
