@@ -23,6 +23,8 @@ func _on_QuitButton_pressed():
 	get_tree().quit()
 
 func _on_StartButton_pressed():
+	$BrushAnimationPlayer.stop()
+	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
 	get_tree().change_scene("res://Main.tscn")
