@@ -10,6 +10,7 @@ enum SecondIncrements{
 }
 
 var current_second_increment : int = 0
+var second_incrementor : int = 1
 var current_minute : int = 0
 
 func start() -> void:
@@ -17,6 +18,13 @@ func start() -> void:
 
 func stop() -> void:
 	$Clock.stop()
+
+func show_next_button() -> void:
+	$AnimationPlayer.play("RevealNextButton")
+
+func speed_up() -> void:
+	$Clock.wait_time = 0.2
+	second_incrementor = 4
 
 func _update_labels():
 	match(current_second_increment):
@@ -36,9 +44,12 @@ func _increment_minute():
 	emit_signal("minute_passed", current_minute)
 
 func _on_Clock_timeout():
-	current_second_increment += 1
+	current_second_increment += second_incrementor
 	if current_second_increment >= SecondIncrements.size():
 		_increment_minute()
 	_update_labels()
 	yield(get_tree().create_timer(0.01), "timeout")
 	$Clock.start()
+
+func _on_NextButton_button_down():
+	speed_up()

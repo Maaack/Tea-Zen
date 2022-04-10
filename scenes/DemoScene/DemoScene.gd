@@ -1,7 +1,10 @@
 extends Node
 
 
+export(int, 0, 15) var show_skip_time : int = 1
 export(int, 0, 15) var wait_time : int = 8
+export(float) var first_skip_point : float = 29.3
+
 var dragging_tea_bag : bool = false
 var started_steeping : bool = false 
 
@@ -39,17 +42,18 @@ func _on_MouseDetectionControl_mouse_exited():
 
 
 func _on_Timer_minute_passed(minute):
-	if minute == wait_time:
+	if minute == show_skip_time:
+		$Control/Timer.show_next_button()
+	elif minute == wait_time:
 		_host_returned()
 
 func _on_SkipButton_pressed():
-	if $HostReturnsAudioStreamPlayer.playing:
+	if $DemoAnimationPlayer.current_animation == "ReturnOfHost":
 		back_to_main_menu()
-	elif $DemoAnimationPlayer.is_playing() and \
-	$DemoAnimationPlayer.current_animation == "Intro" and \
-	$HostWelcomeAudioStreamPlayer.playing:
-		$DemoAnimationPlayer.seek(29.4)
-	elif $MusicAudioStreamPlayer.playing:
+	elif $DemoAnimationPlayer.current_animation == "Intro" and \
+		$DemoAnimationPlayer.current_animation_position < first_skip_point:
+		$DemoAnimationPlayer.seek(first_skip_point)
+	elif $DemoAnimationPlayer.current_animation == "Steeping":
 		_host_returned()
 
 

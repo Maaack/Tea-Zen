@@ -62,7 +62,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 1.9, 4.3, 7.5, 11.2, 15.1, 16.8, 19.7, 22.3, 23.9, 25.2, 28.5, 29.4, 38.7, 42, 45.2, 49.4 ),
+"times": PoolRealArray( 0, 0.1, 1.9, 4.3, 7.5, 11.2, 15.1, 16.8, 19.7, 22.3, 23.9, 25.2, 28.5, 29.3, 38.7, 42, 45.2, 49.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "", "Welcome to the tea party", "Where it's tea time, all the time.", "Here’s a bag of tea and a kettle of boiled water.", "I’m not really sure what your prior experience is with tea, but...", "this is an herbal so you can’t really go too off the rails.", "Here's a timer anyway.", "Now I need to tend to some other recent arrivals,", "but I should be back in like… err…", "Five minutes.", "Don’t hold me to that.", "The timer is for the tea. Not for me.", "Okay?", "", "Just pick up the tea bag and drop it into the water.", " You know, whenever you get relaxed. Relax first. ", "Time is but a concept, and I’m not waiting on you or anything.", "" ]
@@ -86,7 +86,7 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 29.4 ),
+"times": PoolRealArray( 0, 29.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -298,6 +298,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 632, 592 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("Control/TeaControl/Sprite:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "ReturnOfHost"
@@ -459,6 +471,20 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("Control/Timer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
 }
 
 [sub_resource type="Animation" id=60]
