@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scenes/Timer/Timer.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Clock/Clock.tscn" type="PackedScene" id=2]
-[ext_resource path="res://theme/timer_font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://theme/main_theme.tres" type="Theme" id=4]
+[ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://theme/timer_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Timer/Timer.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Clock/Clock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/textures/next-button.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
@@ -64,8 +64,8 @@ tracks/1/keys = {
 margin_right = 272.0
 margin_bottom = 64.0
 rect_min_size = Vector2( 272, 64 )
-theme = ExtResource( 4 )
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -74,7 +74,7 @@ __meta__ = {
 margin_left = 8.0
 margin_right = 70.0
 margin_bottom = 65.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "0"
 align = 2
 
@@ -82,18 +82,18 @@ align = 2
 margin_left = 88.0
 margin_right = 150.0
 margin_bottom = 65.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = "00"
 
 [node name="SeparatorLabel" type="Label" parent="."]
 margin_left = 72.0
 margin_right = 88.0
 margin_bottom = 65.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = ":"
 align = 1
 
-[node name="Clock" parent="." instance=ExtResource( 2 )]
+[node name="Clock" parent="." instance=ExtResource( 4 )]
 margin_left = 162.0
 margin_top = 12.0
 margin_right = 202.0

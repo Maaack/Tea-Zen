@@ -16,12 +16,16 @@ func _started_steeping():
 
 func _host_returned():
 	dragging_tea_bag = false
-	$StrawberryTeaBag.hide()
+	$HeldTeaBag.hide()
 	$DemoAnimationPlayer.play("ReturnOfHost")
-		
 
 func back_to_main_menu():
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
+
+func pick_up_teabag():
+	$Control/TeaBagButton.hide()
+	$HeldTeaBag.show()
+	dragging_tea_bag = true
 
 func _on_MouseDetectionControl_force_applied(position, vector):
 	if not dragging_tea_bag:
@@ -35,11 +39,10 @@ func _on_MouseDetectionControl_force_applied(position, vector):
 func _input(event):
 	if event is InputEventMouseMotion:
 		if dragging_tea_bag:
-			$StrawberryTeaBag.position = event.position
+			$HeldTeaBag.position = event.position
 
 func _on_MouseDetectionControl_mouse_exited():
 	$FluidSimulator.release_velocity_force(true)
-
 
 func _on_Timer_minute_passed(minute):
 	if minute == show_skip_time:
@@ -56,7 +59,5 @@ func _on_SkipButton_pressed():
 	elif $DemoAnimationPlayer.current_animation == "Steeping":
 		_host_returned()
 
-
 func _on_TeaBagButton_button_down():
-	$Control/TeaBagButton.hide()
-	dragging_tea_bag = true
+	pick_up_teabag()

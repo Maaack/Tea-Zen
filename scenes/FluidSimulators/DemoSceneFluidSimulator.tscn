@@ -1,43 +1,42 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/FluidSimulators/DemoSceneFluidSimulator.gd" type="Script" id=1]
-[ext_resource path="res://scenes/NestedViewports/NestedViewportControl.tscn" type="PackedScene" id=2]
-[ext_resource path="res://shaders/ViscosityShader.tres" type="Shader" id=3]
-[ext_resource path="res://shaders/AdvectPaintShader.tres" type="Shader" id=4]
-[ext_resource path="res://shaders/VelocityForcesShader.tres" type="Shader" id=5]
-[ext_resource path="res://assets/brushes/StrawberryTeaWhiteBrush.png" type="Texture" id=6]
-[ext_resource path="res://assets/brushes/TeaBagBrush.png" type="Texture" id=7]
-[ext_resource path="res://shaders/AdvectVelocityWhiteBrushShader.tres" type="Shader" id=8]
-[ext_resource path="res://shaders/DivergenceShader.tres" type="Shader" id=9]
-[ext_resource path="res://scenes/NestedViewports/PressureViewport.gd" type="Script" id=10]
-[ext_resource path="res://shaders/PressureShader.tres" type="Shader" id=11]
-[ext_resource path="res://shaders/GradientSubtractionShader.tres" type="Shader" id=12]
+[ext_resource path="res://shaders/VelocityForcesShader.tres" type="Shader" id=2]
+[ext_resource path="res://shaders/DivergenceShader.tres" type="Shader" id=3]
+[ext_resource path="res://shaders/AdvectPaintColorShader.tres" type="Shader" id=4]
+[ext_resource path="res://shaders/ViscosityShader.tres" type="Shader" id=5]
+[ext_resource path="res://scenes/NestedViewports/PressureViewport.gd" type="Script" id=6]
+[ext_resource path="res://scenes/NestedViewports/NestedViewportControl.tscn" type="PackedScene" id=7]
+[ext_resource path="res://shaders/PressureShader.tres" type="Shader" id=8]
+[ext_resource path="res://shaders/GradientSubtractionShader.tres" type="Shader" id=9]
+[ext_resource path="res://shaders/AdvectVelocityWhiteBrushShader.tres" type="Shader" id=10]
+[ext_resource path="res://assets/brushes/TeaBagBrush.png" type="Texture" id=12]
 
 [sub_resource type="ShaderMaterial" id=21]
-shader = ExtResource( 8 )
+shader = ExtResource( 10 )
 shader_param/deltaTime = 0.05
 shader_param/brushColor = Color( 0, 0, 0, 0 )
 shader_param/brushCenterUV = null
 shader_param/brushScale = Vector2( 0.2, 0.2 )
 shader_param/brushOn = false
-shader_param/brushTexture = ExtResource( 7 )
+shader_param/brushTexture = ExtResource( 12 )
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 3 )
+shader = ExtResource( 5 )
 shader_param/viscosityScale = 64.0
 
 [sub_resource type="ViewportTexture" id=2]
 viewport_path = NodePath("VelocityViewport")
 
 [sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 5 )
+shader = ExtResource( 2 )
 shader_param/vorticityScale = 1.2
 
 [sub_resource type="ViewportTexture" id=9]
 viewport_path = NodePath("ViscosityViewport")
 
 [sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 9 )
+shader = ExtResource( 3 )
 shader_param/divergenceScale = 3.0
 
 [sub_resource type="ViewportTexture" id=13]
@@ -48,7 +47,7 @@ viewport_path = NodePath("DivergenceViewport")
 
 [sub_resource type="ShaderMaterial" id=15]
 resource_local_to_scene = true
-shader = ExtResource( 11 )
+shader = ExtResource( 8 )
 shader_param/divergence = SubResource( 14 )
 
 [sub_resource type="ViewportTexture" id=20]
@@ -56,7 +55,7 @@ viewport_path = NodePath("VelocityForcesViewport")
 
 [sub_resource type="ShaderMaterial" id=17]
 resource_local_to_scene = true
-shader = ExtResource( 12 )
+shader = ExtResource( 9 )
 shader_param/velocity = SubResource( 20 )
 
 [sub_resource type="ViewportTexture" id=18]
@@ -68,13 +67,14 @@ viewport_path = NodePath("GradientSubtractionViewport")
 [sub_resource type="ShaderMaterial" id=22]
 resource_local_to_scene = true
 shader = ExtResource( 4 )
-shader_param/deltaTime = 0.05
-shader_param/brushColor = Color( 0, 0, 0, 0 )
+shader_param/deltaTime = 0.1
+shader_param/brushColor = Color( 0.898039, 0.537255, 0.615686, 1 )
 shader_param/brushCenterUV = null
 shader_param/brushScale = Vector2( 0.2, 0.2 )
+shader_param/brushMod = 0.05
 shader_param/brushOn = false
 shader_param/velocity = SubResource( 19 )
-shader_param/brushTexture = ExtResource( 6 )
+shader_param/brushTexture = ExtResource( 12 )
 
 [sub_resource type="ViewportTexture" id=11]
 viewport_path = NodePath("DyeViewport")
@@ -92,7 +92,7 @@ render_target_update_mode = 3
 material = SubResource( 21 )
 centered = false
 
-[node name="ViscosityViewport" parent="." instance=ExtResource( 2 )]
+[node name="ViscosityViewport" parent="." instance=ExtResource( 7 )]
 size = Vector2( 176, 252 )
 transparent_bg = true
 render_target_v_flip = true
@@ -122,10 +122,10 @@ material = SubResource( 12 )
 texture = SubResource( 13 )
 centered = false
 
-[node name="PressureViewport" parent="." instance=ExtResource( 2 )]
+[node name="PressureViewport" parent="." instance=ExtResource( 7 )]
 size = Vector2( 176, 252 )
 transparent_bg = true
-script = ExtResource( 10 )
+script = ExtResource( 6 )
 levels = 16
 shader_material = SubResource( 15 )
 
