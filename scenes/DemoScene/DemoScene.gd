@@ -6,7 +6,9 @@ export(int, 0, 15) var wait_time : int = 8
 export(float) var first_skip_point : float = 29.3
 
 var dragging_tea_bag : bool = false
-var started_steeping : bool = false 
+var started_steeping : bool = false
+var steeping_state : bool = false
+var steeped_time : float = 0.0
 
 func _started_steeping():
 	started_steeping = true
@@ -30,6 +32,7 @@ func pick_up_teabag():
 func _on_MouseDetectionControl_force_applied(position, vector):
 	if not dragging_tea_bag:
 		return
+	steeping_state = true
 	vector.y += 1.0
 	vector *= 0.1
 	$FluidSimulator.apply_velocity_force(position, vector, true)
@@ -43,6 +46,7 @@ func _input(event):
 
 func _on_MouseDetectionControl_mouse_exited():
 	$FluidSimulator.release_velocity_force(true)
+	steeping_state = false
 
 func _on_Timer_minute_passed(minute):
 	if minute == show_skip_time:
@@ -61,3 +65,7 @@ func _on_SkipButton_pressed():
 
 func _on_TeaBagButton_button_down():
 	pick_up_teabag()
+
+func _process(delta):
+	if steeping_state:
+		steeped_time += delta
