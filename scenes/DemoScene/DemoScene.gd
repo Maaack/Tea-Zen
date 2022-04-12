@@ -4,11 +4,13 @@ extends Node
 export(int, 0, 15) var show_skip_time : int = 1
 export(int, 0, 15) var wait_time : int = 8
 export(float) var first_skip_point : float = 29.3
+export(Array, Resource) var assorted_teas_array : Array
 
 var dragging_tea_bag : bool = false
 var started_steeping : bool = false
 var steeping_state : bool = false
 var steeped_time : float = 0.0
+var current_tea : int = -1
 
 func _started_steeping():
 	started_steeping = true
@@ -25,9 +27,15 @@ func back_to_main_menu():
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
 func pick_up_teabag():
-	$Control/TeaBagButton.hide()
+	current_tea += 1
+	if current_tea >= assorted_teas_array.size():
+		current_tea %= assorted_teas_array.size()
+	var current_tea_data : TeaData = assorted_teas_array[current_tea] 
 	$HeldTeaBag.show()
+	$HeldTeaBag.texture = current_tea_data.bag_image
+	$FluidSimulator.set_brush_color(current_tea_data.color)
 	dragging_tea_bag = true
+
 
 func _on_MouseDetectionControl_force_applied(position, vector):
 	if not dragging_tea_bag:
@@ -41,8 +49,7 @@ func _on_MouseDetectionControl_force_applied(position, vector):
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		if dragging_tea_bag:
-			$HeldTeaBag.position = event.position
+		$HeldTeaBag.position = event.position
 
 func _on_MouseDetectionControl_mouse_exited():
 	$FluidSimulator.release_velocity_force(true)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://resources/TeaData.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/StrawberryTeaBag.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Strawberry"
+bag_image = ExtResource( 2 )
+color = Color( 0.898039, 0.537255, 0.615686, 1 )
