@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush2.png" type="Texture" id=12]
 [ext_resource path="res://assets/brushes/VelocityUpBrush128x2.png" type="Texture" id=13]
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x2.png" type="Texture" id=14]
-[ext_resource path="res://assets/audio/Blue-Ridge_Looping.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/audio/Valley-Sunrise_Looping.ogg" type="AudioStream" id=15]
 [ext_resource path="res://scenes/MouseControl/MouseMotionControl.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/textures/P1020509_Standard.jpg" type="Texture" id=17]
 [ext_resource path="res://scenes/FluidSimulators/MainMenuFluidSimulator.tscn" type="PackedScene" id=18]
@@ -720,7 +720,7 @@ margin_top = 145.0
 margin_right = 188.5
 margin_bottom = 185.0
 custom_fonts/font = ExtResource( 3 )
-text = "All of the time"
+text = "Short on time"
 align = 1
 
 [node name="MouseMotionControl" parent="Control" instance=ExtResource( 16 )]
@@ -747,6 +747,7 @@ margin_bottom = 24.0
 text = "Start Tea Party"
 
 [node name="QuitButton" type="Button" parent="Control/VBoxContainer"]
+visible = false
 margin_top = 40.0
 margin_right = 256.0
 margin_bottom = 64.0

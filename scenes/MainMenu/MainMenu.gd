@@ -27,7 +27,7 @@ func _on_StartButton_pressed():
 	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
-	get_tree().change_scene("res://Main.tscn")
+	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
 func _on_MouseMotionControl_force_applied(position, vector):
 	vector *= 0.01

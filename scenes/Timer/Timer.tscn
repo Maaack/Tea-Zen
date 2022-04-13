@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://theme/timer_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Timer/Timer.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Clock/Clock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures/next-button.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("NextButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NextButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "RevealNextButton"
+tracks/0/type = "value"
+tracks/0/path = NodePath("NextButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NextButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Timer" type="Control"]
+margin_right = 272.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 272, 64 )
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MinutesLabel" type="Label" parent="."]
+margin_left = 8.0
+margin_right = 70.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+align = 2
+
+[node name="SecondsLabel" type="Label" parent="."]
+margin_left = 88.0
+margin_right = 150.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 2 )
+text = "00"
+
+[node name="SeparatorLabel" type="Label" parent="."]
+margin_left = 72.0
+margin_right = 88.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 2 )
+text = ":"
+align = 1
+
+[node name="Clock" parent="." instance=ExtResource( 4 )]
+margin_left = 162.0
+margin_top = 12.0
+margin_right = 202.0
+margin_bottom = 52.0
+clock_color = Color( 0, 0, 0, 1 )
+shadow_color = Color( 0, 0, 0, 0 )
+wait_time = 2.5
+
+[node name="NextButton" type="TextureButton" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.0
+texture_normal = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/RevealNextButton = SubResource( 2 )
+
+[connection signal="timeout" from="Clock" to="." method="_on_Clock_timeout"]
+[connection signal="button_down" from="NextButton" to="." method="_on_NextButton_button_down"]
