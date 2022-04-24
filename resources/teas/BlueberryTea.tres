@@ -1,10 +1,12 @@
-[gd_resource type="Resource" load_steps=3 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://resources/TeaData.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/BlueberryTeaBag.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/TeaTagBlueberry.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 1 )
 name = "Blueberry"
 bag_image = ExtResource( 2 )
+tag_image = ExtResource( 3 )
 color = Color( 0.498039, 0.580392, 0.952941, 1 )
