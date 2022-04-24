@@ -375,10 +375,22 @@ tracks/17/keys = {
 "update": 0,
 "values": [ 1 ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("MusicAudioStreamPlayer:volume_db")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "ReturnOfHost"
-length = 35.0
+length = 38.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("HostReturnsAudioStreamPlayer:playing")
 tracks/0/interp = 1
@@ -506,7 +518,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 33.5, 35 ),
+"times": PoolRealArray( 37, 38 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -625,6 +637,18 @@ tracks/19/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("MusicAudioStreamPlayer:volume_db")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1, 33.4, 34.4, 37, 38 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0, -10.0, 0.0, 0.0, -60.0 ]
 }
 
 [sub_resource type="Animation" id=60]
