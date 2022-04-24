@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/TeaBag/TeaBagOnString.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/TeaTagFront.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/textures/TeaTagBack.png" type="Texture" id=5]
 [ext_resource path="res://assets/textures/TeaBagWhite.png" type="Texture" id=6]
 [ext_resource path="res://scenes/TeaBag/TeaBagRigidBody.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/textures/String4x4.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeOut"
@@ -108,6 +109,16 @@ position = Vector2( 0, 42 )
 position = Vector2( 0, -7 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 0, 1 )
+width = 4.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 8 )
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
 
 [node name="TeaTagFront" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
