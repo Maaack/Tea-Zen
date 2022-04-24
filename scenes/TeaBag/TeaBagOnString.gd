@@ -12,6 +12,11 @@ func _attach_children():
 func _ready():
 	_attach_children()
 
+func _disable_collisions() -> void :
+	$TeaTagRigidBody.collision_layer = 0
+	$TeaBagRigidBody.collision_layer = 0
+	$TeaBagRigidBody.collision_mask = 0
+
 func set_tea(tea_data : TeaData) -> void :
 	#$TeaBagRigidBody/Sprite.texture = tea_data.bag_image
 	$TeaTagFront.texture = tea_data.tag_image
@@ -21,3 +26,8 @@ func set_move_to_target(current_target : Vector2) -> void :
 
 func _process(_delta):
 	$TeaTagFront.position = $TeaTagRigidBody.position
+
+func delete():
+	_disable_collisions()
+	$TeaTagRigidBody.following_mouse = false
+	$AnimationPlayer.play("FadeOut")
