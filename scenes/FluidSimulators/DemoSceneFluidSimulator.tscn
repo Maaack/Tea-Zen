@@ -17,7 +17,7 @@ shader = ExtResource( 10 )
 shader_param/deltaTime = 0.05
 shader_param/brushColor = Color( 0, 0, 0, 0 )
 shader_param/brushCenterUV = null
-shader_param/brushScale = Vector2( 0.2, 0.2 )
+shader_param/brushScale = Vector2( 0.15, 0.15 )
 shader_param/brushOn = false
 shader_param/brushTexture = ExtResource( 12 )
 
@@ -37,7 +37,7 @@ viewport_path = NodePath("ViscosityViewport")
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 3 )
-shader_param/divergenceScale = 3.0
+shader_param/divergenceScale = 1.0
 
 [sub_resource type="ViewportTexture" id=13]
 viewport_path = NodePath("VelocityForcesViewport")
@@ -70,7 +70,7 @@ shader = ExtResource( 4 )
 shader_param/deltaTime = 0.1
 shader_param/brushColor = Color( 0.898039, 0.537255, 0.615686, 1 )
 shader_param/brushCenterUV = null
-shader_param/brushScale = Vector2( 0.2, 0.2 )
+shader_param/brushScale = Vector2( 0.15, 0.15 )
 shader_param/brushMod = 0.05
 shader_param/brushOn = false
 shader_param/velocity = SubResource( 19 )

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/textures/TeaTagFront.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/TeaTagFull.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/TeaBagWhite.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/TeaTagBack.png" type="Texture" id=4]
+
+[node name="TeaBagSprites" type="Node2D"]
+
+[node name="TeaTagFull" type="Sprite" parent="."]
+visible = false
+position = Vector2( 131, -79 )
+texture = ExtResource( 2 )
+
+[node name="TeaTagBack" type="Sprite" parent="."]
+position = Vector2( -3, -75 )
+texture = ExtResource( 4 )
+
+[node name="TeaBagWhite" type="Sprite" parent="."]
+position = Vector2( 0, -2 )
+texture = ExtResource( 3 )
+
+[node name="TeaTagFront" type="Sprite" parent="."]
+position = Vector2( 3, -75 )
+texture = ExtResource( 1 )

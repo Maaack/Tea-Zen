@@ -19,4 +19,4 @@ shape = SubResource( 1 )
 position = Vector2( 0, -15 )
 node_b = NodePath("..")
 bias = 0.2
-softness = 0.05
+softness = 0.2

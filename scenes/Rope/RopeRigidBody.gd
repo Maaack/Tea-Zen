@@ -1,6 +1,6 @@
 tool
 class_name RopePhysicsBody
-extends PhysicsBody2D
+extends RigidBody2D
 
 export(NodePath) var attached_to_path : NodePath setget set_attached_to_path
 

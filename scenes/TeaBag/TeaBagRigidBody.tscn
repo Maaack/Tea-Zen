@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Rope/RopeRigidBody.gd" type="Script" id=1]
+[ext_resource path="res://scenes/TeaBag/TeaBagRigidBody.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 48 )
@@ -15,5 +15,5 @@ position = Vector2( 0, -7 )
 shape = SubResource( 1 )
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2( 0, -52 )
+position = Vector2( 0, -44 )
 node_b = NodePath("..")
