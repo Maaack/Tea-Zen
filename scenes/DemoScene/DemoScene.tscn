@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -10,10 +10,9 @@
 [ext_resource path="res://assets/audio/CheckTeaStatus.ogg" type="AudioStream" id=8]
 [ext_resource path="res://scenes/FluidSimulators/DemoSceneFluidSimulator.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/audio/HostReturnsAndChecks2.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/textures/StrawberryTeaBag.png" type="Texture" id=11]
+[ext_resource path="res://scenes/TeaBag/TeaTagButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/audio/Quantum-Jazz-Intro.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/WelcomeAndInstructions.ogg" type="AudioStream" id=13]
-[ext_resource path="res://scenes/MouseControl/MouseDetectionControl.tscn" type="PackedScene" id=14]
 [ext_resource path="res://shaders/MultiplyScreenAndTexture.tres" type="Shader" id=15]
 [ext_resource path="res://assets/textures/AssortedTeaBags.png" type="Texture" id=16]
 [ext_resource path="res://resources/teas/RoseTea.tres" type="Resource" id=17]
@@ -144,6 +143,18 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Control/TeaTagButtons:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 29.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=61]
@@ -315,6 +326,18 @@ tracks/13/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Control/TeaTagButtons:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=63]
@@ -545,60 +568,36 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/TeaControl/MouseDetectionControl:rect_position")
+tracks/2/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 456, 48 ), Vector2( 424, 0 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/TeaControl/MouseDetectionControl:rect_size")
+tracks/3/path = NodePath("HostWaitingAudioStreamPlayer:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 352, 504 ), Vector2( 416, 600 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
+tracks/4/path = NodePath("Control/CaptionsLabel:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("HostWaitingAudioStreamPlayer:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Control/CaptionsLabel:text")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -614,18 +613,136 @@ shader = ExtResource( 15 )
 [sub_resource type="ViewportTexture" id=14]
 viewport_path = NodePath("FluidSimulator/DyeViewport")
 
+[sub_resource type="Animation" id=66]
+resource_name = "OpenBox"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlueberryButton:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 13.8, 14.2 ),
+"transitions": PoolRealArray( 0.5, 0.5, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 80, -112 ), Vector2( 80, -112 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChamomileButton:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.5, 14, 14.4 ),
+"transitions": PoolRealArray( 0.5, 0.5, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 128, 32 ), Vector2( 128, 32 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ElderberryButton:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.4, 0.7, 14.2, 14.6 ),
+"transitions": PoolRealArray( 0.5, 0.5, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 120 ), Vector2( 0, 120 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RoseButton:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 0.9, 14.4, 14.8 ),
+"transitions": PoolRealArray( 0.5, 0.5, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -128, 32 ), Vector2( -128, 32 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("StrawberryButton:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.8, 1.1, 14.6, 15 ),
+"transitions": PoolRealArray( 0.5, 0.5, 2, 2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -80, -112 ), Vector2( -80, -112 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlueberryButton:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChamomileButton:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ElderberryButton:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("RoseButton:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("StrawberryButton:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
 [sub_resource type="StyleBoxTexture" id=64]
 texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 128, 128 )
-
-[sub_resource type="ViewportTexture" id=12]
-viewport_path = NodePath("FluidSimulator/VelocityForcesViewport")
-
-[sub_resource type="ViewportTexture" id=52]
-viewport_path = NodePath("FluidSimulator/DivergenceViewport")
-
-[sub_resource type="ViewportTexture" id=53]
-viewport_path = NodePath("FluidSimulator/PressureViewport")
 
 [sub_resource type="RectangleShape2D" id=65]
 extents = Vector2( 176, 252 )
@@ -698,50 +815,60 @@ position = Vector2( 632, 592 )
 texture = SubResource( 14 )
 region_rect = Rect2( 0, 504, 352, 0 )
 
-[node name="MouseDetectionControl" parent="Control/TeaControl" instance=ExtResource( 14 )]
+[node name="TeaTagButtons" type="Control" parent="Control"]
 visible = false
-margin_left = 456.0
-margin_top = 48.0
-margin_right = -216.0
-margin_bottom = -48.0
-rect_min_size = Vector2( 352, 504 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -336.0
+margin_top = -124.0
+margin_right = -336.0
+margin_bottom = -124.0
+mouse_filter = 2
+
+[node name="BlueberryButton" parent="Control/TeaTagButtons" instance=ExtResource( 11 )]
+margin_right = 51.0
+margin_bottom = 45.0
+tea = ExtResource( 18 )
+
+[node name="ChamomileButton" parent="Control/TeaTagButtons" instance=ExtResource( 11 )]
+margin_right = 51.0
+margin_bottom = 45.0
+tea = ExtResource( 20 )
+
+[node name="ElderberryButton" parent="Control/TeaTagButtons" instance=ExtResource( 11 )]
+margin_right = 51.0
+margin_bottom = 45.0
+tea = ExtResource( 21 )
+
+[node name="RoseButton" parent="Control/TeaTagButtons" instance=ExtResource( 11 )]
+margin_right = 51.0
+margin_bottom = 45.0
+tea = ExtResource( 17 )
+
+[node name="StrawberryButton" parent="Control/TeaTagButtons" instance=ExtResource( 11 )]
+margin_right = 51.0
+margin_bottom = 45.0
+tea = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TeaTagButtons"]
+anims/OpenBox = SubResource( 66 )
+anims/RESET = SubResource( 67 )
 
 [node name="TeaBagButton" type="Button" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
-margin_top = 192.0
+margin_top = 128.0
 margin_right = 256.0
-margin_bottom = 320.0
+margin_bottom = 256.0
+mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 64 )
 custom_styles/pressed = SubResource( 64 )
 custom_styles/focus = SubResource( 64 )
 custom_styles/disabled = SubResource( 64 )
 custom_styles/normal = SubResource( 64 )
 disabled = true
-
-[node name="VelocitySprite" type="Sprite" parent="Control"]
-visible = false
-position = Vector2( 512, 88 )
-texture = SubResource( 12 )
-centered = false
-
-[node name="VelocitySprite2" type="Sprite" parent="Control"]
-visible = false
-position = Vector2( 512, 88 )
-texture = SubResource( 52 )
-centered = false
-
-[node name="VelocitySprite4" type="Sprite" parent="Control"]
-visible = false
-position = Vector2( 512, 88 )
-texture = SubResource( 53 )
-centered = false
-
-[node name="VelocitySprite3" type="Sprite" parent="Control"]
-visible = false
-position = Vector2( 512, 88 )
-texture = SubResource( 53 )
-centered = false
 
 [node name="Timer" parent="Control" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -792,14 +919,6 @@ bus = "Host"
 stream = ExtResource( 7 )
 bus = "Host"
 
-[node name="HeldTeaBag" type="Sprite" parent="."]
-visible = false
-position = Vector2( 40, 48 )
-texture = ExtResource( 11 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 456, 40 )
 space_override = 3
@@ -810,9 +929,11 @@ angular_damp = 12.0
 position = Vector2( 176, 256 )
 shape = SubResource( 65 )
 
-[connection signal="force_applied" from="Control/TeaControl/MouseDetectionControl" to="." method="_on_MouseDetectionControl_force_applied"]
-[connection signal="force_released" from="Control/TeaControl/MouseDetectionControl" to="." method="_on_MouseDetectionControl_force_released"]
-[connection signal="mouse_exited" from="Control/TeaControl/MouseDetectionControl" to="." method="_on_MouseDetectionControl_mouse_exited"]
+[connection signal="pressed" from="Control/TeaTagButtons/BlueberryButton" to="." method="_on_TeaTagButton_pressed"]
+[connection signal="pressed" from="Control/TeaTagButtons/ChamomileButton" to="." method="_on_TeaTagButton_pressed"]
+[connection signal="pressed" from="Control/TeaTagButtons/ElderberryButton" to="." method="_on_TeaTagButton_pressed"]
+[connection signal="pressed" from="Control/TeaTagButtons/RoseButton" to="." method="_on_TeaTagButton_pressed"]
+[connection signal="pressed" from="Control/TeaTagButtons/StrawberryButton" to="." method="_on_TeaTagButton_pressed"]
 [connection signal="button_down" from="Control/TeaBagButton" to="." method="_on_TeaBagButton_button_down"]
 [connection signal="minute_passed" from="Control/Timer" to="." method="_on_Timer_minute_passed"]
 [connection signal="pressed" from="Control/SkipButton" to="." method="_on_SkipButton_pressed"]

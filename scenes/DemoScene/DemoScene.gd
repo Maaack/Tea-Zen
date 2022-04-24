@@ -27,25 +27,33 @@ func _started_steeping():
 
 func _host_returned():
 	dragging_tea_bag = false
-	$HeldTeaBag.hide()
 	$DemoAnimationPlayer.play("ReturnOfHost")
 
+func _open_tea_box():
+	if $Control/TeaTagButtons/AnimationPlayer.is_playing():
+		$Control/TeaTagButtons/AnimationPlayer.seek(1.5)
+	else:
+		$Control/TeaTagButtons/AnimationPlayer.play("OpenBox")
+	
 func back_to_main_menu():
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
-func pick_up_teabag():
+func pick_up_next_teabag():
 	current_tea += 1
 	if current_tea >= assorted_teas_array.size():
 		current_tea %= assorted_teas_array.size()
 	var current_tea_data : TeaData = assorted_teas_array[current_tea]
+	pick_up_teabag(current_tea_data)
+
+func pick_up_teabag(tea_data : TeaData):
 	if is_instance_valid(current_tea_bag_instance):
 		current_tea_bag_instance.queue_free()
 	var tea_bag_on_string_instance = tea_bag_on_string_scene.instance()
 	add_child(tea_bag_on_string_instance)
-	tea_bag_on_string_instance.set_tea(current_tea_data)
+	tea_bag_on_string_instance.set_tea(tea_data)
 	tea_bag_on_string_instance.position = $Control.get_global_mouse_position()
 	tea_bag_on_string_instance.set_move_to_target($Control.get_global_mouse_position())
-	$FluidSimulator.set_brush_color(current_tea_data.color)
+	$FluidSimulator.set_brush_color(tea_data.color)
 	current_tea_bag_instance = tea_bag_on_string_instance
 	dragging_tea_bag = true
 
@@ -59,17 +67,6 @@ func _steep_tea():
 	$FluidSimulator.apply_velocity_force(position, vector, true)
 	if not started_steeping:
 		_started_steeping()
-
-func _on_MouseDetectionControl_force_applied(position, vector):
-	pass
-
-func _input(event):
-	if event is InputEventMouseMotion:
-		$HeldTeaBag.position = event.position
-
-func _on_MouseDetectionControl_mouse_exited():
-	$FluidSimulator.release_velocity_force(true)
-	steeping_state = false
 
 func _on_Timer_minute_passed(minute):
 	if minute == show_skip_time:
@@ -87,7 +84,7 @@ func _on_SkipButton_pressed():
 		_host_returned()
 
 func _on_TeaBagButton_button_down():
-	pick_up_teabag()
+	_open_tea_box()
 
 func _process(delta):
 	if steeping_state:
@@ -101,3 +98,7 @@ func _on_Area2D_body_entered(body : TeaBagRigidBody):
 func _on_Area2D_body_exited(body):
 	steeping_state = false
 	steeping_tea_bag = null
+
+func _on_TeaTagButton_pressed(tea_data):
+	_open_tea_box()
+	pick_up_teabag(tea_data)
