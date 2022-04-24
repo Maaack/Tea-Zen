@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTag.png"
+   inkscape:export-xdpi="278.57037"
+   inkscape:export-ydpi="278.57037"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="tea-tags-and-bag.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient933">
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:1;"
+         offset="0"
+         id="stop929" />
+      <stop
+         style="stop-color:#0c0c0c;stop-opacity:0.79473686"
+         offset="1"
+         id="stop931" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient890"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffe171;stop-opacity:1;"
+         offset="0"
+         id="stop888" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient935"
+       x1="-3.3545387"
+       y1="88.92411"
+       x2="-2.1371377"
+       y2="73.952789"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(7.0158249,-1.9005425e-6)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient957"
+       gradientUnits="userSpaceOnUse"
+       x1="33.970612"
+       y1="8.3679333"
+       x2="32.005524"
+       y2="5.5759878" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient965"
+       x1="24.757441"
+       y1="12.80915"
+       x2="24.79085"
+       y2="8.4143858"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient987"
+       x1="9.1186752"
+       y1="12.005954"
+       x2="9.0038948"
+       y2="3.8119752"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient933"
+       id="linearGradient997"
+       x1="0"
+       y1="42.69305"
+       x2="0"
+       y2="76.876122"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="369.51581"
+     inkscape:cy="908.53771"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:lockguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1030"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="0,292.72695"
+       orientation="1,0"
+       id="guide826"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="40.023612,292.9274"
+       orientation="1,0"
+       id="guide828"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="37.350915,289.98744"
+       orientation="0,1"
+       id="guide830"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0,242.07937"
+       orientation="0,1"
+       id="guide832"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="13.296659,279.0962"
+       orientation="0,1"
+       id="guide838"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="50.046218,299.14143"
+       orientation="1,0"
+       id="guide852"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="19.978397,285.51068"
+       orientation="1,0"
+       id="guide856"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.0158249,284.50842"
+       orientation="1,0"
+       id="guide858"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="13.964832,283.10525"
+       orientation="1,0"
+       id="guide860"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="25.991961,279.09621"
+       orientation="1,0"
+       id="guide862"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="33.007786,282.77117"
+       orientation="1,0"
+       id="guide864"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="13.964832,240.00804"
+       orientation="0,1"
+       id="guide876"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="29.733734,199.98443"
+       orientation="0,1"
+       id="guide878"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="11.717262,220.12388"
+       orientation="0,1"
+       id="guide880"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.3269229,76.970361 H 24.438955 L 23.035791,97.01557 H 2.9905769 Z"
+       id="path969"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBack.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 0,17.9038 7.0158247,7.0125608 H 33.007786 L 40.02361,17.9038 V 54.920631 H 0 Z"
+       id="path967"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:url(#linearGradient997);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 0,17.9038 v 37.016831 0 0 L 0.35079123,54.052 1.0690781,54.920631 Z"
+       id="path989"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 2.271791,1.0491106 -0.8853304,3.0234865 0.7750907,0.00176"
+       id="path1366"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 2.271791,1.0491106 2.1882692,4.3398667 5.7797035,4.2062319 5.7462949,0.96558884 Z"
+       id="path1368"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:url(#linearGradient957);fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 25.991961,17.9038 33.007786,7.0125608 33.97061,8.3679333 Z"
+       id="path939"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:url(#linearGradient965);fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 15.969352,11.790007 17.150669,12.8564 24.75744,12.80915 24.121074,11.790004 Z"
+       id="path937"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:url(#linearGradient987);fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="M 7.0158247,7.0125608 13.964832,17.9038 9.1186756,12.005954 Z"
+       id="path971"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M -6.8199512e-8,54.920632 V 17.903801 L 7.0158249,7.0125612 13.964832,17.903801 h 12.027129 l 7.015826,-10.8912398 7.01582,10.8912398 v 37.016831 z"
+       id="path866"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 7.0158249,7.0125612 H 33.007787 v 0 0"
+       id="path868"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916667;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 15.969352,11.790007 h 8.151722"
+       id="path874"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaBagWhite.png"
+       inkscape:export-xdpi="100.87323"
+       inkscape:export-ydpi="100.87323" />
+    <path
+       style="fill:url(#linearGradient935);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 3.6612859,88.92411 3.354539,8.091461 H 23.03579 L 24.438955,76.970362 H 4.3269249 Z"
+       id="path894"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBack.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path886"
+       d="M 23.03579,97.015571 24.438955,76.970363 H 4.3269249 l -1.336348,20.045208 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBack.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5291667;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 30.001005,97.015571 28.59784,76.97036 h 20.11203 l 1.336348,20.045211 z"
+       id="path884"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagFront.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffe87e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 66.558167,97.015571 -1.403165,-20.04521 h 20.112022 l 1.33635,20.04521 z"
+       id="path884-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagChamomile.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 68.028149,79.442604 h 14.818985 l 0.98465,14.90027 H 69.062032 Z"
+       id="path1014"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagChamomile.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="75.899521"
+       y="85.945938"
+       id="text1018"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagChamomile.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11"><tspan
+         sodipodi:role="line"
+         id="tspan1016"
+         x="75.899521"
+         y="85.945938"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         rotate="358 358 358 358 0 0 0">Chamo-</tspan><tspan
+         sodipodi:role="line"
+         x="75.899521"
+         y="90.906876"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1020"
+         rotate="358 358 358 358 0">mile</tspan></text>
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1022"
+       d="m 92.571423,96.827093 -1.40316,-20.04521 h 20.112017 l 1.33635,20.04521 z"
+       style="fill:#ffab7e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1024"
+       d="m 94.041413,79.254126 h 14.818977 l 0.98465,14.90027 H 95.075289 Z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       id="text1030"
+       y="87.700539"
+       x="101.9796"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         rotate="358 358 358 358 0"
+         id="tspan1028"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="87.700539"
+         x="101.9796"
+         sodipodi:role="line">Rose</tspan></text>
+    <path
+       style="fill:#ffab7e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 125.33351,127.95202 -1.40316,-20.04521 h 20.11202 l 1.33635,20.04521 z"
+       id="path1034"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 126.8035,110.37905 h 14.81898 l 0.98465,14.90027 h -14.76975 z"
+       id="path1036"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="134.74168"
+       y="118.82546"
+       id="text1040"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagRose.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11"><tspan
+         sodipodi:role="line"
+         x="134.74168"
+         y="118.82546"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1038"
+         rotate="358 358 358 358 0">Rose</tspan></text>
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagStrawberry.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1042"
+       d="m 118.40323,96.921331 -1.40317,-20.04521 h 20.11202 l 1.33635,20.04521 z"
+       style="fill:#ff8e7e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagStrawberry.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1044"
+       d="m 119.87321,79.348371 h 14.81898 l 0.98465,14.90027 h -14.76975 z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagStrawberry.png"
+       id="text1050"
+       y="85.322525"
+       x="127.74457"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         rotate="358 358 358 358 358 358 0"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="85.322525"
+         x="127.74457"
+         id="tspan1046"
+         sodipodi:role="line">Straw-</tspan><tspan
+         rotate="358 358 358 358 358 0"
+         id="tspan1048"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="90.283463"
+         x="127.74457"
+         sodipodi:role="line">berry</tspan></text>
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagElderberry.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1052"
+       d="M 143.09717,96.921333 141.694,76.876121 h 20.11202 l 1.33635,20.045212 z"
+       style="fill:#ff94ca;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagElderberry.png"
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path1054"
+       d="m 144.56715,79.348361 h 14.81898 l 0.98465,14.900272 h -14.76975 z"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       inkscape:export-ydpi="110.11"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagElderberry.png"
+       id="text1060"
+       y="85.32254"
+       x="152.43852"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         rotate="358 358 358 358 358 358 0"
+         id="tspan1058"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="85.32254"
+         x="152.43852"
+         sodipodi:role="line">Elder-</tspan><tspan
+         rotate="358 358 358 358 358 0 0 0 0 0 0"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         y="90.283478"
+         x="152.43852"
+         sodipodi:role="line"
+         id="tspan1064">berry</tspan></text>
+    <path
+       style="fill:#94abff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52916676;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 168.08687,96.921333 166.6837,76.876121 h 20.11202 l 1.33635,20.045212 z"
+       id="path1066"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBlueberry.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 169.55685,79.348361 h 14.81898 l 0.98465,14.900272 h -14.76975 z"
+       id="path1068"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBlueberry.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.96875px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="177.42822"
+       y="85.32254"
+       id="text1074"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaTagBlueberry.png"
+       inkscape:export-xdpi="110.11"
+       inkscape:export-ydpi="110.11"><tspan
+         sodipodi:role="line"
+         x="177.42822"
+         y="85.32254"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         id="tspan1070"
+         rotate="358 358 358 358 358 0">Blue-</tspan><tspan
+         id="tspan1072"
+         sodipodi:role="line"
+         x="177.42822"
+         y="90.283478"
+         style="text-align:center;text-anchor:middle;stroke-width:0.26458332px"
+         rotate="358 358 358 358 358 0 0 0 0 0 0">berry</tspan></text>
+  </g>
+</svg>
