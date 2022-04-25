@@ -4,18 +4,17 @@ extends Node
 export(int, 0, 15) var show_skip_time : int = 1
 export(int, 0, 15) var wait_time : int = 8
 export(float) var first_skip_point : float = 29.3
-export(Array, Resource) var assorted_teas_array : Array
 export(Vector2) var velocity_base : Vector2 = Vector2(0.0, 1.0)
 export(float) var velocity_mod : float = 0.002
 
 var dragging_tea_bag : bool = false
 var started_steeping : bool = false
 var steeping_state : bool = false
-var steeped_time : float = 0.0
-var current_tea : int = -1
+var tea_steep_times : Dictionary = {}
 
 var tea_bag_on_string_scene : PackedScene = preload("res://scenes/TeaBag/TeaBagOnString.tscn")
 var current_tea_bag_instance : Node2D
+var current_tea_data : TeaData
 
 var steeping_tea_bag
 
@@ -38,12 +37,6 @@ func _open_tea_box():
 func back_to_main_menu():
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
-func pick_up_next_teabag():
-	current_tea += 1
-	if current_tea >= assorted_teas_array.size():
-		current_tea %= assorted_teas_array.size()
-	var current_tea_data : TeaData = assorted_teas_array[current_tea]
-	pick_up_teabag(current_tea_data)
 
 func delete_current_teabag():
 	if is_instance_valid(current_tea_bag_instance):
@@ -51,12 +44,13 @@ func delete_current_teabag():
 
 func pick_up_teabag(tea_data : TeaData):
 	delete_current_teabag()
+	current_tea_data = tea_data
 	var tea_bag_on_string_instance = tea_bag_on_string_scene.instance()
 	add_child(tea_bag_on_string_instance)
-	tea_bag_on_string_instance.set_tea(tea_data)
+	tea_bag_on_string_instance.set_tea(current_tea_data)
 	tea_bag_on_string_instance.position = $Control.get_global_mouse_position()
 	tea_bag_on_string_instance.set_move_to_target($Control.get_global_mouse_position())
-	$FluidSimulator.set_brush_color(tea_data.color)
+	$FluidSimulator.set_brush_color(current_tea_data.color)
 	current_tea_bag_instance = tea_bag_on_string_instance
 	dragging_tea_bag = true
 
@@ -89,10 +83,16 @@ func _on_SkipButton_pressed():
 func _on_TeaBagButton_button_down():
 	_open_tea_box()
 
+func _add_steeping_time(seconds : float) -> void:
+	var tea_name : String = current_tea_data.name
+	if not tea_name in tea_steep_times:
+		tea_steep_times[tea_name] = 0.0
+	tea_steep_times[tea_name] += seconds
+
 func _process(delta):
 	if steeping_state:
 		_steep_tea()
-		steeped_time += delta
+		_add_steeping_time(delta)
 
 func _on_Area2D_body_entered(body : TeaBagRigidBody):
 	steeping_state = true

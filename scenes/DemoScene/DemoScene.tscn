@@ -899,7 +899,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [ 512.0 ]
 }
-assorted_teas_array = [ ExtResource( 17 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 19 ) ]
 velocity_base = Vector2( 0, 50 )
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 9 )]
