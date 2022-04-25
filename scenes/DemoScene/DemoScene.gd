@@ -45,9 +45,12 @@ func pick_up_next_teabag():
 	var current_tea_data : TeaData = assorted_teas_array[current_tea]
 	pick_up_teabag(current_tea_data)
 
-func pick_up_teabag(tea_data : TeaData):
+func delete_current_teabag():
 	if is_instance_valid(current_tea_bag_instance):
-		current_tea_bag_instance.queue_free()
+		current_tea_bag_instance.delete()
+
+func pick_up_teabag(tea_data : TeaData):
+	delete_current_teabag()
 	var tea_bag_on_string_instance = tea_bag_on_string_scene.instance()
 	add_child(tea_bag_on_string_instance)
 	tea_bag_on_string_instance.set_tea(tea_data)

@@ -12,6 +12,11 @@ func _attach_children():
 func _ready():
 	_attach_children()
 
+func _disable_collisions() -> void :
+	$TeaTagRigidBody.collision_layer = 0
+	$TeaBagRigidBody.collision_layer = 0
+	$TeaBagRigidBody.collision_mask = 0
+
 func set_tea(tea_data : TeaData) -> void :
 	#$TeaBagRigidBody/Sprite.texture = tea_data.bag_image
 	$TeaTagFront.texture = tea_data.tag_image
@@ -21,3 +26,13 @@ func set_move_to_target(current_target : Vector2) -> void :
 
 func _process(_delta):
 	$TeaTagFront.position = $TeaTagRigidBody.position
+	var line_points : PoolVector2Array = []
+	for child_node in get_children():
+		if child_node is RopePhysicsBody:
+			line_points.append(child_node.joint_node.get_global_transform().get_origin() - position)
+	$Line2D.points = line_points
+
+func delete():
+	_disable_collisions()
+	$TeaTagRigidBody.following_mouse = false
+	$AnimationPlayer.play("FadeOut")
