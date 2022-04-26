@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/TeaBag/TeaBagOnString.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/TeaTagFront.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Rope/RopeRigidBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/TeaBag/TeaTagRigidBody.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures/TeaTagBack.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/TeaBagWhite.png" type="Texture" id=6]
+[ext_resource path="res://scenes/TeaBag/TeaBagRigidBody.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/textures/String4x4.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="TeaBagOnString" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TeaTagRigidBody" parent="." instance=ExtResource( 4 )]
+rotation = -0.00126163
+speed = 40.0
+max_velocity = 600.0
+
+[node name="Sprite" type="Sprite" parent="TeaTagRigidBody"]
+position = Vector2( -2, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="RopeRigidBody" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -10 )
+rotation = -1.53589
+
+[node name="RopeRigidBody2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -9 )
+rotation = 1.53589
+
+[node name="RopeRigidBody3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -8 )
+rotation = -1.53589
+
+[node name="RopeRigidBody4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -7 )
+rotation = 1.53589
+
+[node name="RopeRigidBody5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -6 )
+rotation = -1.53589
+
+[node name="RopeRigidBody6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -5 )
+rotation = 1.53589
+
+[node name="RopeRigidBody7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -4 )
+rotation = -1.53589
+
+[node name="RopeRigidBody8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15, -3 )
+rotation = 1.53589
+
+[node name="TeaBagRigidBody" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 42 )
+
+[node name="Sprite" type="Sprite" parent="TeaBagRigidBody"]
+position = Vector2( 0, -7 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2( 0, 1 )
+width = 4.0
+default_color = Color( 1, 1, 1, 1 )
+texture = ExtResource( 8 )
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+
+[node name="TeaTagFront" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+offset = Vector2( 2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 1 )
+anims/RESET = SubResource( 2 )

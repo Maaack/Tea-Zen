@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Rope/TestRope.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Rope/RopeRigidBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/TeaBag/TeaBagRigidBody.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/TeaBag/TeaTagRigidBody.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 161, 159 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 9.0
+height = 308.0
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 177, 10 )
+
+[node name="TestRopeScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_vertical_guides_": [ 393.0 ]
+}
+
+[node name="TeaTagBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 393, 147 )
+mass = 10.0
+speed = 40.0
+max_velocity = 400.0
+
+[node name="RopeBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 182 )
+
+[node name="RopeBody2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 212 )
+
+[node name="RopeBody2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 242 )
+
+[node name="RopeBody2D4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 272 )
+
+[node name="RopeBody2D5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 302 )
+
+[node name="RopeBody2D6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 332 )
+
+[node name="RopeBody2D7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 362 )
+
+[node name="RopeBody2D8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 393, 392 )
+
+[node name="TeaBagBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 393, 459 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 687, 420 )
+space_override = 3
+linear_damp = 20.0
+angular_damp = 12.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 516, 418 )
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 858, 419 )
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 687, 589 )
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
