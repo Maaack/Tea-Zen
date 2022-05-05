@@ -29,10 +29,22 @@ func _on_StartButton_pressed():
 	yield($MenuAnimationPlayer, "animation_finished")
 	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
-func _on_MouseMotionControl_force_applied(position, vector):
-	vector *= 0.01
+
+func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Sprite) -> void:
+	vector *= 0.04
 	vector.y = clamp(vector.y, 0.1, 4.0)
+	position.y /= 4
+	position.y += sprite_node.region_rect.position.y / sprite_node.texture.get_size().y
 	$FluidSimulator.apply_velocity_force_2(position, vector)
+	
 
 func _on_MouseMotionControl_force_released(position):
 	$FluidSimulator.release_velocity_force_2()
+
+
+func _on_TopMouseMotionControl_force_applied(position, vector):
+	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite)
+
+
+func _on_BottomMouseMotionControl_force_applied(position, vector):
+	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite2)
