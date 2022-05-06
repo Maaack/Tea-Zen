@@ -29,10 +29,10 @@ func _host_returned():
 	$DemoAnimationPlayer.play("ReturnOfHost")
 
 func _open_tea_box():
-	if $Control/TeaTagButtons/AnimationPlayer.is_playing():
-		$Control/TeaTagButtons/AnimationPlayer.seek(1.5)
+	if $Control/BagOfTeas/TeaTagButtons/AnimationPlayer.is_playing():
+		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.seek(1.5)
 	else:
-		$Control/TeaTagButtons/AnimationPlayer.play("OpenBox")
+		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.play("OpenBox")
 	
 func back_to_main_menu():
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
