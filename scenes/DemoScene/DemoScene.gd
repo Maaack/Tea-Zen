@@ -1,5 +1,10 @@
 extends Node
 
+const ANIMATION_STEEPED_ALL = "SteepedEveryFlavor"
+const ANIMATION_NO_STEEP = "NoSteep"
+const ANIMATION_LIGHT_STEEP = "LightSteep"
+const ANIMATION_LONG_STEEP = "LongSteep"
+const ANIMATION_WELL_STEEPED = "WellSteeped"
 
 export(int, 0, 15) var show_skip_time : int = 1
 export(int, 0, 15) var wait_time : int = 8
@@ -11,17 +16,16 @@ var dragging_tea_bag : bool = false
 var started_steeping : bool = false
 var steeping_state : bool = false
 var tea_steep_times : Dictionary = {}
-
+var animation_queue : Array = []
 var tea_bag_on_string_scene : PackedScene = preload("res://scenes/TeaBag/TeaBagOnString.tscn")
 var current_tea_bag_instance : Node2D
 var current_tea_data : TeaData
-
 var steeping_tea_bag
 
 func _started_steeping():
 	started_steeping = true
 	$Control/Timer.start()
-	$MusicAudioStreamPlayer.play()
+	$AudioStreamPlayers/Music.play()
 	$DemoAnimationPlayer.play("Steeping")
 
 func _host_returned():
@@ -53,6 +57,52 @@ func pick_up_teabag(tea_data : TeaData):
 	$FluidSimulator.set_brush_color(current_tea_data.color)
 	current_tea_bag_instance = tea_bag_on_string_instance
 	dragging_tea_bag = true
+
+func _queue_tea_outcome_animations() -> void:
+	if tea_steep_times.size() == 5:
+		animation_queue.append(ANIMATION_STEEPED_ALL)
+		return
+	var tea_name_1 : String = ""
+	var tea_name_2 : String = ""
+	var steep_time_1 : float = 0.0
+	var steep_time_2 : float = 0.0
+	var steep_time_total : float = 0.0
+	for tea_name in tea_steep_times:
+		var steeped_time : float = tea_steep_times[tea_name]
+		if steeped_time > steep_time_1:
+			# This is the strongest tea
+			tea_name_2 = tea_name_1
+			tea_name_1 = tea_name
+			steep_time_2 = steep_time_1
+			steep_time_1 = steeped_time
+		elif steeped_time > steep_time_2:
+			# This is the 2nd strongest tea
+			tea_name_2 = tea_name
+			steep_time_2 = steeped_time
+		steep_time_total += steeped_time
+	if tea_steep_times.size() == 1 and steep_time_total < 5.0:
+		animation_queue.append(ANIMATION_NO_STEEP)
+		return
+	animation_queue.append("Strong%sFlavor" % tea_name_1)
+	if tea_name_2 != "":
+		animation_queue.append("Lighter%sFlavor" % tea_name_2)
+	if steep_time_total < 30:
+		animation_queue.append(ANIMATION_LIGHT_STEEP)
+	elif steep_time_total > 70:
+		animation_queue.append(ANIMATION_LONG_STEEP)
+	else:
+		animation_queue.append(ANIMATION_WELL_STEEPED)
+	
+
+func taste_tea() -> void:
+	_queue_tea_outcome_animations()
+	while animation_queue.size() > 0:
+		if $DemoAnimationPlayer.is_playing():
+			yield($DemoAnimationPlayer, "animation_finished")
+		$DemoAnimationPlayer.play(animation_queue.pop_front())
+		yield($DemoAnimationPlayer, "animation_finished")
+	yield(get_tree().create_timer(1.0), "timeout")
+	$DemoAnimationPlayer.play("EndOfDemo")
 
 func _steep_tea():
 	if not dragging_tea_bag:

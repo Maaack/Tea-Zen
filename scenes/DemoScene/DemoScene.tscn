@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scenes/TeaBag/TeaTagButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/audio/Quantum-Jazz-Intro.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/WelcomeAndInstructions.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/Outcomes/LighterChamomileFlavor.ogg" type="AudioStream" id=14]
 [ext_resource path="res://shaders/MultiplyScreenAndTexture.tres" type="Shader" id=15]
 [ext_resource path="res://assets/textures/AssortedTeaBags.png" type="Texture" id=16]
 [ext_resource path="res://resources/teas/RoseTea.tres" type="Resource" id=17]
@@ -20,6 +21,103 @@
 [ext_resource path="res://resources/teas/StrawberryTea.tres" type="Resource" id=19]
 [ext_resource path="res://resources/teas/ChamomileTea.tres" type="Resource" id=20]
 [ext_resource path="res://resources/teas/ElderberryTea.tres" type="Resource" id=21]
+[ext_resource path="res://assets/audio/Outcomes/LightSteep.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/Outcomes/LongSteep.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/Outcomes/LighterElderberryFlavor.ogg" type="AudioStream" id=24]
+[ext_resource path="res://assets/audio/Outcomes/AlsoSomethingElse.ogg" type="AudioStream" id=25]
+[ext_resource path="res://assets/audio/Outcomes/StrongElderberryFlavor.ogg" type="AudioStream" id=26]
+[ext_resource path="res://assets/audio/Outcomes/Mmmm.ogg" type="AudioStream" id=27]
+[ext_resource path="res://assets/audio/Outcomes/LighterRoseFlavor.ogg" type="AudioStream" id=28]
+[ext_resource path="res://assets/audio/Outcomes/NoSteep.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/Outcomes/LighterBlueberryFlavor.ogg" type="AudioStream" id=30]
+[ext_resource path="res://assets/audio/Outcomes/LighterStrawberryFlavor.ogg" type="AudioStream" id=31]
+[ext_resource path="res://assets/audio/Outcomes/StrongStrawberryFlavor.ogg" type="AudioStream" id=32]
+[ext_resource path="res://assets/audio/Outcomes/StrongBlueberryFlavor.ogg" type="AudioStream" id=33]
+[ext_resource path="res://assets/audio/Outcomes/SteepedEveryFlavor.ogg" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/Outcomes/StrongChamomileFlavor.ogg" type="AudioStream" id=35]
+[ext_resource path="res://assets/audio/Outcomes/WellSteeped.ogg" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/Outcomes/StrongRoseFlavor.ogg" type="AudioStream" id=37]
+
+[sub_resource type="Animation" id=70]
+resource_name = "EndOfDemo"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/HostReturns:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/HostChecks:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/HostClosing:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/CaptionsLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 1.8, 3.3, 5.4, 8.3, 9.4, 10.2, 11.4, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That’s all I have for now. ", "I was a bit short on time.", "Hope you enjoyed the experience.", "If this is something you’d like to see more of,", "let me know.", "Alright.", "Thank you!", "Bye bye!", "" ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 15.7, 16.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "delete_current_teabag"
+}, {
+"args": [  ],
+"method": "back_to_main_menu"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 12.1, 13.1, 15.7, 16.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0, 0.0, -60.0 ]
+}
 
 [sub_resource type="Animation" id=54]
 resource_name = "Intro"
@@ -61,7 +159,7 @@ tracks/2/keys = {
 "values": [ "", "Welcome to the tea party", "Where it's tea time, all the time.", "Here’s a bag of tea and a kettle of boiled water.", "I’m not really sure what your prior experience is with tea, but...", "this is an herbal so you can’t really go too off the rails.", "Here's a timer anyway.", "Now I need to tend to some other recent arrivals,", "but I should be back in like… err…", "Five minutes.", "Don’t hold me to that.", "The timer is for the tea. Not for me.", "Okay?", "", "Just pick up the tea bag and drop it into the water.", " You know, whenever you get relaxed. Relax first. ", "Time is but a concept, and I’m not waiting on you or anything.", "" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
+tracks/3/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -85,7 +183,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HostWaitingAudioStreamPlayer:playing")
+tracks/5/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -155,6 +253,292 @@ tracks/10/keys = {
 "times": PoolRealArray( 29.9, 38.8 )
 }
 
+[sub_resource type="Animation" id=84]
+resource_name = "LightSteep"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/LightSteep:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2.5, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That seems a little light, but still fine.", "Typically, five minutes is the steep time for herbal teas.", "" ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "LighterBlueberryFlavor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/LighterBlueberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "There's also something else I'm tasting...", "A lighter blueberry flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=77]
+resource_name = "LighterChamomileFlavor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/LighterChamomileFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "There's also something else I'm tasting...", "A lighter chamomile flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "LighterElderberryFlavor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/LighterElderberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "There's also something else I'm tasting...", "A lighter elderberry flavor.", "
+" ]
+}
+
+[sub_resource type="Animation" id=79]
+resource_name = "LighterRoseFlavor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/LighterRoseFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 2.3, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "There's also something else I'm tasting...", "A lighter rose flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "LighterStrawberryFlavor"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/LighterStrawberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 2.3, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "There's also something else I'm tasting...", "A lighter strawberry flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "LongSteep"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/LongSteep:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 0.1, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2.6, 6.4, 9.4, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Did you steep this the whole time?", "Typically, five minutes is enough for herbal teas,
+but...", "I did say, \"you can't go too off the rails.\"", "Other teas are less forgiving, though.", "" ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "NoSteep"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/NoSteep:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2.2, 4, 6.1, 7.7, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That's just water with a hint of tea.", "What are you, some kind of purist?", "Did you want to see if I would notice?", "Well I've noticed!", "Please, steep it longer next time.", "" ]
+}
+
 [sub_resource type="Animation" id=61]
 length = 0.001
 tracks/0/type = "value"
@@ -170,7 +554,7 @@ tracks/0/keys = {
 "values": [ "" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("HostReturnsAudioStreamPlayer:playing")
+tracks/1/path = NodePath("AudioStreamPlayers/HostReturns:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -182,7 +566,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
+tracks/2/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -218,7 +602,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("HostChecksAudioStreamPlayer:playing")
+tracks/5/path = NodePath("AudioStreamPlayers/HostChecks:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -230,7 +614,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("HostClosingAudioStreamPlayer:playing")
+tracks/6/path = NodePath("AudioStreamPlayers/HostClosing:playing")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -266,7 +650,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("HostWaitingAudioStreamPlayer:playing")
+tracks/9/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -374,7 +758,7 @@ tracks/17/keys = {
 "values": [ 1 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("MusicAudioStreamPlayer:volume_db")
+tracks/18/path = NodePath("AudioStreamPlayers/Music:volume_db")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -397,12 +781,204 @@ tracks/19/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/20/type = "value"
+tracks/20/path = NodePath("AudioStreamPlayers/Outcomes/StrongBlueberryFlavor:playing")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("AudioStreamPlayers/Outcomes/StrongChamomileFlavor:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("AudioStreamPlayers/Outcomes/StrongElderberryFlavor:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("AudioStreamPlayers/Outcomes/StrongRoseFlavor:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("AudioStreamPlayers/Outcomes/StrongStrawberryFlavor:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("AudioStreamPlayers/Outcomes/LighterBlueberryFlavor:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("AudioStreamPlayers/Outcomes/LighterChamomileFlavor:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("AudioStreamPlayers/Outcomes/LighterElderberryFlavor:playing")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("AudioStreamPlayers/Outcomes/LighterRoseFlavor:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("AudioStreamPlayers/Outcomes/LighterStrawberryFlavor:playing")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("AudioStreamPlayers/Outcomes/SteepedEveryFlavor:playing")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("AudioStreamPlayers/Outcomes/NoSteep:playing")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("AudioStreamPlayers/Outcomes/LongSteep:playing")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("AudioStreamPlayers/Outcomes/LightSteep:playing")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("AudioStreamPlayers/Outcomes/WellSteeped:playing")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "ReturnOfHost"
-length = 38.0
+length = 13.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("HostReturnsAudioStreamPlayer:playing")
+tracks/0/path = NodePath("AudioStreamPlayers/HostReturns:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -414,7 +990,243 @@ tracks/0/keys = {
 "values": [ false, true, false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("HostChecksAudioStreamPlayer:playing")
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 3, 4.2, 6.1, 10.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Okay I’m back. How long was I?", "8 minutes?", "That's exactly what I said!", "Anyway, that got me all thirsty, so I’m going to help myself here.", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Timer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/TeaControl/Sprite:region_enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 10.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/TeaControl/Sprite:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 10.2, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 352, 504 ), Rect2( 0, 0, 352, 504 ), Rect2( 0, 504, 352, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TeaControl/Sprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 10.2, 11.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 320, 704 ), Vector2( 320, 704 ), Vector2( 320, 1008 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/TeaControl/TeaKettle:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 11.9, 12.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 13 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "taste_tea"
+} ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("Control/Timer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( -0.1, 11.9, 12.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Area2D:collision_layer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Area2D:collision_mask")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Control/TeaControl/TeaKettle:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ) ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "ReturnOfHost (copy)"
+length = 38.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/HostReturns:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 10.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/HostChecks:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -426,7 +1238,7 @@ tracks/1/keys = {
 "values": [ false, true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HostClosingAudioStreamPlayer:playing")
+tracks/2/path = NodePath("AudioStreamPlayers/HostClosing:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -528,7 +1340,7 @@ tracks/9/keys = {
 } ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
+tracks/10/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -540,7 +1352,7 @@ tracks/10/keys = {
 "values": [ false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("HostWaitingAudioStreamPlayer:playing")
+tracks/11/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -638,7 +1450,7 @@ tracks/18/keys = {
 "values": [ 0 ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("MusicAudioStreamPlayer:volume_db")
+tracks/19/path = NodePath("AudioStreamPlayers/Music:volume_db")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -660,6 +1472,35 @@ tracks/20/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.2, 1.2 ) ]
+}
+
+[sub_resource type="Animation" id=81]
+resource_name = "SteepedEveryFlavor"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/SteepedEveryFlavor:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1.4, 4.5, 7, 8.2, 9.4, 10.9, 11.7, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Oh my...", "Did you steep every flavor of tea in the box?", "Because that's what it tastes like.", "I've done that once.", "Just the once though,", "because it tasted like...", "", "well like this.", "
+" ]
 }
 
 [sub_resource type="Animation" id=60]
@@ -690,7 +1531,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HostWelcomeAudioStreamPlayer:playing")
+tracks/2/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -702,7 +1543,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HostWaitingAudioStreamPlayer:playing")
+tracks/3/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -724,6 +1565,234 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "" ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "StrongBlueberryFlavor"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/Mmm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/StrongBlueberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 1.101, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Mmmm...", "I taste a strong blueberry flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "StrongChamomileFlavor"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/Mmm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/StrongChamomileFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 1.2, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Mmmm...", "I taste a strong chamomile flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "StrongElderberryFlavor"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/Mmm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/StrongElderberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 1.2, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Mmmm...", "I taste a strong elderberry flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "StrongRoseFlavor"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/Mmm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/StrongRoseFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 1.2, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 3.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Mmmm...", "I taste a strong rose flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=75]
+resource_name = "StrongStrawberryFlavor"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/Mmm:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Outcomes/StrongStrawberryFlavor:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 3.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Mmmm...", "I taste a strong strawberry flavor.", "" ]
+}
+
+[sub_resource type="Animation" id=85]
+resource_name = "WellSteeped"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/WellSteeped:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 2, 4.3, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That's a well steeped tea!", "Not too strong, not too light...", "Good work!", "" ]
 }
 
 [sub_resource type="ShaderMaterial" id=57]
@@ -933,10 +2002,27 @@ velocity_base = Vector2( 0, 50 )
 
 [node name="DemoAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Intro"
+anims/EndOfDemo = SubResource( 70 )
 anims/Intro = SubResource( 54 )
+anims/LightSteep = SubResource( 84 )
+anims/LighterBlueberryFlavor = SubResource( 76 )
+anims/LighterChamomileFlavor = SubResource( 77 )
+anims/LighterElderberryFlavor = SubResource( 78 )
+anims/LighterRoseFlavor = SubResource( 79 )
+anims/LighterStrawberryFlavor = SubResource( 80 )
+anims/LongSteep = SubResource( 83 )
+anims/NoSteep = SubResource( 82 )
 anims/RESET = SubResource( 61 )
 anims/ReturnOfHost = SubResource( 63 )
+"anims/ReturnOfHost (copy)" = SubResource( 86 )
+anims/SteepedEveryFlavor = SubResource( 81 )
 anims/Steeping = SubResource( 60 )
+anims/StrongBlueberryFlavor = SubResource( 71 )
+anims/StrongChamomileFlavor = SubResource( 72 )
+anims/StrongElderberryFlavor = SubResource( 73 )
+anims/StrongRoseFlavor = SubResource( 74 )
+anims/StrongStrawberryFlavor = SubResource( 75 )
+anims/WellSteeped = SubResource( 85 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1067,31 +2153,104 @@ __meta__ = {
 [node name="SkipButton" type="Button" parent="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -40.0
-margin_bottom = 24.0
+margin_left = -56.0
+margin_bottom = 32.0
 text = ">>>"
 
-[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayers" type="Node" parent="."]
+
+[node name="Outcomes" type="Node" parent="AudioStreamPlayers"]
+
+[node name="AlsoSomethingElse" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 25 )
+bus = "Host"
+
+[node name="LighterBlueberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 30 )
+bus = "Host"
+
+[node name="LighterChamomileFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 14 )
+bus = "Host"
+
+[node name="LighterElderberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 24 )
+bus = "Host"
+
+[node name="LighterRoseFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 28 )
+bus = "Host"
+
+[node name="LighterStrawberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 31 )
+bus = "Host"
+
+[node name="LightSteep" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 22 )
+bus = "Host"
+
+[node name="LongSteep" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 23 )
+bus = "Host"
+
+[node name="Mmm" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 27 )
+bus = "Host"
+
+[node name="NoSteep" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 29 )
+volume_db = -3.0
+bus = "Host"
+
+[node name="SteepedEveryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 34 )
+bus = "Host"
+
+[node name="StrongBlueberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 33 )
+bus = "Host"
+
+[node name="StrongChamomileFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 35 )
+bus = "Host"
+
+[node name="StrongElderberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 26 )
+bus = "Host"
+
+[node name="StrongRoseFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 37 )
+bus = "Host"
+
+[node name="StrongStrawberryFlavor" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 32 )
+bus = "Host"
+
+[node name="WellSteeped" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
+stream = ExtResource( 36 )
+bus = "Host"
+
+[node name="Music" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 12 )
 bus = "Music"
 
-[node name="HostWelcomeAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HostWelcome" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 13 )
 bus = "Host"
 
-[node name="HostWaitingAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HostWaiting" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 6 )
 bus = "Host"
 
-[node name="HostReturnsAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HostReturns" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 10 )
 bus = "Host"
 
-[node name="HostChecksAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HostChecks" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 8 )
 bus = "Host"
 
-[node name="HostClosingAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HostClosing" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 7 )
 bus = "Host"
 
