@@ -80,7 +80,7 @@ func _queue_tea_outcome_animations() -> void:
 			tea_name_2 = tea_name
 			steep_time_2 = steeped_time
 		steep_time_total += steeped_time
-	if tea_steep_times.size() == 1 and steep_time_total < 4.0:
+	if tea_steep_times.size() == 1 and steep_time_total < 5.0:
 		animation_queue.append(ANIMATION_NO_STEEP)
 		return
 	animation_queue.append("Strong%sFlavor" % tea_name_1)
