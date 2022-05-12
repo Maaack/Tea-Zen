@@ -30,7 +30,7 @@ viewport_path = NodePath("VelocityViewport")
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
-shader_param/vorticityScale = 1.2
+shader_param/vorticityScale = 2.0
 
 [sub_resource type="ViewportTexture" id=9]
 viewport_path = NodePath("ViscosityViewport")
