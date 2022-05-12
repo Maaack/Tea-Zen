@@ -18,6 +18,18 @@ func set_steeping_tea(value : bool) -> void:
 func set_velocity_brush_position(value : Vector2) -> void:
 	velocity_brush_position = value
 
+func _disable_menu_buttons(disabled : bool = true) -> void:
+	$Control/MarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
+	$Control/MarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
+	$Control/MarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
+
+func open_menu():
+	menu_state = States.MENU
+	_disable_menu_buttons(false)
+
+func close_menu():
+	_disable_menu_buttons()
+
 func _process(delta):
 	var brush_offset : Vector2 = Vector2.ZERO
 	if steeping_tea:
@@ -26,6 +38,7 @@ func _process(delta):
 	$FluidSimulator.apply_dye_paint(dye_brush_position + brush_offset, Vector2.ZERO)
 
 func quit():
+	close_menu()
 	menu_state = States.EXIT
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
@@ -50,11 +63,11 @@ func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Spr
 	$FluidSimulator.apply_velocity_force_2(position, vector)
 
 func open_credits():
+	close_menu()
 	menu_state = States.CREDITS
 	$MenuAnimationPlayer.play("OpenCredits")
 
 func close_credits():
-	menu_state = States.MENU
 	$MenuAnimationPlayer.play("CloseCredits")
 
 func _on_MouseMotionControl_force_released(position):
@@ -75,6 +88,7 @@ func _on_Credits_end_reached():
 	close_credits()
 
 func _on_BackButton_pressed():
+	$Control/BackButton.disabled = true
 	match(menu_state):
 		States.CREDITS:
 			close_credits()

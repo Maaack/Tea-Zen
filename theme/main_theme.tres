@@ -13,7 +13,7 @@ bg_color = Color( 0.843137, 0.831373, 0.721569, 1 )
 
 [resource]
 Button/colors/font_color = Color( 0.0313726, 0.0156863, 0.00784314, 1 )
-Button/colors/font_color_disabled = Color( 0.533333, 0.533333, 0.533333, 1 )
+Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 Button/colors/font_color_focus = Color( 0.0313726, 0.0156863, 0.00784314, 1 )
 Button/colors/font_color_hover = Color( 0.0313726, 0.0156863, 0.00784314, 1 )
 Button/colors/font_color_pressed = Color( 0.0313726, 0.0156863, 0.00784314, 1 )
