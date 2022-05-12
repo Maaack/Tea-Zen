@@ -1,0 +1,320 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://theme/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/Credits/CreditsH3Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Credits/CreditsH4Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/Credits/Credits.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Credits/CreditsH2Font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/Credits/HiddenScrollBar.tres" type="Theme" id=6]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+h1_font = ExtResource( 5 )
+h2_font = ExtResource( 5 )
+h3_font = ExtResource( 2 )
+h4_font = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 640.0
+margin_bottom = 2569.0
+
+[node name="HeaderSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
+margin_right = 640.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 640.0
+margin_bottom = 2565.0
+rect_min_size = Vector2( 640, 0 )
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+bbcode_enabled = true
+bbcode_text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[center]
+[font=res://scenes/Credits/CreditsH2Font.tres]Collaborators[/font]
+[font=res://scenes/Credits/CreditsH3Font.tres]Programming[/font]
+Author: [url=https://github.com/Maaack]Marek Belski[/url]  
+Source: [url=https://github.com/Maaack/Tea-Zen]Github : Tea Time[/url]  
+License: [url=./LICENSE.md]MIT License[/url]
+
+[font=res://scenes/Credits/CreditsH3Font.tres]Voice Acting[/font]
+Author: [url=https://github.com/Maaack]Marek Belski[/url]  
+License: [url=https://creativecommons.org/licenses/by-nc-sa/4.0/]Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)[/url]
+
+[font=res://scenes/Credits/CreditsH2Font.tres]Sourced / Unaffiliated[/font]
+[font=res://scenes/Credits/CreditsH3Font.tres]Fonts[/font]
+[font=res://scenes/Credits/CreditsH4Font.tres]Title[/font]
+Author: [url=https://www.1001fonts.com/users/lime/]Lime[/url]  
+Source: [url=https://www.1001fonts.com/spring-font.html]1001Fonts : spring-font.html[/url]  
+License: [url=https://www.1001fonts.com/licenses/ffc.html]1001Fonts Free For Commercial Use License (FFC)[/url]
+
+[font=res://scenes/Credits/CreditsH4Font.tres]Captions[/font]
+Author: [url=https://www.ndiscover.com/]ndiscover[/url]  
+Source: [url=https://www.1001fonts.com/cinzel-font.html]1001Fonts : cinzel-font.html[/url]  
+License: [url=https://scripts.sil.org/OFL]SIL Open Font License (OFL)[/url]
+
+[font=res://scenes/Credits/CreditsH3Font.tres]Music[/font]
+[font=res://scenes/Credits/CreditsH4Font.tres]Main Menu[/font]
+Author: [url=www.soundimage.org]Eric Matyas[/url]  
+Source: [url=https://soundimage.org/wp-content/uploads/2018/11/Valley-Sunrise_Looping.mp3]Soundimage.org : Valley-Sunrise.mp3[/url]  
+License: [url=https://soundimage.org/attribution-info/]Attribution License[/url]
+
+[font=res://scenes/Credits/CreditsH4Font.tres]Tea Steeping Jazz[/font]
+Author: [url=https://freemusicarchive.org/music/Quantum_Jazz]Quantum Jazz[/url]  
+Source: [url=https://freemusicarchive.org/music/Quantum_Jazz/End_of_Line/01_-_Quantum_Jazz_-_Intro]Free Music Archive : 01 - Quantum Jazz - Intro[/url]  
+License: [url=https://creativecommons.org/licenses/by-sa/3.0/]Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)[/url]
+
+[font=res://scenes/Credits/CreditsH3Font.tres]Images[/font]
+[font=res://scenes/Credits/CreditsH4Font.tres]Background[/font]
+Author: [url=www.soundimage.org]Eric Matyas[/url]  
+Source: [url=https://soundimage.org/wp-content/uploads/2017/05/P1020509_Standard.jpg]Soundimage.org : P1020509_Standard.jpg[/url]  
+License: [url=https://soundimage.org/attribution-info/]Attribution License[/url]
+
+[font=res://scenes/Credits/CreditsH3Font.tres]Icons[/font]
+[font=res://scenes/Credits/CreditsH4Font.tres]Icons[/font]
+Author: [url=https://game-icons.net/about.html#authors]Lorc, Delapouite, and contributors[/url]  
+Source: [url=https://game-icons.net/]Game-icons.net[/url]  
+License: [url=https://creativecommons.org/licenses/by/3.0/]Attribution 3.0 Unported (CC BY 3.0)[/url]  
+
+[font=res://scenes/Credits/CreditsH2Font.tres]Tools[/font]
+[font=res://scenes/Credits/CreditsH4Font.tres]Godot[/font]
+Author: [url=https://godotengine.org/contact]Juan Linietsky, Ariel Manzur, and contributors[/url]  
+Source: [url=https://godotengine.org/]godotengine.org[/url]  
+License: [url=https://github.com/godotengine/godot/blob/master/LICENSE.txt]MIT License[/url] 
+
+[font=res://scenes/Credits/CreditsH4Font.tres]Git[/font]
+Author: [url=https://github.com/torvalds]Linus Torvalds[/url]  
+Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
+License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
+
+[font=res://scenes/Credits/CreditsH4Font.tres]PyCharm[/font]
+Author: [url=https://www.jetbrains.com/]Jet Brains[/url]  
+Source: [url=https://www.jetbrains.com/pycharm/download/]jetbrains.com[/url]  
+License: [url=https://www.jetbrains.com/]Copyright © 2000-2020 JetBrains s.r.o[/url]
+
+[font=res://scenes/Credits/CreditsH4Font.tres]GIMP[/font]
+Author: [url=https://www.gimp.org/about/authors.html]Spencer Kimball, Peter Mattis, and contributors[/url]  
+Source: [url=https://www.gimp.org/downloads/]gimp.org[/url]  
+License: [url=https://www.gimp.org/about/COPYING]GNU General Public License version 3[/url]
+[/center]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Collaborators
+Programming
+Author: Marek Belski  
+Source: Github : Tea Time  
+License: MIT License
+
+Voice Acting
+Author: Marek Belski  
+License: Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+
+Sourced / Unaffiliated
+Fonts
+Title
+Author: Lime  
+Source: 1001Fonts : spring-font.html  
+License: 1001Fonts Free For Commercial Use License (FFC)
+
+Captions
+Author: ndiscover  
+Source: 1001Fonts : cinzel-font.html  
+License: SIL Open Font License (OFL)
+
+Music
+Main Menu
+Author: Eric Matyas  
+Source: Soundimage.org : Valley-Sunrise.mp3  
+License: Attribution License
+
+Tea Steeping Jazz
+Author: Quantum Jazz  
+Source: Free Music Archive : 01 - Quantum Jazz - Intro  
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+Images
+Background
+Author: Eric Matyas  
+Source: Soundimage.org : P1020509_Standard.jpg  
+License: Attribution License
+
+Icons
+Icons
+Author: Lorc, Delapouite, and contributors  
+Source: Game-icons.net  
+License: Attribution 3.0 Unported (CC BY 3.0)  
+
+Tools
+Godot
+Author: Juan Linietsky, Ariel Manzur, and contributors  
+Source: godotengine.org  
+License: MIT License 
+
+Git
+Author: Linus Torvalds  
+Source: git-scm.com  
+License: GNU General Public License version 2
+
+PyCharm
+Author: Jet Brains  
+Source: jetbrains.com  
+License: Copyright © 2000-2020 JetBrains s.r.o
+
+GIMP
+Author: Spencer Kimball, Peter Mattis, and contributors  
+Source: gimp.org  
+License: GNU General Public License version 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content_height = true
+scroll_active = false
+selection_enabled = true
+
+[node name="FooterSpace" type="Control" parent="ScrollContainer/VBoxContainer"]
+margin_top = 2569.0
+margin_right = 640.0
+margin_bottom = 2569.0
+
+[node name="ScrollResetTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="scroll_ended" from="ScrollContainer" to="." method="_on_ScrollContainer_scroll_ended"]
+[connection signal="gui_input" from="ScrollContainer/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_gui_input"]
+[connection signal="meta_clicked" from="ScrollContainer/VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="timeout" from="ScrollResetTimer" to="." method="_on_ScrollResetTimer_timeout"]

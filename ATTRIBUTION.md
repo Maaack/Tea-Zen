@@ -1,11 +1,16 @@
 # Attribution
 ## Collaborators
-### Programming, Voice Acting, Tea Art
+### Programming
 Author: [Marek Belski](https://github.com/Maaack)  
 Source: [Github : Tea Time](https://github.com/Maaack/Tea-Zen)  
 License: [MIT License](./LICENSE.md)
 
-## Sourced Assets
+### Voice Acting
+Author: [Marek Belski](https://github.com/Maaack)  
+License: [Attribution-NonCommercial-ShareAlike 4.0  
+International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Sourced / Unaffiliated
 ### Fonts
 #### Title
 Author: [Lime](https://www.1001fonts.com/users/lime/)  
