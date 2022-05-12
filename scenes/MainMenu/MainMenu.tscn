@@ -23,7 +23,7 @@
 
 [sub_resource type="Animation" id=60]
 resource_name = "CloseCredits"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/MarginContainer/Credits:visible")
 tracks/0/interp = 1
@@ -105,7 +105,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 2 ),
+"times": PoolRealArray( 0.5, 2.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 128, 24 ), Vector2( 128, 160 ) ]
@@ -117,7 +117,7 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 2 ),
+"times": PoolRealArray( 2.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -905,7 +905,6 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_left = 222.0
 margin_top = 268.0
 margin_right = 418.0
