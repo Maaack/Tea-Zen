@@ -1,0 +1,127 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://theme/main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
+
+[node name="OptionsMenu" type="VBoxContainer"]
+margin_left = 170.0
+margin_top = 360.5
+margin_right = 470.0
+margin_bottom = 663.5
+custom_constants/separation = 20
+script = ExtResource( 2 )
+
+[node name="MasterControl" type="HBoxContainer" parent="."]
+margin_right = 300.0
+margin_bottom = 16.0
+
+[node name="MasterLabel" type="Label" parent="MasterControl"]
+margin_top = 1.0
+margin_right = 96.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Master :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterHSlider" type="HSlider" parent="MasterControl"]
+margin_left = 100.0
+margin_right = 300.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXControl" type="HBoxContainer" parent="."]
+margin_top = 36.0
+margin_right = 300.0
+margin_bottom = 52.0
+
+[node name="SFXLabel" type="Label" parent="SFXControl"]
+margin_top = 1.0
+margin_right = 96.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "SFX :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXHSlider" type="HSlider" parent="SFXControl"]
+margin_left = 100.0
+margin_right = 300.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicControl" type="HBoxContainer" parent="."]
+margin_top = 72.0
+margin_right = 300.0
+margin_bottom = 88.0
+
+[node name="MusicLabel" type="Label" parent="MusicControl"]
+margin_top = 1.0
+margin_right = 96.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Music :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicHSlider" type="HSlider" parent="MusicControl"]
+margin_left = 100.0
+margin_right = 300.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 108.0
+margin_right = 300.0
+margin_bottom = 148.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_top = 13.0
+margin_right = 220.0
+margin_bottom = 27.0
+size_flags_horizontal = 3
+text = "Mute :"
+
+[node name="MuteButton" type="CheckButton" parent="HBoxContainer"]
+margin_left = 224.0
+margin_right = 300.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="MasterControl/MasterHSlider" to="." method="_on_MasterHSlider_value_changed"]
+[connection signal="value_changed" from="SFXControl/SFXHSlider" to="." method="_on_SFXHSlider_value_changed"]
+[connection signal="value_changed" from="MusicControl/MusicHSlider" to="." method="_on_MusicHSlider_value_changed"]
+[connection signal="toggled" from="HBoxContainer/MuteButton" to="." method="_on_MuteButton_toggled"]

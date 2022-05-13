@@ -20,6 +20,7 @@ func set_velocity_brush_position(value : Vector2) -> void:
 
 func _disable_menu_buttons(disabled : bool = true) -> void:
 	$Control/MarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
+	$Control/MarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
 	$Control/MarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
 	$Control/MarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
 
@@ -70,6 +71,14 @@ func open_credits():
 func close_credits():
 	$MenuAnimationPlayer.play("CloseCredits")
 
+func open_options():
+	close_menu()
+	menu_state = States.OPTIONS
+	$MenuAnimationPlayer.play("OpenOptions")
+
+func close_options():
+	$MenuAnimationPlayer.play("CloseOptions")
+
 func _on_MouseMotionControl_force_released(position):
 	$FluidSimulator.release_velocity_force_2()
 
@@ -87,9 +96,15 @@ func _on_CreditsButton_pressed():
 func _on_Credits_end_reached():
 	close_credits()
 
+func _on_OptionsButton_pressed():
+	open_options()
+
 func _on_BackButton_pressed():
 	$Control/BackButton.disabled = true
 	match(menu_state):
 		States.CREDITS:
 			close_credits()
-		
+		States.OPTIONS:
+			close_options()
+
+
