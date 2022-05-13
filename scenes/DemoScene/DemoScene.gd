@@ -26,6 +26,7 @@ func _started_steeping():
 	started_steeping = true
 	$Control/Timer.start()
 	$AudioStreamPlayers/Music.play()
+	$Control/BordersMarginContainer/Control/MusicController.show_controls()
 	$DemoAnimationPlayer.play("Steeping")
 
 func _host_returned():
@@ -155,3 +156,12 @@ func _on_Area2D_body_exited(body):
 func _on_TeaTagButton_pressed(tea_data):
 	_open_tea_box()
 	pick_up_teabag(tea_data)
+
+func _on_MusicController_pause_pressed():
+	$AudioStreamPlayers/Music.stream_paused = true
+
+func _on_MusicController_play_pressed():
+	$AudioStreamPlayers/Music.stream_paused = false
+
+func _on_MusicController_repeat_pressed():
+	$AudioStreamPlayers/Music.play()

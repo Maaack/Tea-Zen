@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://theme/main_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/icons/24x24/pause-button.png" type="Texture" id=2]
+[ext_resource path="res://assets/icons/24x24/anticlockwise-rotation.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/24x24/play-button.png" type="Texture" id=4]
+[ext_resource path="res://scenes/MusicController/MusicController.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeOut"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FastFadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="MusicController" type="HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+margin_right = 224.0
+rect_min_size = Vector2( 48, 48 )
+script = ExtResource( 5 )
+
+[node name="RepeatButton" type="TextureButton" parent="."]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+mouse_filter = 1
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+expand = true
+stretch_mode = 3
+
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+mouse_filter = 1
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+expand = true
+stretch_mode = 3
+
+[node name="PlayButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 80.0
+margin_right = 128.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+mouse_filter = 1
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 104.0
+margin_right = 212.0
+margin_bottom = 48.0
+mouse_filter = 2
+custom_constants/margin_left = 12
+
+[node name="SongName" type="Label" parent="MarginContainer"]
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 108.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Song Name"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 2 )
+anims/FastFadeIn = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+
+[node name="InactiveTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_MusicController_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_MusicController_mouse_exited"]
+[connection signal="pressed" from="RepeatButton" to="." method="_on_RepeatButton_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="timeout" from="InactiveTimer" to="." method="_on_InactiveTimer_timeout"]

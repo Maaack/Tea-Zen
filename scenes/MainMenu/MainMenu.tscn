@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x128.png" type="Texture" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://shaders/MultiplyThree.tres" type="Shader" id=8]
 [ext_resource path="res://assets/brushes/WhiteBrush128x2.png" type="Texture" id=9]
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush4.png" type="Texture" id=10]
+[ext_resource path="res://scenes/OptionsMenu/OptionsMenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush2.png" type="Texture" id=12]
 [ext_resource path="res://assets/brushes/VelocityUpBrush128x2.png" type="Texture" id=13]
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x2.png" type="Texture" id=14]
@@ -20,12 +21,13 @@
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush3.png" type="Texture" id=19]
 [ext_resource path="res://assets/textures/VerticalMask.png" type="Texture" id=20]
 [ext_resource path="res://assets/textures/HorizontalMask.png" type="Texture" id=21]
+[ext_resource path="res://scenes/MusicController/MusicController.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=60]
 resource_name = "CloseCredits"
-length = 2.0
+length = 2.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/0/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,7 +39,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -49,7 +51,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Control/MarginContainer/Credits")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -63,59 +65,163 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/BackButton:visible")
+tracks/3/path = NodePath("Control/BackButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Control/BackButton:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 1, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/6/type = "value"
-tracks/6/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/6/path = NodePath("Control/TitleSection:rect_position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 24 ), Vector2( 128, 160 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "open_menu"
+} ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "CloseOptions"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/BackButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/TitleSection:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 24 ), Vector2( 128, 160 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "open_menu"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=54]
 resource_name = "Intro"
 length = 4.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/Title:modulate")
+tracks/0/path = NodePath("Control/TitleSection/Title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -127,7 +233,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/SubTitle:modulate")
+tracks/1/path = NodePath("Control/TitleSection/SubTitle:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -139,7 +245,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -174,23 +280,40 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 3.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "open_menu"
+} ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("Control/BordersMarginContainer/Control/MusicController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_controls"
+} ]
 }
 
 [sub_resource type="Animation" id=59]
 resource_name = "OpenCredits"
+length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/0/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -202,7 +325,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -214,7 +337,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Control/MarginContainer/Credits")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -228,19 +351,19 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/BackButton:visible")
+tracks/3/path = NodePath("Control/BackButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/BackButton:modulate")
+tracks/4/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -249,10 +372,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -260,26 +383,126 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
-tracks/6/interp = 1
+tracks/6/path = NodePath("Control/TitleSection:rect_position")
+tracks/6/interp = 2
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 160 ), Vector2( 128, 24 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Control/BackButton:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=61]
+resource_name = "OpenOptions"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/BackButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/TitleSection:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 160 ), Vector2( 128, 24 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/BackButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=55]
 resource_name = "Outro"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/Title:modulate")
+tracks/0/path = NodePath("Control/TitleSection/Title:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -291,7 +514,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/SubTitle:modulate")
+tracks/1/path = NodePath("Control/TitleSection/SubTitle:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -303,7 +526,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -366,7 +589,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -378,7 +601,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -390,7 +613,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/BackButton:visible")
+tracks/3/path = NodePath("Control/BackButton:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -399,10 +622,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/BackButton:modulate")
+tracks/4/path = NodePath("Control/TitleSection:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -411,10 +634,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 128, 160 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/5/path = NodePath("Control/BackButton:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -424,6 +647,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -733,8 +980,10 @@ __meta__ = {
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Intro"
 anims/CloseCredits = SubResource( 60 )
+anims/CloseOptions = SubResource( 62 )
 anims/Intro = SubResource( 54 )
 anims/OpenCredits = SubResource( 59 )
+anims/OpenOptions = SubResource( 61 )
 anims/Outro = SubResource( 55 )
 anims/RESET = SubResource( 56 )
 
@@ -819,25 +1068,36 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 560, 40, 80, 512 )
 
-[node name="Title" type="Label" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="TitleSection" type="Control" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -192.0
 margin_top = 160.0
-margin_right = 185.0
-margin_bottom = 242.0
-custom_fonts/font = ExtResource( 4 )
-text = "Tea Time"
+margin_right = 192.0
+margin_bottom = 288.0
+mouse_filter = 2
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="SubTitle" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Control/TitleSection"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -192.0
-margin_top = 248.0
 margin_right = 192.0
-margin_bottom = 288.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 4 )
+text = "Tea Time"
+
+[node name="SubTitle" type="Label" parent="Control/TitleSection"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_top = 88.0
+margin_right = 192.0
+margin_bottom = 128.0
 custom_fonts/font = ExtResource( 3 )
 text = "Short on time"
 align = 1
@@ -851,13 +1111,35 @@ anchor_top = 1.0
 margin_top = -160.0
 minimum_vector = 1.5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="BordersMarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 6
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 6
+
+[node name="Control" type="Control" parent="Control/BordersMarginContainer"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 634.0
+margin_bottom = 1018.0
+mouse_filter = 2
+
+[node name="MusicController" parent="Control/BordersMarginContainer/Control" instance=ExtResource( 22 )]
+margin_top = -52.0
+margin_right = 612.0
+song_name = "Valley Sunrise - Eric Matyas"
+
+[node name="CenterMarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_top = 160
 custom_constants/margin_bottom = 160
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterMarginContainer"]
 margin_top = 160.0
 margin_right = 640.0
 margin_bottom = 864.0
@@ -866,37 +1148,54 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterMarginContainer/CenterContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 222.0
-margin_top = 268.0
+margin_top = 236.0
 margin_right = 418.0
-margin_bottom = 436.0
+margin_bottom = 468.0
 rect_min_size = Vector2( 196, 0 )
 custom_constants/separation = 24
 
-[node name="StartButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_right = 196.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
+disabled = true
 text = "Join Tea Party"
 
-[node name="CreditsButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 64.0
 margin_right = 196.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 0, 40 )
-text = "Credits"
+disabled = true
+text = "Options"
 
-[node name="QuitButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 128.0
 margin_right = 196.0
 margin_bottom = 168.0
 rect_min_size = Vector2( 0, 40 )
+disabled = true
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
+margin_top = 192.0
+margin_right = 196.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 0, 40 )
+disabled = true
 text = "Leave"
 
-[node name="Credits" parent="Control/MarginContainer" instance=ExtResource( 6 )]
+[node name="OptionsMenu" parent="Control/CenterMarginContainer/CenterContainer" instance=ExtResource( 11 )]
+visible = false
+margin_left = 183.0
+margin_top = 272.0
+margin_right = 457.0
+margin_bottom = 432.0
+
+[node name="Credits" parent="Control/CenterMarginContainer" instance=ExtResource( 6 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 0.0
@@ -906,7 +1205,6 @@ margin_right = 640.0
 margin_bottom = 864.0
 
 [node name="BackButton" type="Button" parent="Control"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 1.0
@@ -927,8 +1225,12 @@ bus = "Music"
 [connection signal="force_released" from="Control/TopMouseMotionControl" to="." method="_on_MouseMotionControl_force_released"]
 [connection signal="force_applied" from="Control/BottomMouseMotionControl" to="." method="_on_BottomMouseMotionControl_force_applied"]
 [connection signal="force_released" from="Control/BottomMouseMotionControl" to="." method="_on_MouseMotionControl_force_released"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="end_reached" from="Control/MarginContainer/Credits" to="." method="_on_Credits_end_reached"]
+[connection signal="pause_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_pause_pressed"]
+[connection signal="play_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_play_pressed"]
+[connection signal="repeat_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_repeat_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="end_reached" from="Control/CenterMarginContainer/Credits" to="." method="_on_Credits_end_reached"]
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_BackButton_pressed"]
