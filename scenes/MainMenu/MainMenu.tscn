@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/brushes/VelocityMixedUpBrush128x128.png" type="Texture" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -21,12 +21,13 @@
 [ext_resource path="res://assets/brushes/MainMenuBackgroundBrush3.png" type="Texture" id=19]
 [ext_resource path="res://assets/textures/VerticalMask.png" type="Texture" id=20]
 [ext_resource path="res://assets/textures/HorizontalMask.png" type="Texture" id=21]
+[ext_resource path="res://scenes/MusicController/MusicController.tscn" type="PackedScene" id=22]
 
 [sub_resource type="Animation" id=60]
 resource_name = "CloseCredits"
 length = 2.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/0/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -38,7 +39,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -50,7 +51,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Control/MarginContainer/Credits")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -76,7 +77,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/4/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -88,7 +89,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -142,7 +143,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -154,7 +155,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -192,7 +193,7 @@ tracks/4/keys = {
 } ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -204,7 +205,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:visible")
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -244,7 +245,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -293,12 +294,26 @@ tracks/5/keys = {
 "method": "open_menu"
 } ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("Control/BordersMarginContainer/Control/MusicController")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 4.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_controls"
+} ]
+}
 
 [sub_resource type="Animation" id=59]
 resource_name = "OpenCredits"
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/0/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -310,7 +325,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -322,7 +337,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("Control/MarginContainer/Credits")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -348,7 +363,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/4/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -360,7 +375,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -412,7 +427,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/1/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -424,7 +439,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:visible")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -460,7 +475,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:visible")
+tracks/5/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -472,7 +487,7 @@ tracks/5/keys = {
 "values": [ false, true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -511,7 +526,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/CenterContainer/VBoxContainer:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/CenterContainer/VBoxContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -574,7 +589,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/MarginContainer/Credits:visible")
+tracks/1/path = NodePath("Control/CenterMarginContainer/Credits:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -586,7 +601,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Control/MarginContainer/Credits:modulate")
+tracks/2/path = NodePath("Control/CenterMarginContainer/Credits:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -634,7 +649,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:visible")
+tracks/6/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -646,7 +661,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Control/MarginContainer/CenterContainer/OptionsMenu:modulate")
+tracks/7/path = NodePath("Control/CenterMarginContainer/CenterContainer/OptionsMenu:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1096,14 +1111,35 @@ anchor_top = 1.0
 margin_top = -160.0
 minimum_vector = 1.5
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="BordersMarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 6
+custom_constants/margin_top = 12
+custom_constants/margin_left = 12
+custom_constants/margin_bottom = 6
+
+[node name="Control" type="Control" parent="Control/BordersMarginContainer"]
+margin_left = 12.0
+margin_top = 12.0
+margin_right = 634.0
+margin_bottom = 1018.0
+mouse_filter = 2
+
+[node name="MusicController" parent="Control/BordersMarginContainer/Control" instance=ExtResource( 22 )]
+margin_top = -52.0
+margin_right = 612.0
+song_name = "Valley Sunrise - Eric Matyas"
+
+[node name="CenterMarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 custom_constants/margin_top = 160
 custom_constants/margin_bottom = 160
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/CenterMarginContainer"]
 margin_top = 160.0
 margin_right = 640.0
 margin_bottom = 864.0
@@ -1112,7 +1148,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterMarginContainer/CenterContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 222.0
 margin_top = 236.0
@@ -1121,14 +1157,14 @@ margin_bottom = 468.0
 rect_min_size = Vector2( 196, 0 )
 custom_constants/separation = 24
 
-[node name="StartButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_right = 196.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Join Tea Party"
 
-[node name="OptionsButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 64.0
 margin_right = 196.0
 margin_bottom = 104.0
@@ -1136,7 +1172,7 @@ rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Options"
 
-[node name="CreditsButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 128.0
 margin_right = 196.0
 margin_bottom = 168.0
@@ -1144,7 +1180,7 @@ rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="Control/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 192.0
 margin_right = 196.0
 margin_bottom = 232.0
@@ -1152,14 +1188,14 @@ rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Leave"
 
-[node name="OptionsMenu" parent="Control/MarginContainer/CenterContainer" instance=ExtResource( 11 )]
+[node name="OptionsMenu" parent="Control/CenterMarginContainer/CenterContainer" instance=ExtResource( 11 )]
 visible = false
 margin_left = 183.0
 margin_top = 272.0
 margin_right = 457.0
 margin_bottom = 432.0
 
-[node name="Credits" parent="Control/MarginContainer" instance=ExtResource( 6 )]
+[node name="Credits" parent="Control/CenterMarginContainer" instance=ExtResource( 6 )]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 0.0
@@ -1189,9 +1225,12 @@ bus = "Music"
 [connection signal="force_released" from="Control/TopMouseMotionControl" to="." method="_on_MouseMotionControl_force_released"]
 [connection signal="force_applied" from="Control/BottomMouseMotionControl" to="." method="_on_BottomMouseMotionControl_force_applied"]
 [connection signal="force_released" from="Control/BottomMouseMotionControl" to="." method="_on_MouseMotionControl_force_released"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="end_reached" from="Control/MarginContainer/Credits" to="." method="_on_Credits_end_reached"]
+[connection signal="pause_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_pause_pressed"]
+[connection signal="play_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_play_pressed"]
+[connection signal="repeat_pressed" from="Control/BordersMarginContainer/Control/MusicController" to="." method="_on_MusicController_repeat_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="end_reached" from="Control/CenterMarginContainer/Credits" to="." method="_on_Credits_end_reached"]
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_BackButton_pressed"]

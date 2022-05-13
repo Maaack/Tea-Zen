@@ -19,10 +19,10 @@ func set_velocity_brush_position(value : Vector2) -> void:
 	velocity_brush_position = value
 
 func _disable_menu_buttons(disabled : bool = true) -> void:
-	$Control/MarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
-	$Control/MarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
-	$Control/MarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
-	$Control/MarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
 
 func open_menu():
 	menu_state = States.MENU
@@ -107,4 +107,11 @@ func _on_BackButton_pressed():
 		States.OPTIONS:
 			close_options()
 
+func _on_MusicController_pause_pressed():
+	$AudioStreamPlayer.stream_paused = true
 
+func _on_MusicController_play_pressed():
+	$AudioStreamPlayer.stream_paused = false
+
+func _on_MusicController_repeat_pressed():
+	$AudioStreamPlayer.play()
