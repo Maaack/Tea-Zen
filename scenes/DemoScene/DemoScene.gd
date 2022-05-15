@@ -108,7 +108,7 @@ func taste_tea() -> void:
 func _steep_tea():
 	if not dragging_tea_bag:
 		return
-	var position : Vector2 = (current_tea_bag_instance.position + steeping_tea_bag.position - $Area2D.position) / ($Area2D/CollisionShape2D.shape.extents * 2)
+	var position : Vector2 = ((current_tea_bag_instance.position + steeping_tea_bag.position - $Area2D.position) + $Area2D/CollisionShape2D.shape.extents) / ($Area2D/CollisionShape2D.shape.extents * 2)
 	var vector : Vector2 = steeping_tea_bag.linear_velocity
 	vector += velocity_base
 	vector *= velocity_mod

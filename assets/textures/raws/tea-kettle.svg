@@ -20,6 +20,94 @@
   <defs
      id="defs7038">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient10239">
+      <stop
+         style="stop-color:#3c888b;stop-opacity:0.3137255"
+         offset="0"
+         id="stop10225" />
+      <stop
+         id="stop10227"
+         offset="0.08"
+         style="stop-color:#569b9e;stop-opacity:0.23529412;" />
+      <stop
+         id="stop10229"
+         offset="0.2"
+         style="stop-color:#70afb1;stop-opacity:0.15686275;" />
+      <stop
+         id="stop10231"
+         offset="0.26699513"
+         style="stop-color:#a5d6d8;stop-opacity:0" />
+      <stop
+         style="stop-color:#3c888b;stop-opacity:0.3137255"
+         offset="1"
+         id="stop10237" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient10223">
+      <stop
+         style="stop-color:#3c888b;stop-opacity:0.314"
+         offset="0"
+         id="stop10209" />
+      <stop
+         id="stop10211"
+         offset="0.08"
+         style="stop-color:#569b9e;stop-opacity:0.23529412;" />
+      <stop
+         id="stop10213"
+         offset="0.2"
+         style="stop-color:#70afb1;stop-opacity:0.15686275;" />
+      <stop
+         id="stop10215"
+         offset="0.50226825"
+         style="stop-color:#a5d6d8;stop-opacity:0" />
+      <stop
+         style="stop-color:#70aeb1;stop-opacity:0.15686275;"
+         offset="0.80000001"
+         id="stop10217" />
+      <stop
+         id="stop10219"
+         offset="0.92000002"
+         style="stop-color:#569b9e;stop-opacity:0.23529412;" />
+      <stop
+         style="stop-color:#3c888b;stop-opacity:0.3137255"
+         offset="1"
+         id="stop10221" />
+    </linearGradient>
+    <linearGradient
+       id="Glass-LightBlue"
+       inkscape:collect="always">
+      <stop
+         id="stop10169"
+         offset="0"
+         style="stop-color:#3c888b;stop-opacity:0.3137255" />
+      <stop
+         style="stop-color:#569b9e;stop-opacity:0.23529412;"
+         offset="0.08"
+         id="stop10189" />
+      <stop
+         style="stop-color:#70afb1;stop-opacity:0.15686275;"
+         offset="0.2"
+         id="stop10185" />
+      <stop
+         style="stop-color:#a5d6d8;stop-opacity:0"
+         offset="0.50226825"
+         id="stop10175" />
+      <stop
+         id="stop10187"
+         offset="0.80000001"
+         style="stop-color:#70aeb1;stop-opacity:0.15686275;" />
+      <stop
+         style="stop-color:#569b9e;stop-opacity:0.23529412;"
+         offset="0.92000002"
+         id="stop10191" />
+      <stop
+         id="stop10181"
+         offset="1"
+         style="stop-color:#3c888b;stop-opacity:0.3137255" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient8206"
        inkscape:collect="always">
       <stop
@@ -492,52 +580,20 @@
        y2="98.751488" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#Glass-7-8"
+       xlink:href="#Glass-LightBlue"
        id="linearGradient7790-3"
        gradientUnits="userSpaceOnUse"
        x1="76.627953"
        y1="99.461578"
        x2="147.03275"
        y2="98.751488"
-       gradientTransform="matrix(1.2922297,0,0,1.3149312,108.02882,4.9887117)" />
-    <linearGradient
-       id="Glass-7-8"
-       inkscape:collect="always">
-      <stop
-         id="stop7792-5"
-         offset="0"
-         style="stop-color:#2a4462;stop-opacity:0.3137255" />
-      <stop
-         style="stop-color:#152231;stop-opacity:0.1882353"
-         offset="0.08021756"
-         id="stop7794-1" />
-      <stop
-         id="stop7810-0"
-         offset="0.2"
-         style="stop-color:#0a1118;stop-opacity:0.09411765" />
-      <stop
-         style="stop-color:#000000;stop-opacity:0.02105263"
-         offset="0.50226825"
-         id="stop7796-8" />
-      <stop
-         id="stop7808-7"
-         offset="0.80000001"
-         style="stop-color:#0a1118;stop-opacity:0.09411765" />
-      <stop
-         id="stop7798-6"
-         offset="0.92136115"
-         style="stop-color:#152231;stop-opacity:0.1882353" />
-      <stop
-         id="stop7800-3"
-         offset="1"
-         style="stop-color:#2a4462;stop-opacity:0.3137255" />
-    </linearGradient>
+       gradientTransform="matrix(1.2922297,0,0,1.3149312,140.363,4.988709)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#Highlight-3"
        id="linearGradient8229-9"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.2922297,0,0,1.3149312,108.02882,4.9887217)"
+       gradientTransform="matrix(1.5005993,0,0,1.4089539,395.33586,-2.858148)"
        x1="76.627953"
        y1="99.461578"
        x2="147.03275"
@@ -554,6 +610,77 @@
        y2="98.751488" />
     <linearGradient
        inkscape:collect="always"
+       xlink:href="#linearGradient10239"
+       id="linearGradient8178-1"
+       x1="73.109795"
+       y1="44.688118"
+       x2="77.889389"
+       y2="40.173409"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,238.1816,2.6078206)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Glass-LightBlue"
+       id="linearGradient8144-1"
+       x1="147.22173"
+       y1="129.34393"
+       x2="158.14967"
+       y2="33.153488"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,238.1816,2.6078206)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient10223"
+       id="linearGradient8164-2"
+       gradientUnits="userSpaceOnUse"
+       x1="153.0275"
+       y1="49.251534"
+       x2="147.22174"
+       y2="119.22853"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,238.1816,4.8445357)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7950-1"
+       id="linearGradient8013-4"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,238.18161,2.5745858)"
+       x1="76.351189"
+       y1="131.0652"
+       x2="147.22173"
+       y2="131.0652" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Glass-LightBlue"
+       id="linearGradient7790-5"
+       gradientUnits="userSpaceOnUse"
+       x1="76.627953"
+       y1="99.461578"
+       x2="147.03275"
+       y2="98.751488"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,238.1816,2.6078206)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient7918-7"
+       id="radialGradient7920-4"
+       cx="111.78646"
+       cy="129.35519"
+       fx="111.78646"
+       fy="129.35519"
+       r="35.46035"
+       gradientTransform="matrix(1.4609708,4.9162382e-4,-5.6066714e-5,0.14065203,244.13333,171.36483)"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Highlight-3"
+       id="linearGradient8229-9-5"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,394.84608,-2.8581402)"
+       x1="76.627953"
+       y1="99.461578"
+       x2="147.03275"
+       y2="98.751488" />
+    <linearGradient
+       inkscape:collect="always"
        xlink:href="#linearGradient8133"
        id="linearGradient8092-9"
        x1="76.351189"
@@ -561,7 +688,27 @@
        x2="147.22173"
        y2="138.74049"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.2922297,0,0,1.3149312,119.20351,29.371338)" />
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,247.69917,84.864794)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#Glass-LightBlue"
+       id="linearGradient10151"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,394.84607,-2.8581505)"
+       x1="76.452385"
+       y1="96.256538"
+       x2="147.20831"
+       y2="96.256538" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8133"
+       id="linearGradient8092-9-9"
+       x1="76.351189"
+       y1="138.74049"
+       x2="147.22173"
+       y2="138.74049"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5070142,0,0,1.4089539,100.1958,59.713381)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -570,9 +717,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="929.92081"
-     inkscape:cy="440.4868"
+     inkscape:zoom="1"
+     inkscape:cx="1690.7932"
+     inkscape:cy="681.76875"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -619,7 +766,7 @@
        id="guide7786"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="112.33672,171.0525"
+       position="418.33026,167.65606"
        orientation="0,1"
        id="guide7912"
        inkscape:locked="false" />
@@ -682,6 +829,11 @@
        position="70.906604,117.58523"
        orientation="0,1"
        id="guide8225"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="396.81506,117.58523"
+       orientation="1,0"
+       id="guide8541"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
@@ -1791,67 +1943,113 @@ pgsAsPgLAAAwS/Yk+acWfwEAgH4t/m9N8me6AgAAAKDJ/wdxl73kE7bFtQAAAABJRU5ErkJggg==
        inkscape:export-xdpi="100.873"
        inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
        style="display:inline;fill:url(#linearGradient7790-3);fill-opacity:1;stroke:none;stroke-width:0.68956792;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 209.42732,43.779601 c 29.61527,5.166645 54.48927,7.347865 86.11058,0 2.73522,39.911685 2.73522,91.041829 2.73522,131.318539 -31.10983,6.3246 -61.58447,5.17131 -91.58102,0 -1e-5,-39.1646 -1e-5,-90.659734 2.73522,-131.318539 z"
+       d="m 241.7615,55.950431 c 29.61527,5.166645 54.48927,7.347865 86.11058,0 2.73522,39.911685 2.73522,78.870999 2.73522,119.147709 -31.10983,6.3246 -61.58447,5.17131 -91.58102,0 -1e-5,-39.1646 -1e-5,-78.488904 2.73522,-119.147709 z"
        id="path8211-5"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path8227-5"
-       d="m 209.42731,43.779606 c 29.61528,5.16665 54.48928,7.34787 86.11058,0 2.73523,39.91169 2.73523,91.041824 2.73523,131.318534 -31.10983,6.3246 -61.58447,5.17131 -91.58103,0 0,-39.1646 0,-90.659734 2.73522,-131.318534 z"
-       style="display:inline;fill:url(#linearGradient8229-9);fill-opacity:1;stroke:none;stroke-width:0.68956792;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
-       inkscape:export-xdpi="100.873"
-       inkscape:export-ydpi="100.873" />
     <g
-       id="g8422">
+       id="g10321"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873">
       <path
          inkscape:export-ydpi="100.873"
          inkscape:export-xdpi="100.873"
-         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
-         style="display:inline;fill:#858a93;fill-opacity:1;stroke:none;stroke-width:0.68956792;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 217.86679,199.44971 c 30.50312,6.32525 61.01035,5.66354 91.58103,0 l -1.36762,20.4684 c -29.95696,5.56027 -57.7248,5.75425 -88.8458,0 z"
-         id="path8049-0"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+         style="opacity:0.35714291;fill:url(#linearGradient8164-2);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.38554007px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 457.03503,58.684677 9.95653,1.785944 c 0,0 9.62959,1.490713 9.95654,1.785942 0.35621,0.321649 0.34282,76.579327 0.34282,76.579327 0,0 0.5934,34.10525 0.34282,34.6528 -0.15937,0.34822 -8.79345,5.67939 -8.79345,5.67939 l -8.79341,5.67939 v -12.01543 l 9.05952,-7.90039 -0.3102,-90.693976 -11.16031,-4.267844 z"
+         id="path8162-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccscsccccccc" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+         sodipodi:nodetypes="cczcsccccccc"
+         inkscape:connector-curvature="0"
+         id="path8136-8"
+         d="m 456.85702,57.213504 9.98558,2.427387 c 0,0 9.64316,2.103862 9.98556,2.427385 0.34241,0.323526 0.3021,76.665154 0.3021,76.665154 0,0 0.51129,34.27384 0.30209,34.73861 -0.18116,0.40249 -8.69276,5.68769 -8.69276,5.68769 l -8.69271,5.68774 v -14.25216 l 8.18744,-6.21339 -0.40279,-90.654463 -10.19564,-3.757627 z"
+         style="fill:url(#linearGradient8144-1);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+         style="display:inline;fill:url(#linearGradient7790-5);fill-opacity:1.0;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 356.4338,57.213504 c 35.65899,-6.450633 64.8725,-6.306531 100.42322,0 3.18986,42.765524 3.18986,84.510576 3.18986,127.667226 -35.74053,-6.42114 -71.3345,-6.33566 -106.80292,0 0,-41.96502 0,-84.10116 3.18984,-127.667226 z"
+         id="path7788-2"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccc" />
       <path
          inkscape:export-ydpi="100.873"
          inkscape:export-xdpi="100.873"
-         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+         sodipodi:nodetypes="ccc"
+         inkscape:connector-curvature="0"
+         id="path7910-4"
+         d="m 354.04141,189.6313 c 35.33962,-6.5846 69.44353,-6.45347 105.20799,0 -35.73197,6.09349 -69.73666,6.03574 -105.20799,0 z"
+         style="display:inline;fill:url(#radialGradient7920-4);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.38554007px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+         style="display:inline;fill:url(#linearGradient8013-4);fill-opacity:1;stroke:none;stroke-width:0.77083737;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 353.24396,184.84747 c 35.29207,-6.36562 70.89015,-6.42517 106.80292,0 l -0.79748,4.78383 c -35.73055,-6.31013 -69.73095,-6.44705 -105.20799,0 z"
+         id="path8011-2"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
-         id="path8084-6"
-         d="m 217.86679,199.44971 c 30.50312,6.32525 61.01035,5.66354 91.58103,0 l -1.36762,20.4684 c -29.95696,5.56027 -57.7248,5.75425 -88.8458,0 z"
-         style="display:inline;fill:url(#linearGradient8092-9);fill-opacity:1;stroke:none;stroke-width:0.68956792;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         id="path8170-3"
+         d="m 356.4338,57.213504 -16.97338,-1.3e-5 15.74059,17.123851 3.24781,-16.514726 z"
+         style="fill:url(#linearGradient8178-1);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.529;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
       <path
          inkscape:export-ydpi="100.873"
          inkscape:export-xdpi="100.873"
-         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
          sodipodi:nodetypes="cc"
          inkscape:connector-curvature="0"
-         id="path8080-0"
-         d="m 219.2344,219.91811 c 29.61696,5.5302 59.23223,5.5291 88.8458,0"
-         style="display:inline;fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:0.9972012;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         id="path8539"
+         d="m 353.24396,184.88073 c 35.06292,-6.45824 70.65803,-6.52938 106.80291,0"
+         style="fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:0.55892777;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g10332"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873"
+       transform="translate(-156.75258,5.465973)">
       <path
          inkscape:export-ydpi="100.873"
          inkscape:export-xdpi="100.873"
-         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
-         style="display:inline;fill:none;fill-rule:evenodd;stroke:#202020;stroke-width:0.39105934;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 218.80962,212.95989 c 29.61697,5.5302 60.08178,5.5291 89.69536,0"
-         id="path8082-8"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
+         style="display:inline;fill:url(#linearGradient10151);fill-opacity:1;stroke:none;stroke-width:0.77083731;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 513.09826,51.747531 c 34.53769,5.536086 63.54605,7.873271 100.42322,0 3.18985,42.765539 3.18985,84.510589 3.18985,127.667239 -36.28067,6.77683 -71.82058,5.54108 -106.80292,0 -1e-5,-41.96502 -1e-5,-84.10116 3.18985,-127.667239 z"
+         id="path10149"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cc" />
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
+         style="display:inline;fill:url(#linearGradient8229-9);fill-opacity:1;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 513.18638,51.747531 c 34.39069,5.536086 63.70304,7.873272 100.42322,0 3.17628,42.765532 3.10173,84.510589 3.10173,127.667239 -36.12623,6.77683 -71.88134,5.50781 -106.71479,-0.0333 0,-41.96503 0.0136,-84.067906 3.18984,-127.633969 z"
+         id="path8227-5"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontGlass.png"
+         style="display:inline;fill:url(#linearGradient8229-9-5);fill-opacity:1;stroke:none;stroke-width:0.77083731;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0.30000001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 513.09826,51.747531 c 34.53769,5.536086 63.54607,7.873271 100.42322,0 3.18986,42.765529 3.18986,84.510589 3.18986,127.667239 -36.28068,6.77683 -71.82057,5.54108 -106.80293,0 0,-41.96503 0,-84.10116 3.18985,-127.667239 z"
+         id="path8227-5-4"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
     </g>
-    <path
-       sodipodi:nodetypes="ccc"
-       inkscape:connector-curvature="0"
-       id="path7927-5"
-       d="m 217.86677,199.48075 c 30.38925,-5.96949 60.91385,-6.02281 91.58105,0 -30.61209,5.98158 -61.13827,5.92399 -91.58105,0 z"
-       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.34489256px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettle2.png"
-       inkscape:export-xdpi="100.873"
-       inkscape:export-ydpi="100.873" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1887,6 +2085,107 @@ pgsAsPgLAAAwS/Yk+acWfwEAgH4t/m9N8me6AgAAAKDJ/wdxl73kE7bFtQAAAABJRU5ErkJggg==
        id="path8170"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettle2.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 4">
+    <path
+       sodipodi:nodetypes="ccccc"
+       inkscape:connector-curvature="0"
+       id="path8049-0"
+       d="m 364.35643,245.17247 c 35.57311,6.77753 71.15102,6.0685 106.80292,0 l -1.59493,21.93197 c -34.93618,5.95785 -67.31938,6.1657 -103.61307,0 z"
+       style="display:inline;fill:#899e9e;fill-opacity:1;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+    <path
+       style="display:inline;fill:url(#linearGradient8092-9);fill-opacity:1;stroke:none;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 362.7615,267.10444 c 35.57311,6.77753 71.15102,6.0685 106.80292,0 l -1.59493,21.93197 c -34.93618,5.95785 -67.31938,6.1657 -103.61307,0 z"
+       id="path8084-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05799997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 365.95135,267.10444 c 34.53966,5.92563 69.07736,5.92445 103.61307,0"
+       id="path8080-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8082-8"
+       d="m 365.45597,259.64868 c 34.53967,5.92563 70.06811,5.92445 104.60383,0"
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#333333;stroke-width:0.55892777;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 215.25815,241.98628 c 35.06292,-6.45824 70.65803,-6.52938 106.80291,0"
+       id="path8539-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleBack.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873" />
+    <g
+       id="g10312"
+       inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+       inkscape:export-xdpi="100.873"
+       inkscape:export-ydpi="100.873">
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         style="display:inline;fill:#899e9e;fill-opacity:1;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 215.25812,241.95302 c 35.57311,6.77753 71.15102,6.0685 106.80292,0 l -1.59493,21.93198 c -34.93618,5.95784 -67.31938,6.1657 -103.61307,0 z"
+         id="path8049-0-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         sodipodi:nodetypes="ccccc"
+         inkscape:connector-curvature="0"
+         id="path8084-6-4"
+         d="m 215.25812,241.95302 c 35.57311,6.77753 71.15102,6.0685 106.80292,0 l -1.59493,21.93198 c -34.93618,5.95784 -67.31938,6.1657 -103.61307,0 z"
+         style="display:inline;fill:url(#linearGradient8092-9-9);fill-opacity:1;stroke:none;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path8080-0-8"
+         d="m 216.85304,263.885 c 34.53966,5.92563 69.07736,5.92445 103.61307,0"
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05799997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="100.873"
+         inkscape:export-xdpi="100.873"
+         inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettleFrontBase.png"
+         style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.52899998;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 216.35766,256.42923 c 34.53967,5.92564 70.06811,5.92445 104.60383,0"
+         id="path8082-8-9"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <path
+       sodipodi:nodetypes="ccc"
+       inkscape:connector-curvature="0"
+       id="path7927-5-6"
+       d="m 215.2581,241.98628 c 35.44033,-6.39633 71.03849,-6.45347 106.80296,0 -35.7002,6.40929 -71.30021,6.34758 -106.80296,0 z"
+       style="display:inline;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:0.38554007px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        inkscape:export-filename="/home/marek/Projects/Godot/Tea Zen/assets/textures/TeaKettle2.png"
        inkscape:export-xdpi="100.873"
        inkscape:export-ydpi="100.873" />
