@@ -1,10 +1,9 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/textures/P1020509_Standard.jpg" type="Texture" id=3]
 [ext_resource path="res://scenes/Timer/Timer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/textures/TeaKettle.png" type="Texture" id=5]
 [ext_resource path="res://assets/audio/WaitingOnAction.ogg" type="AudioStream" id=6]
 [ext_resource path="res://assets/audio/Closing.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/audio/CheckTeaStatus.ogg" type="AudioStream" id=8]
@@ -38,6 +37,9 @@
 [ext_resource path="res://assets/audio/Outcomes/WellSteeped.ogg" type="AudioStream" id=36]
 [ext_resource path="res://assets/audio/Outcomes/StrongRoseFlavor.ogg" type="AudioStream" id=37]
 [ext_resource path="res://scenes/MusicController/MusicController.tscn" type="PackedScene" id=38]
+[ext_resource path="res://assets/textures/TeaKettleBack.png" type="Texture" id=39]
+[ext_resource path="res://assets/textures/TeaKettleFrontGlass.png" type="Texture" id=40]
+[ext_resource path="res://assets/textures/TeaKettleFrontBase.png" type="Texture" id=41]
 
 [sub_resource type="Animation" id=70]
 resource_name = "EndOfDemo"
@@ -124,134 +126,134 @@ tracks/5/keys = {
 resource_name = "Intro"
 length = 50.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/TeaControl/TeaKettle:modulate")
+tracks/0/path = NodePath("Control/Timer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5.8, 6.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Control/Timer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 15.3, 16.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control/CaptionsLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 1.9, 4.3, 7.5, 11.2, 15.1, 16.8, 19.7, 22.3, 23.9, 25.2, 28.5, 29.3, 38.7, 42, 45.2, 49.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "", "Welcome to the tea party", "Where it's tea time, all the time.", "Here’s a bag of tea and a kettle of boiled water.", "I’m not really sure what your prior experience is with tea, but...", "this is an herbal so you can’t really go too off the rails.", "Here's a timer anyway.", "Now I need to tend to some other recent arrivals,", "but I should be back in like… err…", "Five minutes.", "Don’t hold me to that.", "The timer is for the tea. Not for me.", "Okay?", "", "Just pick up the tea bag and drop it into the water.", " You know, whenever you get relaxed. Relax first. ", "Time is but a concept, and I’m not waiting on you or anything.", "" ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 29.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
 "times": PoolRealArray( 0, 29.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0, 38.7, 49.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Control/TeaControl/Sprite:region_rect")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 0, 0, 352, 504 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Control/TeaControl/Sprite:region_enabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TeaKettle/TeaFluid:region_enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
 "times": PoolRealArray( 0, 4.8, 5.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
+tracks/7/type = "value"
+tracks/7/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0, 29.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/10/type = "animation"
-tracks/10/path = NodePath("Control/BagOfTeas/TeaBagButton/AnimationPlayer")
+tracks/8/type = "animation"
+tracks/8/path = NodePath("Control/BagOfTeas/TeaBagButton/AnimationPlayer")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": PoolStringArray( "Pulse", "Pulse" ),
+"times": PoolRealArray( 29.9, 38.8 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Control/TeaKettle/TeaFluid:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 352, 504 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Control/TeaKettle:modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"clips": PoolStringArray( "Pulse", "Pulse" ),
-"times": PoolRealArray( 29.9, 38.8 )
+"times": PoolRealArray( 0, 5.8, 6.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=84]
@@ -579,7 +581,7 @@ tracks/2/keys = {
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/TeaControl/TeaKettle:modulate")
+tracks/3/path = NodePath("Control/Timer:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -591,7 +593,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/Timer:modulate")
+tracks/4/path = NodePath("AudioStreamPlayers/HostChecks:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -600,10 +602,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AudioStreamPlayers/HostChecks:playing")
+tracks/5/path = NodePath("AudioStreamPlayers/HostClosing:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -615,7 +617,7 @@ tracks/5/keys = {
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AudioStreamPlayers/HostClosing:playing")
+tracks/6/path = NodePath("Control/TeaKettle/TeaFluid:region_enabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -627,7 +629,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Control/TeaControl:modulate")
+tracks/7/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -636,10 +638,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ false ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Control/TeaControl/Sprite:region_enabled")
+tracks/8/path = NodePath("Control/TeaKettle/TeaFluid:region_rect")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -648,10 +650,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Rect2( 0, 504, 352, 0 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/9/path = NodePath("Control/TeaKettle/TeaFluid:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -660,10 +662,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Control/TeaControl/Sprite:region_rect")
+tracks/10/path = NodePath("Control/TeaKettle/TeaFluid:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -672,10 +674,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 0, 504, 352, 0 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/TeaControl/Sprite:position")
+tracks/11/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -684,10 +686,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 320, 704 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Control/TeaControl/Sprite:scale")
+tracks/12/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -696,10 +698,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/13/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -708,10 +710,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ 2 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/14/path = NodePath("Area2D:collision_layer")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -720,10 +722,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 1 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
+tracks/15/path = NodePath("Area2D:collision_mask")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -732,10 +734,10 @@ tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 2 ]
+"values": [ 1 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Area2D:collision_layer")
+tracks/16/path = NodePath("AudioStreamPlayers/Music:volume_db")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -744,10 +746,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1 ]
+"values": [ 0.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Area2D:collision_mask")
+tracks/17/path = NodePath("AudioStreamPlayers/Outcomes/StrongBlueberryFlavor:playing")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -756,10 +758,10 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1 ]
+"values": [ false ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/18/path = NodePath("AudioStreamPlayers/Outcomes/StrongChamomileFlavor:playing")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -768,10 +770,10 @@ tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ false ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Control/TeaControl/TeaKettle:scale")
+tracks/19/path = NodePath("AudioStreamPlayers/Outcomes/StrongElderberryFlavor:playing")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
@@ -780,10 +782,10 @@ tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("AudioStreamPlayers/Outcomes/StrongBlueberryFlavor:playing")
+tracks/20/path = NodePath("AudioStreamPlayers/Outcomes/StrongRoseFlavor:playing")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -795,7 +797,7 @@ tracks/20/keys = {
 "values": [ false ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("AudioStreamPlayers/Outcomes/StrongChamomileFlavor:playing")
+tracks/21/path = NodePath("AudioStreamPlayers/Outcomes/StrongStrawberryFlavor:playing")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/imported = false
@@ -807,7 +809,7 @@ tracks/21/keys = {
 "values": [ false ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("AudioStreamPlayers/Outcomes/StrongElderberryFlavor:playing")
+tracks/22/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/imported = false
@@ -819,7 +821,7 @@ tracks/22/keys = {
 "values": [ false ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("AudioStreamPlayers/Outcomes/StrongRoseFlavor:playing")
+tracks/23/path = NodePath("AudioStreamPlayers/Outcomes/LighterBlueberryFlavor:playing")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/imported = false
@@ -831,7 +833,7 @@ tracks/23/keys = {
 "values": [ false ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("AudioStreamPlayers/Outcomes/StrongStrawberryFlavor:playing")
+tracks/24/path = NodePath("AudioStreamPlayers/Outcomes/LighterChamomileFlavor:playing")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/imported = false
@@ -843,7 +845,7 @@ tracks/24/keys = {
 "values": [ false ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("AudioStreamPlayers/Outcomes/AlsoSomethingElse:playing")
+tracks/25/path = NodePath("AudioStreamPlayers/Outcomes/LighterElderberryFlavor:playing")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/imported = false
@@ -855,7 +857,7 @@ tracks/25/keys = {
 "values": [ false ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("AudioStreamPlayers/Outcomes/LighterBlueberryFlavor:playing")
+tracks/26/path = NodePath("AudioStreamPlayers/Outcomes/LighterRoseFlavor:playing")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/imported = false
@@ -867,7 +869,7 @@ tracks/26/keys = {
 "values": [ false ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("AudioStreamPlayers/Outcomes/LighterChamomileFlavor:playing")
+tracks/27/path = NodePath("AudioStreamPlayers/Outcomes/LighterStrawberryFlavor:playing")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/imported = false
@@ -879,7 +881,7 @@ tracks/27/keys = {
 "values": [ false ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("AudioStreamPlayers/Outcomes/LighterElderberryFlavor:playing")
+tracks/28/path = NodePath("AudioStreamPlayers/Outcomes/SteepedEveryFlavor:playing")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/imported = false
@@ -891,7 +893,7 @@ tracks/28/keys = {
 "values": [ false ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("AudioStreamPlayers/Outcomes/LighterRoseFlavor:playing")
+tracks/29/path = NodePath("AudioStreamPlayers/Outcomes/NoSteep:playing")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/imported = false
@@ -903,7 +905,7 @@ tracks/29/keys = {
 "values": [ false ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("AudioStreamPlayers/Outcomes/LighterStrawberryFlavor:playing")
+tracks/30/path = NodePath("AudioStreamPlayers/Outcomes/LongSteep:playing")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/imported = false
@@ -915,7 +917,7 @@ tracks/30/keys = {
 "values": [ false ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("AudioStreamPlayers/Outcomes/SteepedEveryFlavor:playing")
+tracks/31/path = NodePath("AudioStreamPlayers/Outcomes/LightSteep:playing")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/imported = false
@@ -927,7 +929,7 @@ tracks/31/keys = {
 "values": [ false ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("AudioStreamPlayers/Outcomes/NoSteep:playing")
+tracks/32/path = NodePath("AudioStreamPlayers/Outcomes/WellSteeped:playing")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/imported = false
@@ -939,7 +941,7 @@ tracks/32/keys = {
 "values": [ false ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("AudioStreamPlayers/Outcomes/LongSteep:playing")
+tracks/33/path = NodePath("Control/TeaKettle:scale")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/imported = false
@@ -948,10 +950,10 @@ tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("AudioStreamPlayers/Outcomes/LightSteep:playing")
+tracks/34/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:self_modulate")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/imported = false
@@ -960,10 +962,10 @@ tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("AudioStreamPlayers/Outcomes/WellSteeped:playing")
+tracks/35/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:modulate")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/imported = false
@@ -972,7 +974,19 @@ tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Control/TeaKettle:modulate")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=63]
@@ -1015,7 +1029,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Control/TeaControl/Sprite:region_enabled")
+tracks/3/path = NodePath("Control/TeaKettle/TeaFluid:region_enabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -1027,48 +1041,36 @@ tracks/3/keys = {
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/TeaControl/Sprite:region_rect")
+tracks/4/path = NodePath("Control/TeaKettle/TeaFluid:region_rect")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 10.2, 11.9 ),
+"times": PoolRealArray( 0, 10.2, 12 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Rect2( 0, 0, 352, 504 ), Rect2( 0, 0, 352, 504 ), Rect2( 0, 504, 352, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Control/TeaControl/Sprite:position")
+tracks/5/path = NodePath("Control/TeaKettle/TeaFluid:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 10.2, 11.9 ),
+"times": PoolRealArray( 0, 10.2, 12 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 320, 704 ), Vector2( 320, 704 ), Vector2( 320, 1008 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 252 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Control/TeaControl/TeaKettle:modulate")
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 11.9, 12.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/7/type = "method"
-tracks/7/path = NodePath(".")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 13 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -1076,8 +1078,20 @@ tracks/7/keys = {
 "method": "taste_tea"
 } ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 tracks/8/type = "value"
-tracks/8/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/8/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1088,8 +1102,8 @@ tracks/8/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/9/type = "method"
+tracks/9/path = NodePath("Control/Timer")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1097,37 +1111,37 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/10/type = "method"
-tracks/10/path = NodePath("Control/Timer")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "stop"
 } ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( -0.1, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 tracks/11/type = "value"
-tracks/11/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/11/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( -0.1, 11.9, 12.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/12/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1136,10 +1150,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/13/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1148,10 +1162,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
+tracks/14/path = NodePath("Area2D:collision_layer")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -1163,7 +1177,7 @@ tracks/14/keys = {
 "values": [ 0 ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Area2D:collision_layer")
+tracks/15/path = NodePath("Area2D:collision_mask")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -1175,40 +1189,28 @@ tracks/15/keys = {
 "values": [ 0 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Area2D:collision_mask")
+tracks/16/path = NodePath("AudioStreamPlayers/Music:volume_db")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("AudioStreamPlayers/Music:volume_db")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -10.0 ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("Control/TeaControl/TeaKettle:scale")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( -0.1 ),
-"transitions": PoolRealArray( 1 ),
+tracks/17/type = "value"
+tracks/17/path = NodePath("Control/TeaKettle:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( -0.1, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.2, 1.2 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=81]
@@ -1244,31 +1246,31 @@ tracks/1/keys = {
 resource_name = "Steeping"
 length = 16.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Control/TeaControl/TeaKettle:scale")
+tracks/0/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Control/TeaControl/Sprite:scale")
+tracks/1/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/2/path = NodePath("Control/CaptionsLabel:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1277,31 +1279,31 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ "" ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/3/path = NodePath("Control/TeaKettle:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"times": PoolRealArray( 0, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Control/CaptionsLabel:text")
+tracks/4/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "" ]
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.12549 ) ]
 }
 
 [sub_resource type="Animation" id=71]
@@ -1790,20 +1792,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TeaControl" type="Control" parent="Control"]
-margin_right = 640.0
-margin_bottom = 1024.0
-
-[node name="TeaKettle" type="Sprite" parent="Control/TeaControl"]
+[node name="TeaKettle" type="Node2D" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 320, 704 )
-texture = ExtResource( 5 )
+position = Vector2( 320, 696 )
 
-[node name="Sprite" type="Sprite" parent="Control/TeaControl"]
+[node name="TeaKettleBack" type="Sprite" parent="Control/TeaKettle"]
+position = Vector2( 8, -40 )
+texture = ExtResource( 39 )
+
+[node name="TeaFluid" type="Sprite" parent="Control/TeaKettle"]
 material = SubResource( 57 )
-position = Vector2( 320, 704 )
 texture = SubResource( 14 )
 region_rect = Rect2( 0, 504, 352, 0 )
+
+[node name="TeaKettleFrontBase" type="Sprite" parent="Control/TeaKettle"]
+position = Vector2( 0.5, 262 )
+texture = ExtResource( 41 )
+
+[node name="TeaKettleFrontGlass" type="Sprite" parent="Control/TeaKettle"]
+position = Vector2( 1, -40 )
+texture = ExtResource( 40 )
 
 [node name="BagOfTeas" type="Control" parent="Control"]
 margin_left = 56.0
@@ -1901,6 +1909,10 @@ custom_constants/margin_right = 6
 custom_constants/margin_top = 12
 custom_constants/margin_left = 12
 custom_constants/margin_bottom = 6
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="Control" type="Control" parent="Control/BordersMarginContainer"]
 margin_left = 12.0
@@ -2012,7 +2024,7 @@ stream = ExtResource( 7 )
 bus = "Host"
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 144, 448 )
+position = Vector2( 144, 440 )
 space_override = 3
 linear_damp = 20.0
 angular_damp = 12.0
