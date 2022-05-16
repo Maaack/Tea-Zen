@@ -1,5 +1,23 @@
+tool
 extends Node
 
+
+export(Vector2) var sim_resolution : Vector2 = Vector2(256, 256) setget set_sim_resolution
+export(Vector2) var dye_resolution : Vector2 = Vector2(512, 512) setget set_dye_resolution
+
+func set_sim_resolution(value : Vector2) -> void:
+	sim_resolution = value
+	$VelocityViewport.size = sim_resolution
+	$ViscosityViewport.size = sim_resolution
+	$VelocityForcesViewport.size = sim_resolution
+	$DivergenceViewport.size = sim_resolution
+	$PressureViewport.size = sim_resolution
+	$GradientSubtractionViewport.size = sim_resolution
+
+func set_dye_resolution(value : Vector2) -> void:
+	dye_resolution = value
+	$DyeViewport.size = dye_resolution
+	$DyeBackBufferViewport.size = dye_resolution
 
 func apply_velocity_force(position, vector, cascade : bool = false):
 	$VelocityViewport/Sprite.material.set_shader_param("brushCenterUV", position)
@@ -36,18 +54,6 @@ func _ready():
 func _process(delta):
 	$DyeViewport/Sprite.material.set_shader_param("deltaTime", delta)
 	$VelocityViewport/Sprite.material.set_shader_param("deltaTime", delta)
-
-func set_paint_size(paint_size : Vector2):
-	$DyeViewport.size = paint_size
-	$DyeBackBufferViewport.size = paint_size
-
-func set_simulation_size(sim_size : Vector2):
-	$VelocityViewport.size = sim_size
-	$ViscosityViewport.size = sim_size
-	$VelocityForcesViewport.size = sim_size
-	$DivergenceViewport.size = sim_size
-	$PressureViewport.size = sim_size
-	$GradientSubtractionViewport.size = sim_size
 
 func set_brush_color(new_color : Color):
 		$DyeViewport/Sprite.material.set_shader_param("brushColor", new_color)
