@@ -21,7 +21,7 @@
      id="defs7038">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient1082">
+       id="Glass-LightYellow-LowSat">
       <stop
          style="stop-color:#7b794c;stop-opacity:0.23529412"
          offset="0"
@@ -861,7 +861,7 @@
        gradientTransform="matrix(1.5070142,0,0,1.4089539,233.47679,-178.42721)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#Glass-LightYellow"
+       xlink:href="#Glass-LightYellow-LowSat"
        id="linearGradient8144-1-7"
        x1="147.22173"
        y1="129.34393"
@@ -871,7 +871,7 @@
        gradientTransform="matrix(1.5070142,0,0,1.4089539,233.47679,-180.66392)" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#Glass-LightYellow"
+       xlink:href="#Glass-LightYellow-LowSat"
        id="linearGradient7790-5-4"
        gradientUnits="userSpaceOnUse"
        x1="76.627953"
@@ -922,7 +922,7 @@
        y2="98.751488" />
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient1082"
+       xlink:href="#Glass-LightYellow-LowSat"
        id="linearGradient10713"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1.5070142,0,0,1.4089539,647.72177,-184.58728)"
@@ -938,9 +938,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="1768.7719"
-     inkscape:cy="738.10769"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="2292.2569"
+     inkscape:cy="1138.9194"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="false"

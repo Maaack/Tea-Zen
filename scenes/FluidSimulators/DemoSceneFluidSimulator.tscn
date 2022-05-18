@@ -16,7 +16,7 @@
 
 [sub_resource type="ShaderMaterial" id=21]
 shader = ExtResource( 10 )
-shader_param/deltaTime = 0.0166667
+shader_param/deltaTime = 0.016301
 shader_param/brushColor = Color( 0, 0, 0, 0 )
 shader_param/brushCenterUV = null
 shader_param/brushScale = Vector2( 0.15, 0.15 )
