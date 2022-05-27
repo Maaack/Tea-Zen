@@ -2,9 +2,9 @@
 A short tea making experience.
 
 ## Screenshots
-![](assets/screenshots/2022-04-12/02.png)
-![](assets/screenshots/2022-04-12/05.png)
-![](assets/screenshots/2022-04-12/07.png)
+![](assets/screenshots/2022-05-16/01.png)
+![](assets/screenshots/2022-05-16/02.png)
+![](assets/screenshots/2022-05-16/03.png)
 
 ## Resources
 [MIT License](./LICENSE.md)  
