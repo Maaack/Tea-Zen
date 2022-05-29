@@ -72,6 +72,10 @@ config/name="Tea Time"
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Config="*res://managers/Config.gd"
+
 [display]
 
 window/size/width=640
