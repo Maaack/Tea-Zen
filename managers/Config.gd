@@ -1,6 +1,7 @@
 extends Node
 
 const CONFIG_FILE_LOCATION := "user://config.cfg"
+const DEFAULT_CONFIG_FILE_LOCATION := "res://default_config.cfg"
 
 var config_file : ConfigFile
 
@@ -12,7 +13,10 @@ func load_config_file() -> void:
 		return
 	config_file = ConfigFile.new()
 	var load_error : int = config_file.load(CONFIG_FILE_LOCATION)
-	if load_error: 
+	if load_error:
+		var load_default_error : int = config_file.load(DEFAULT_CONFIG_FILE_LOCATION)
+		if load_default_error:
+			print("loading default config file failed with error %d" % load_default_error)
 		var save_error : int = config_file.save(CONFIG_FILE_LOCATION)
 		if save_error:
 			print("save config file failed with error %d" % save_error)
