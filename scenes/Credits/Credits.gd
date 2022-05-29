@@ -18,7 +18,9 @@ export(float) var current_speed : float = 1.0
 
 func load_file(file_path):
 	var file : File = File.new()
-	file.open(file_path, File.READ)
+	var open_error : int = file.open(file_path, File.READ)
+	if open_error:
+		print("load file failed with error %d" % open_error)
 	var text : String = file.get_as_text()
 	file.close()
 	return text

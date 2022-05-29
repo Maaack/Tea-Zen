@@ -5,48 +5,82 @@ signal return_button_pressed
 const MASTER_AUDIO_BUS = 'Master'
 const VOICE_AUDIO_BUS = 'Host'
 const MUSIC_AUDIO_BUS = 'Music'
+const MUTE_SETTING = 'Mute'
+const AUDIO_SECTION = 'AudioSettings'
 
 onready var master_slider = $MasterControl/MasterHSlider
 onready var sfx_slider = $SFXControl/SFXHSlider
 onready var music_slider = $MusicControl/MusicHSlider
 onready var mute_button = $HBoxContainer/MuteButton
 
-func _get_bus_volume_2_linear(bus_name : String):
+func _get_bus_volume_2_linear(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
-	var audio_db : float = AudioServer.get_bus_volume_db(bus_index)
-	return db2linear(audio_db)
+	var volume_db : float = AudioServer.get_bus_volume_db(bus_index)
+	return db2linear(volume_db)
 
-func _is_muted():
+func _set_bus_linear_2_volume(bus_name : String, linear : float) -> void:
+	var bus_index : int = AudioServer.get_bus_index(bus_name)
+	var volume_db : float = linear2db(linear)
+	AudioServer.set_bus_volume_db(bus_index, volume_db)
+	Config.set_config(AUDIO_SECTION, bus_name, linear)
+
+func _is_muted() -> bool:
 	var bus_index : int = AudioServer.get_bus_index(MASTER_AUDIO_BUS)
 	return AudioServer.is_bus_mute(bus_index)
 
-func _update_settings():
+func _set_mute(mute_flag : bool) -> void:
+	var bus_index : int = AudioServer.get_bus_index(MASTER_AUDIO_BUS)
+	AudioServer.set_bus_mute(bus_index, mute_flag)
+	Config.set_config(AUDIO_SECTION, MUTE_SETTING, mute_flag)
+
+func _update_ui():
 	master_slider.value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
 	sfx_slider.value = _get_bus_volume_2_linear(VOICE_AUDIO_BUS)
 	music_slider.value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
 	mute_button.pressed = _is_muted()
 
+func _sync_with_config():
+	var master_audio_value : float
+	var voice_audio_value : float
+	var music_audio_value : float
+	var mute_audio_flag : bool
+	if not Config.has_section(AUDIO_SECTION):
+		master_audio_value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
+		voice_audio_value = _get_bus_volume_2_linear(VOICE_AUDIO_BUS)
+		music_audio_value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
+		mute_audio_flag = _is_muted()
+		Config.set_config(AUDIO_SECTION, MASTER_AUDIO_BUS, master_audio_value)
+		Config.set_config(AUDIO_SECTION, VOICE_AUDIO_BUS, voice_audio_value)
+		Config.set_config(AUDIO_SECTION, MUSIC_AUDIO_BUS, music_audio_value)
+		Config.set_config(AUDIO_SECTION, MUTE_SETTING, mute_audio_flag)
+	else:
+		master_audio_value = Config.get_config(AUDIO_SECTION, MASTER_AUDIO_BUS)
+		voice_audio_value = Config.get_config(AUDIO_SECTION, VOICE_AUDIO_BUS)
+		music_audio_value = Config.get_config(AUDIO_SECTION, MUSIC_AUDIO_BUS)
+		mute_audio_flag = Config.get_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
+	_set_bus_linear_2_volume(MASTER_AUDIO_BUS, master_audio_value)
+	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, voice_audio_value)
+	_set_bus_linear_2_volume(MUSIC_AUDIO_BUS, music_audio_value)
+	_set_mute(mute_audio_flag)
+	_update_ui()
+
 func _ready():
-	_update_settings()
+	_sync_with_config()
 
 func _on_ReturnButton_pressed():
 	emit_signal("return_button_pressed")
 
 func _on_MasterHSlider_value_changed(value):
-	var bus_index : int = AudioServer.get_bus_index(MASTER_AUDIO_BUS)
-	AudioServer.set_bus_volume_db(bus_index, linear2db(value))
+	_set_bus_linear_2_volume(MASTER_AUDIO_BUS, value)
 
 func _on_SFXHSlider_value_changed(value):
-	var bus_index : int = AudioServer.get_bus_index(VOICE_AUDIO_BUS)
-	AudioServer.set_bus_volume_db(bus_index, linear2db(value))
+	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, value)
 
 func _on_MusicHSlider_value_changed(value):
-	var bus_index : int = AudioServer.get_bus_index(MUSIC_AUDIO_BUS)
-	AudioServer.set_bus_volume_db(bus_index, linear2db(value))
+	_set_bus_linear_2_volume(MUSIC_AUDIO_BUS, value)
 
 func _on_MuteButton_toggled(button_pressed):
-	var bus_index : int = AudioServer.get_bus_index(MASTER_AUDIO_BUS)
-	AudioServer.set_bus_mute(bus_index, button_pressed)
+	_set_mute(button_pressed)
 
 func _unhandled_key_input(event):
 	if event.is_action_released('ui_mute'):
