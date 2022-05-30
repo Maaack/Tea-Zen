@@ -9,6 +9,7 @@ const TOTAL_STEEPINGS = "TotalSteepings"
 const TOTAL_TIME_PLAYED = "TotalTimePlayed"
 const FIRST_VERSION_PLAYED = "FirstVersionPlayed"
 const UPDATE_COUNTER_RESET = 3.0
+const UNKNOWN_VERSION = "unknown"
 
 var remembered_intros : int = 0
 var remembered_steepings : int = 0
@@ -16,7 +17,7 @@ var remembered_time_played : float = 0.0
 var total_intros : int = 0
 var total_steepings : int = 0
 var total_time_played : float = 0.0
-var first_version_played : String = "unknown"
+var first_version_played : String = UNKNOWN_VERSION setget set_first_version_played
 var update_counter : float = 0.0
 
 func _process(delta):
@@ -59,3 +60,9 @@ func reset_memory():
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_INTROS, remembered_intros)
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_STEEPINGS, remembered_steepings)
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_TIME_PLAYED, remembered_time_played)
+
+func set_first_version_played(value : String) -> void:
+	if first_version_played != UNKNOWN_VERSION:
+		return
+	first_version_played = value
+	Config.set_config(PERSISTENT_SECTION, FIRST_VERSION_PLAYED, first_version_played)
