@@ -82,10 +82,8 @@ func close_options():
 func _on_MouseMotionControl_force_released(position):
 	$FluidSimulator.release_velocity_force_2()
 
-
 func _on_TopMouseMotionControl_force_applied(position, vector):
 	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite)
-
 
 func _on_BottomMouseMotionControl_force_applied(position, vector):
 	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite2)

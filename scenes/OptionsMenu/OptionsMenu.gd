@@ -11,7 +11,7 @@ const AUDIO_SECTION = 'AudioSettings'
 onready var master_slider = $MasterControl/MasterHSlider
 onready var sfx_slider = $SFXControl/SFXHSlider
 onready var music_slider = $MusicControl/MusicHSlider
-onready var mute_button = $HBoxContainer/MuteButton
+onready var mute_button = $MuteControl/MuteButton
 
 func _get_bus_volume_2_linear(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
@@ -39,25 +39,19 @@ func _update_ui():
 	music_slider.value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
 	mute_button.pressed = _is_muted()
 
+func _set_init_config():
+	Config.set_config(AUDIO_SECTION, MASTER_AUDIO_BUS, _get_bus_volume_2_linear(MASTER_AUDIO_BUS))
+	Config.set_config(AUDIO_SECTION, VOICE_AUDIO_BUS, _get_bus_volume_2_linear(VOICE_AUDIO_BUS))
+	Config.set_config(AUDIO_SECTION, MUSIC_AUDIO_BUS, _get_bus_volume_2_linear(MUSIC_AUDIO_BUS))
+	Config.set_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
+
 func _sync_with_config():
-	var master_audio_value : float
-	var voice_audio_value : float
-	var music_audio_value : float
-	var mute_audio_flag : bool
 	if not Config.has_section(AUDIO_SECTION):
-		master_audio_value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
-		voice_audio_value = _get_bus_volume_2_linear(VOICE_AUDIO_BUS)
-		music_audio_value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
-		mute_audio_flag = _is_muted()
-		Config.set_config(AUDIO_SECTION, MASTER_AUDIO_BUS, master_audio_value)
-		Config.set_config(AUDIO_SECTION, VOICE_AUDIO_BUS, voice_audio_value)
-		Config.set_config(AUDIO_SECTION, MUSIC_AUDIO_BUS, music_audio_value)
-		Config.set_config(AUDIO_SECTION, MUTE_SETTING, mute_audio_flag)
-	else:
-		master_audio_value = Config.get_config(AUDIO_SECTION, MASTER_AUDIO_BUS)
-		voice_audio_value = Config.get_config(AUDIO_SECTION, VOICE_AUDIO_BUS)
-		music_audio_value = Config.get_config(AUDIO_SECTION, MUSIC_AUDIO_BUS)
-		mute_audio_flag = Config.get_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
+		_set_init_config()
+	var master_audio_value : float = Config.get_config(AUDIO_SECTION, MASTER_AUDIO_BUS)
+	var voice_audio_value : float = Config.get_config(AUDIO_SECTION, VOICE_AUDIO_BUS)
+	var music_audio_value : float = Config.get_config(AUDIO_SECTION, MUSIC_AUDIO_BUS)
+	var mute_audio_flag  : bool = Config.get_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
 	_set_bus_linear_2_volume(MASTER_AUDIO_BUS, master_audio_value)
 	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, voice_audio_value)
 	_set_bus_linear_2_volume(MUSIC_AUDIO_BUS, music_audio_value)
@@ -85,3 +79,22 @@ func _on_MuteButton_toggled(button_pressed):
 func _unhandled_key_input(event):
 	if event.is_action_released('ui_mute'):
 		mute_button.pressed = !(mute_button.pressed)
+
+func _on_ResetButton_pressed():
+	$ResetGameControl/ResetButton.hide()
+	$ResetGameControl/ResetCancelButton.show()
+	$ResetGameControl/DividerLabel.show()
+	$ResetGameControl/ResetConfirmButton.show()
+
+func _on_ResetCancelButton_pressed():
+	$ResetGameControl/ResetCancelButton.hide()
+	$ResetGameControl/DividerLabel.hide()
+	$ResetGameControl/ResetConfirmButton.hide()
+	$ResetGameControl/ResetButton.show()
+
+func _on_ResetConfirmButton_pressed():
+	PersistentData.reset_memory()
+	$ResetGameControl/ResetCancelButton.hide()
+	$ResetGameControl/DividerLabel.hide()
+	$ResetGameControl/ResetConfirmButton.hide()
+	$ResetGameControl/ResetConfirmationLabel.show()
