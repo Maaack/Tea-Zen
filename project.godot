@@ -75,6 +75,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Config="*res://managers/Config.gd"
+PersistentData="*res://managers/PersistentData.gd"
 
 [display]
 
