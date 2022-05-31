@@ -22,6 +22,10 @@ var current_tea_bag_instance : Node2D
 var current_tea_data : TeaData
 var steeping_tea_bag
 
+func _ready():
+	$AnimationTree['parameters/conditions/first_intro'] = PersistentData.remembered_intros == 0
+	$AnimationTree['parameters/conditions/second_intro'] = PersistentData.remembered_intros == 1
+
 func _started_steeping() -> void:
 	started_steeping = true
 	$Control/Timer.start()
@@ -96,7 +100,7 @@ func _queue_tea_outcome_animations() -> void:
 		animation_queue.append(ANIMATION_LONG_STEEP)
 	else:
 		animation_queue.append(ANIMATION_WELL_STEEPED)
-	
+
 
 func taste_tea() -> void:
 	_queue_tea_outcome_animations()
