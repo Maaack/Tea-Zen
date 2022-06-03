@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -350,6 +350,186 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id=90]
 resource_name = "IntroReturning"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Timer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 11.3, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 4.3, 7.5, 11.2, 12.3, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Welcome to the tea party", "It's good to see you again.", "Here’s tea and some water.", "At this point, you know this should be steeped for about 5 minutes.", "Here's your timer.", "Alright, you're all set.", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 13.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4.8, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 13.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TeaKettle:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5.8, 6.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 13.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_intro"
+} ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "IntroReturningMore"
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Timer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 11.3, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 4.3, 7.5, 11.2, 12.3, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Welcome to the tea party", "It's good to see you again.", "Here’s tea and some water.", "At this point, you know this should be steeped for about 5 minutes.", "Here's your timer.", "Alright, you're all set.", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 13.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4.8, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 13.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TeaKettle:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5.8, 6.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 13.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_intro"
+} ]
+}
+
+[sub_resource type="Animation" id=103]
+resource_name = "IntroReturningPostHiatus"
 length = 14.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/Timer:modulate")
@@ -1260,8 +1440,148 @@ tracks/3/keys = {
 "method": "taste_tea"
 } ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("Control/Timer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( -0.1, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -10.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Control/TeaKettle:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( -0.1, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Control/TeaKettle/TeaFluid:material:shader_param/region_offset")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 10.2, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 472 ) ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "ReturnOfHostBeforePhase"
+length = 0.02
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Timer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Control/Timer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/4/type = "value"
-tracks/4/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
+tracks/4/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1273,7 +1593,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AudioStreamPlayers/HostWaiting:playing")
+tracks/5/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1282,10 +1602,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
-tracks/6/type = "method"
-tracks/6/path = NodePath("Control/Timer")
+tracks/6/type = "value"
+tracks/6/path = NodePath("Area2D:collision_layer")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1293,49 +1613,47 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "stop"
-} ]
+"update": 1,
+"values": [ 0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Control/BagOfTeas/TeaBagButton:modulate")
+tracks/7/path = NodePath("Area2D:collision_mask")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( -0.1, 12, 13 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Control/BagOfTeas/TeaBagButton:disabled")
+tracks/8/path = NodePath("Control/TeaKettle:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( -0.1 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Control/BagOfTeas/TeaTagButtons:visible")
+tracks/9/path = NodePath("Control/TeaKettle/TeaFluid:material:shader_param/region_offset")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Control/BagOfTeas/TeaBagButton:mouse_default_cursor_shape")
+tracks/10/path = NodePath("Control/TeaKettle:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -1343,11 +1661,11 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Area2D:collision_layer")
+tracks/11/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -1355,11 +1673,11 @@ tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.505882 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Area2D:collision_mask")
+tracks/12/path = NodePath("Control/TeaKettle/TeaKettleFrontGlassHighlight:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -1367,44 +1685,20 @@ tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.752941 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/13/path = NodePath("Area2D/CollisionShape2D:shape:extents")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, -10.0 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Control/TeaKettle:modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( -0.1, 12, 13 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Control/TeaKettle/TeaFluid:material:shader_param/region_offset")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
-"times": PoolRealArray( 10.2, 12 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 472 ) ]
+"values": [ Vector2( 252, 283.2 ) ]
 }
 
 [sub_resource type="Animation" id=81]
@@ -1440,6 +1734,58 @@ tracks/1/keys = {
 resource_name = "Steeping"
 length = 16.0
 tracks/0/type = "value"
+tracks/0/path = NodePath("Control/TeaKettle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.505882 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/TeaKettle/TeaKettleFrontGlassHighlight:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.752941 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Area2D/CollisionShape2D:shape:extents")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 16 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 210, 236 ), Vector2( 252, 283.2 ) ]
+}
+
+[sub_resource type="Animation" id=104]
+resource_name = "SteepingBeforePhase"
+length = 0.02
+tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayers/HostWelcome:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -1474,54 +1820,6 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ "" ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Control/TeaKettle:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Control/TeaKettle/TeaKettleFrontGlass:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.505882 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Control/TeaKettle/TeaKettleFrontGlassHighlight:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.752941 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Area2D/CollisionShape2D:shape:extents")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 16 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 210, 236 ), Vector2( 252, 283.2 ) ]
 }
 
 [sub_resource type="Animation" id=71]
@@ -1981,6 +2279,18 @@ animation = "Intro"
 [sub_resource type="AnimationNodeAnimation" id=95]
 animation = "IntroReturning"
 
+[sub_resource type="AnimationNodeAnimation" id=111]
+animation = "ReturnOfHost"
+
+[sub_resource type="AnimationNodeAnimation" id=112]
+animation = "ReturnOfHostBeforePhase"
+
+[sub_resource type="AnimationNodeAnimation" id=105]
+animation = "Steeping"
+
+[sub_resource type="AnimationNodeAnimation" id=106]
+animation = "SteepingBeforePhase"
+
 [sub_resource type="AnimationNodeAnimation" id=96]
 animation = "WaitingHost"
 
@@ -2007,6 +2317,20 @@ auto_advance = true
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=107]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=108]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=109]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=113]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=114]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=88]
 states/Arrival/node = SubResource( 91 )
 states/Arrival/position = Vector2( 130, 92 )
@@ -2014,12 +2338,21 @@ states/Intro/node = SubResource( 87 )
 states/Intro/position = Vector2( 341, 92 )
 states/IntroReturning/node = SubResource( 95 )
 states/IntroReturning/position = Vector2( 324, 239 )
+states/ReturnOfHost/node = SubResource( 111 )
+states/ReturnOfHost/position = Vector2( 1988.51, 92 )
+states/ReturnOfHostBeforePhase/node = SubResource( 112 )
+states/ReturnOfHostBeforePhase/position = Vector2( 1667.51, 92 )
+states/Steeping/node = SubResource( 105 )
+states/Steeping/position = Vector2( 1357, 92 )
+states/SteepingBeforePhase/node = SubResource( 106 )
+states/SteepingBeforePhase/position = Vector2( 1035, 92 )
 states/WaitingHost/node = SubResource( 96 )
-states/WaitingHost/position = Vector2( 577, 92 )
+states/WaitingHost/position = Vector2( 684, 92 )
 states/WaitingHostComments/node = SubResource( 97 )
-states/WaitingHostComments/position = Vector2( 866, 92 )
-transitions = [ "Arrival", "Intro", SubResource( 92 ), "WaitingHost", "WaitingHostComments", SubResource( 98 ), "Arrival", "IntroReturning", SubResource( 99 ), "Intro", "WaitingHost", SubResource( 100 ), "IntroReturning", "WaitingHost", SubResource( 101 ) ]
+states/WaitingHostComments/position = Vector2( 684, 239 )
+transitions = [ "Arrival", "Intro", SubResource( 92 ), "WaitingHost", "WaitingHostComments", SubResource( 98 ), "Arrival", "IntroReturning", SubResource( 99 ), "Intro", "WaitingHost", SubResource( 100 ), "IntroReturning", "WaitingHost", SubResource( 101 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ) ]
 start_node = "Arrival"
+graph_offset = Vector2( 563.302, 3 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=89]
 
@@ -2240,6 +2573,8 @@ anims/Arrival = SubResource( 86 )
 anims/EndOfDemo = SubResource( 70 )
 anims/Intro = SubResource( 54 )
 anims/IntroReturning = SubResource( 90 )
+anims/IntroReturningMore = SubResource( 102 )
+anims/IntroReturningPostHiatus = SubResource( 103 )
 anims/LightSteep = SubResource( 84 )
 anims/LighterBlueberryFlavor = SubResource( 76 )
 anims/LighterChamomileFlavor = SubResource( 77 )
@@ -2250,8 +2585,10 @@ anims/LongSteep = SubResource( 83 )
 anims/NoSteep = SubResource( 82 )
 anims/RESET = SubResource( 61 )
 anims/ReturnOfHost = SubResource( 63 )
+anims/ReturnOfHostBeforePhase = SubResource( 110 )
 anims/SteepedEveryFlavor = SubResource( 81 )
 anims/Steeping = SubResource( 60 )
+anims/SteepingBeforePhase = SubResource( 104 )
 anims/StrongBlueberryFlavor = SubResource( 71 )
 anims/StrongChamomileFlavor = SubResource( 72 )
 anims/StrongElderberryFlavor = SubResource( 73 )

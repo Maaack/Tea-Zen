@@ -21,17 +21,19 @@ var tea_bag_on_string_scene : PackedScene = preload("res://scenes/TeaBag/TeaBagO
 var current_tea_bag_instance : Node2D
 var current_tea_data : TeaData
 var steeping_tea_bag
+var animation_state_machine : AnimationNodeStateMachinePlayback
 
 func _ready():
 	$AnimationTree['parameters/conditions/first_intro'] = PersistentData.remembered_intros == 0
-	$AnimationTree['parameters/conditions/second_intro'] = PersistentData.remembered_intros == 1
+	$AnimationTree['parameters/conditions/second_intro'] = PersistentData.remembered_intros >= 1
+	animation_state_machine = $AnimationTree["parameters/playback"]
 
 func _started_steeping() -> void:
 	started_steeping = true
 	$Control/Timer.start()
 	$AudioStreamPlayers/Music.play()
 	$Control/BordersMarginContainer/Control/MusicController.show_controls()
-	$DemoAnimationPlayer.play("Steeping")
+	animation_state_machine.travel("Steeping")
 	PersistentData.played_steeping()
 
 func finished_intro() -> void:
@@ -39,7 +41,7 @@ func finished_intro() -> void:
 
 func _host_returned() -> void:
 	dragging_tea_bag = false
-	$DemoAnimationPlayer.play("ReturnOfHost")
+	animation_state_machine.travel("ReturnOfHost")
 
 func _open_tea_box() -> void:
 	if $Control/BagOfTeas/TeaTagButtons/AnimationPlayer.is_playing():
