@@ -72,6 +72,11 @@ config/name="Tea Time"
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Config="*res://managers/Config.gd"
+PersistentData="*res://managers/PersistentData.gd"
+
 [display]
 
 window/size/width=640
@@ -89,6 +94,14 @@ mp3={
 ogg_vorbis={
 "loop": false,
 "loop_offset": 0
+}
+
+[input]
+
+ui_mute={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
 }
 
 [physics]

@@ -54,6 +54,9 @@ func _on_StartButton_pressed():
 	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
+	if PersistentData.first_version_played == PersistentData.UNKNOWN_VERSION:
+		get_tree().change_scene("res://scenes/PreviousPlayCheck/PreviousPlayCheck.tscn")
+		return
 	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
 func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Sprite) -> void:
@@ -82,10 +85,8 @@ func close_options():
 func _on_MouseMotionControl_force_released(position):
 	$FluidSimulator.release_velocity_force_2()
 
-
 func _on_TopMouseMotionControl_force_applied(position, vector):
 	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite)
-
 
 func _on_BottomMouseMotionControl_force_applied(position, vector):
 	_apply_force_to_sim(position, vector, $Control/Node2D/Sprite2)

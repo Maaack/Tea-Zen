@@ -22,32 +22,35 @@ var current_tea_bag_instance : Node2D
 var current_tea_data : TeaData
 var steeping_tea_bag
 
-func _started_steeping():
+func _started_steeping() -> void:
 	started_steeping = true
 	$Control/Timer.start()
 	$AudioStreamPlayers/Music.play()
 	$Control/BordersMarginContainer/Control/MusicController.show_controls()
 	$DemoAnimationPlayer.play("Steeping")
+	PersistentData.played_steeping()
 
-func _host_returned():
+func finished_intro() -> void:
+	PersistentData.played_intro()
+
+func _host_returned() -> void:
 	dragging_tea_bag = false
 	$DemoAnimationPlayer.play("ReturnOfHost")
 
-func _open_tea_box():
+func _open_tea_box() -> void:
 	if $Control/BagOfTeas/TeaTagButtons/AnimationPlayer.is_playing():
 		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.seek(1.5)
 	else:
 		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.play("OpenBox")
 	
-func back_to_main_menu():
+func back_to_main_menu() -> void:
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
 
-
-func delete_current_teabag():
+func delete_current_teabag() -> void:
 	if is_instance_valid(current_tea_bag_instance):
 		current_tea_bag_instance.delete()
 
-func pick_up_teabag(tea_data : TeaData):
+func pick_up_teabag(tea_data : TeaData) -> void:
 	delete_current_teabag()
 	current_tea_data = tea_data
 	var tea_bag_on_string_instance = tea_bag_on_string_scene.instance()
@@ -105,7 +108,7 @@ func taste_tea() -> void:
 	yield(get_tree().create_timer(1.0), "timeout")
 	$DemoAnimationPlayer.play("EndOfDemo")
 
-func _steep_tea():
+func _steep_tea() -> void:
 	if not dragging_tea_bag:
 		return
 	var position : Vector2 = ((current_tea_bag_instance.position + steeping_tea_bag.position - $Area2D.position) + $Area2D/CollisionShape2D.shape.extents) / ($Area2D/CollisionShape2D.shape.extents * 2)
