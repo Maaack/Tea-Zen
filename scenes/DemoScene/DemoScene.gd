@@ -168,3 +168,7 @@ func _on_MusicController_play_pressed():
 
 func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayers/Music.play()
+
+
+func _on_BoxOfTea_tea_selected(tea_data):
+	pick_up_teabag(tea_data)
