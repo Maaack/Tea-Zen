@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
-name = "Rose"
+name = "Mint"
 wrapper_image = ExtResource( 2 )
 tag_image = ExtResource( 3 )
 color = Color( 0.714828, 0.952941, 0.498039, 1 )
