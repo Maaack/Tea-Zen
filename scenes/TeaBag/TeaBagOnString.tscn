@@ -66,8 +66,7 @@ speed = 40.0
 max_velocity = 600.0
 
 [node name="Sprite" type="Sprite" parent="TeaTagRigidBody"]
-position = Vector2( -2, 0 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -1, 0 )
 texture = ExtResource( 5 )
 
 [node name="RopeRigidBody" parent="." instance=ExtResource( 3 )]
@@ -107,7 +106,6 @@ position = Vector2( 0, 42 )
 
 [node name="Sprite" type="Sprite" parent="TeaBagRigidBody"]
 position = Vector2( 0, -7 )
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -121,7 +119,6 @@ begin_cap_mode = 1
 end_cap_mode = 2
 
 [node name="TeaTagFront" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 offset = Vector2( 2, 0 )
 __meta__ = {
