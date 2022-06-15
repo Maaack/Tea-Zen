@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/BoxOfTea/TeaButton.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="TeaButton" type="Button"]
+margin_right = 96.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 96, 108 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+script = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_TeaButton_mouse_entered"]

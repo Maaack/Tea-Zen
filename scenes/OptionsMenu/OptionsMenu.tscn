@@ -71,10 +71,40 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MusicControl" type="HBoxContainer" parent="."]
+[node name="VoiceControl" type="HBoxContainer" parent="."]
 margin_top = 72.0
 margin_right = 305.0
 margin_bottom = 88.0
+
+[node name="VoiceLabel" type="Label" parent="VoiceControl"]
+margin_top = 1.0
+margin_right = 101.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+text = "Voice :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoiceHSlider" type="HSlider" parent="VoiceControl"]
+margin_left = 105.0
+margin_right = 305.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+tick_count = 11
+ticks_on_borders = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicControl" type="HBoxContainer" parent="."]
+margin_top = 108.0
+margin_right = 305.0
+margin_bottom = 124.0
 
 [node name="MusicLabel" type="Label" parent="MusicControl"]
 margin_top = 1.0
@@ -102,9 +132,9 @@ __meta__ = {
 }
 
 [node name="MuteControl" type="HBoxContainer" parent="."]
-margin_top = 108.0
+margin_top = 144.0
 margin_right = 305.0
-margin_bottom = 148.0
+margin_bottom = 184.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="MuteLabel" type="Label" parent="MuteControl"]
@@ -124,9 +154,9 @@ __meta__ = {
 }
 
 [node name="ResetGameControl" type="HBoxContainer" parent="."]
-margin_top = 168.0
+margin_top = 204.0
 margin_right = 305.0
-margin_bottom = 200.0
+margin_bottom = 236.0
 rect_min_size = Vector2( 0, 32 )
 
 [node name="ResetLabel" type="Label" parent="ResetGameControl"]
@@ -180,6 +210,7 @@ text = "reset!"
 
 [connection signal="value_changed" from="MasterControl/MasterHSlider" to="." method="_on_MasterHSlider_value_changed"]
 [connection signal="value_changed" from="SFXControl/SFXHSlider" to="." method="_on_SFXHSlider_value_changed"]
+[connection signal="value_changed" from="VoiceControl/VoiceHSlider" to="." method="_on_VoiceHSlider_value_changed"]
 [connection signal="value_changed" from="MusicControl/MusicHSlider" to="." method="_on_MusicHSlider_value_changed"]
 [connection signal="toggled" from="MuteControl/MuteButton" to="." method="_on_MuteButton_toggled"]
 [connection signal="pressed" from="ResetGameControl/ResetButton" to="." method="_on_ResetButton_pressed"]

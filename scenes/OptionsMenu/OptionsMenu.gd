@@ -4,12 +4,14 @@ signal return_button_pressed
 
 const MASTER_AUDIO_BUS = 'Master'
 const VOICE_AUDIO_BUS = 'Host'
+const SFX_AUDIO_BUS = 'SFX'
 const MUSIC_AUDIO_BUS = 'Music'
 const MUTE_SETTING = 'Mute'
 const AUDIO_SECTION = 'AudioSettings'
 
 onready var master_slider = $MasterControl/MasterHSlider
 onready var sfx_slider = $SFXControl/SFXHSlider
+onready var voice_slider = $VoiceControl/VoiceHSlider
 onready var music_slider = $MusicControl/MusicHSlider
 onready var mute_button = $MuteControl/MuteButton
 
@@ -35,12 +37,14 @@ func _set_mute(mute_flag : bool) -> void:
 
 func _update_ui():
 	master_slider.value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
-	sfx_slider.value = _get_bus_volume_2_linear(VOICE_AUDIO_BUS)
+	sfx_slider.value = _get_bus_volume_2_linear(SFX_AUDIO_BUS)
+	voice_slider.value = _get_bus_volume_2_linear(VOICE_AUDIO_BUS)
 	music_slider.value = _get_bus_volume_2_linear(MUSIC_AUDIO_BUS)
 	mute_button.pressed = _is_muted()
 
 func _set_init_config():
 	Config.set_config(AUDIO_SECTION, MASTER_AUDIO_BUS, _get_bus_volume_2_linear(MASTER_AUDIO_BUS))
+	Config.set_config(AUDIO_SECTION, SFX_AUDIO_BUS, _get_bus_volume_2_linear(SFX_AUDIO_BUS))
 	Config.set_config(AUDIO_SECTION, VOICE_AUDIO_BUS, _get_bus_volume_2_linear(VOICE_AUDIO_BUS))
 	Config.set_config(AUDIO_SECTION, MUSIC_AUDIO_BUS, _get_bus_volume_2_linear(MUSIC_AUDIO_BUS))
 	Config.set_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
@@ -48,11 +52,18 @@ func _set_init_config():
 func _sync_with_config():
 	if not Config.has_section(AUDIO_SECTION):
 		_set_init_config()
-	var master_audio_value : float = Config.get_config(AUDIO_SECTION, MASTER_AUDIO_BUS)
-	var voice_audio_value : float = Config.get_config(AUDIO_SECTION, VOICE_AUDIO_BUS)
-	var music_audio_value : float = Config.get_config(AUDIO_SECTION, MUSIC_AUDIO_BUS)
-	var mute_audio_flag  : bool = Config.get_config(AUDIO_SECTION, MUTE_SETTING, _is_muted())
+	var master_audio_value : float = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
+	var sfx_audio_value : float = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
+	var voice_audio_value : float = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
+	var music_audio_value : float = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
+	var mute_audio_flag : bool = _is_muted()
+	master_audio_value = Config.get_config(AUDIO_SECTION, MASTER_AUDIO_BUS, master_audio_value)
+	sfx_audio_value = Config.get_config(AUDIO_SECTION, SFX_AUDIO_BUS, sfx_audio_value)
+	voice_audio_value = Config.get_config(AUDIO_SECTION, VOICE_AUDIO_BUS, voice_audio_value)
+	music_audio_value = Config.get_config(AUDIO_SECTION, MUSIC_AUDIO_BUS, music_audio_value)
+	mute_audio_flag = Config.get_config(AUDIO_SECTION, MUTE_SETTING, mute_audio_flag)
 	_set_bus_linear_2_volume(MASTER_AUDIO_BUS, master_audio_value)
+	_set_bus_linear_2_volume(SFX_AUDIO_BUS, sfx_audio_value)
 	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, voice_audio_value)
 	_set_bus_linear_2_volume(MUSIC_AUDIO_BUS, music_audio_value)
 	_set_mute(mute_audio_flag)
@@ -68,6 +79,9 @@ func _on_MasterHSlider_value_changed(value):
 	_set_bus_linear_2_volume(MASTER_AUDIO_BUS, value)
 
 func _on_SFXHSlider_value_changed(value):
+	_set_bus_linear_2_volume(SFX_AUDIO_BUS, value)
+
+func _on_VoiceHSlider_value_changed(value):
 	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, value)
 
 func _on_MusicHSlider_value_changed(value):
