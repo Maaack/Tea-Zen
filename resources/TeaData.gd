@@ -3,6 +3,7 @@ extends Resource
 
 export(String) var name : String
 export(Texture) var bag_image : Texture
+export(Texture) var wrapper_image : Texture
 export(Texture) var tag_image : Texture
 export(Color) var color : Color
 

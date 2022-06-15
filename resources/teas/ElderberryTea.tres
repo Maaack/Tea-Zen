@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://resources/TeaData.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/ElderberryTeaBag.png" type="Texture" id=2]
 [ext_resource path="res://assets/textures/TeaTagElderberry.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/TeaBagWrapperElderberry.png" type="Texture" id=4]
 
 [resource]
 script = ExtResource( 1 )
 name = "Elderberry"
 bag_image = ExtResource( 2 )
+wrapper_image = ExtResource( 4 )
 tag_image = ExtResource( 3 )
 color = Color( 0.945098, 0.501961, 0.94902, 1 )

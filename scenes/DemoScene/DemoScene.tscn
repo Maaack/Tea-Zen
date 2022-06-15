@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -42,6 +42,8 @@
 [ext_resource path="res://assets/textures/TeaKettleFrontGlass.png" type="Texture" id=40]
 [ext_resource path="res://assets/textures/TeaKettleFrontBase.png" type="Texture" id=41]
 [ext_resource path="res://assets/textures/TeaKettleFrontGlassHighlight.png" type="Texture" id=42]
+[ext_resource path="res://scenes/BoxOfTea/BoxOfTea.tscn" type="PackedScene" id=43]
+[ext_resource path="res://assets/textures/TeaBoxBack.png" type="Texture" id=48]
 
 [sub_resource type="Animation" id=70]
 resource_name = "EndOfDemo"
@@ -270,6 +272,30 @@ tracks/11/keys = {
 "args": [  ],
 "method": "finished_intro"
 } ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Control/BoxOfTea:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 29.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Control/BoxOfTea:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 4.8, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=84]
@@ -1040,6 +1066,30 @@ tracks/39/keys = {
 "update": 0,
 "values": [ Vector2( 210, 236 ) ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Control/BoxOfTea:disabled")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Control/BoxOfTea:modulate")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "ReturnOfHost"
@@ -1239,6 +1289,30 @@ tracks/15/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 472 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Control/BoxOfTea:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Control/BoxOfTea:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 12, 13 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=81]
@@ -1881,7 +1955,12 @@ texture = ExtResource( 40 )
 position = Vector2( 0, -40 )
 texture = ExtResource( 42 )
 
+[node name="BoxOfTea" parent="Control" instance=ExtResource( 43 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 320, 144 )
+
 [node name="BagOfTeas" type="Control" parent="Control"]
+visible = false
 margin_left = 56.0
 margin_top = 80.0
 margin_right = 184.0
@@ -1904,6 +1983,10 @@ mouse_filter = 2
 margin_right = 51.0
 margin_bottom = 45.0
 tea = ExtResource( 19 )
+
+[node name="TeaBoxBack" type="Sprite" parent="Control/BagOfTeas/TeaTagButtons/StrawberryButton"]
+position = Vector2( 232, 0 )
+texture = ExtResource( 48 )
 
 [node name="RoseButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0
@@ -1947,9 +2030,11 @@ anims/RESET = SubResource( 69 )
 
 [node name="Timer" parent="Control" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 24.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -136.0
 margin_top = 256.0
-margin_right = 296.0
+margin_right = 136.0
 margin_bottom = 320.0
 
 [node name="CaptionsLabel" type="Label" parent="Control"]
@@ -2106,6 +2191,7 @@ bus = "Host"
 stream = ExtResource( 7 )
 bus = "Host"
 
+[connection signal="tea_selected" from="Control/BoxOfTea" to="." method="_on_BoxOfTea_tea_selected"]
 [connection signal="pressed" from="Control/BagOfTeas/TeaTagButtons/StrawberryButton" to="." method="_on_TeaTagButton_pressed"]
 [connection signal="pressed" from="Control/BagOfTeas/TeaTagButtons/RoseButton" to="." method="_on_TeaTagButton_pressed"]
 [connection signal="pressed" from="Control/BagOfTeas/TeaTagButtons/ElderberryButton" to="." method="_on_TeaTagButton_pressed"]
