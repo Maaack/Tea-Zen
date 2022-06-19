@@ -158,7 +158,7 @@ func _on_Area2D_body_entered(body : TeaBagRigidBody):
 	steeping_state = true
 	steeping_tea_bag = body
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
 	steeping_state = false
 	steeping_tea_bag = null
 
@@ -174,3 +174,7 @@ func _on_MusicController_play_pressed():
 
 func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayers/Music.play()
+
+
+func _on_BoxOfTea_tea_selected(tea_data):
+	pick_up_teabag(tea_data)

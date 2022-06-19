@@ -1,0 +1,248 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/audio/SFX/tea-wrapper-pickup-2.ogg" type="AudioStream" id=1]
+[ext_resource path="res://scenes/BoxOfTea/TeaBagWrapper.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/SFX/tea-wrapper-tear-open-2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/SFX/tea-wrapper-drop-3.ogg" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "DropDown"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -36 ), Vector2( 0, 0 ), Vector2( 0, -6 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 3.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../StreamPlayer2Ds/DropDown:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "PickUp"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../StreamPlayer2Ds/PickUp:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../StreamPlayer2Ds/PickUp:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../StreamPlayer2Ds/DropDown:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../StreamPlayer2Ds/TearOpen:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "TearOpen"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../StreamPlayer2Ds/TearOpen:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6, -3 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "DropDown"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "PickUp"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "RESET"
+
+[sub_resource type="AnimationNodeAnimation" id=15]
+animation = "TearOpen"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/DropDown/node = SubResource( 4 )
+states/DropDown/position = Vector2( 451, 81 )
+states/PickUp/node = SubResource( 5 )
+states/PickUp/position = Vector2( 258, 81 )
+states/RESET/node = SubResource( 10 )
+states/RESET/position = Vector2( 75, 81 )
+states/TearOpen/node = SubResource( 15 )
+states/TearOpen/position = Vector2( 258, -25 )
+transitions = [ "PickUp", "DropDown", SubResource( 6 ), "DropDown", "PickUp", SubResource( 7 ), "RESET", "PickUp", SubResource( 11 ), "PickUp", "TearOpen", SubResource( 16 ) ]
+start_node = "RESET"
+graph_offset = Vector2( -170, -42 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
+
+[sub_resource type="AudioStreamRandomPitch" id=12]
+audio_stream = ExtResource( 1 )
+
+[sub_resource type="AudioStreamRandomPitch" id=13]
+audio_stream = ExtResource( 4 )
+
+[sub_resource type="AudioStreamRandomPitch" id=17]
+audio_stream = ExtResource( 3 )
+
+[node name="TeaBagWrapper" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="WrapperSprite" type="Sprite" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../WrapperSprite")
+anims/DropDown = SubResource( 1 )
+anims/PickUp = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+anims/TearOpen = SubResource( 14 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 8 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 9 )
+
+[node name="StreamPlayer2Ds" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="PickUp" type="AudioStreamPlayer2D" parent="StreamPlayer2Ds"]
+stream = SubResource( 12 )
+bus = "SFX"
+
+[node name="DropDown" type="AudioStreamPlayer2D" parent="StreamPlayer2Ds"]
+stream = SubResource( 13 )
+volume_db = -6.0
+bus = "SFX"
+
+[node name="TearOpen" type="AudioStreamPlayer2D" parent="StreamPlayer2Ds"]
+stream = SubResource( 17 )

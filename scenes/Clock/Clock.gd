@@ -75,7 +75,7 @@ func stop():
 	set_process(false)
 	visible = false
 
-func _process(delta):
+func _process(_delta):
 	var current_time : float = wait_time - $Timer.time_left
 	draw_clock_value(current_time)
 

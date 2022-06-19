@@ -67,7 +67,7 @@ func _ready():
 	set_header_and_footer()
 	set_process(false)
 
-func _process(delta):
+func _process(_delta):
 	if round(current_speed) > 0:
 		var previous_scroll = $ScrollContainer.scroll_vertical
 		$ScrollContainer.scroll_vertical += round(current_speed)
