@@ -10,9 +10,9 @@ var move_to_target = Vector2()
 var velocity = Vector2()
 
 func _follow_mouse(state):
-	var vector = move_to_target - state.transform.origin
+	var vector : Vector2 = move_to_target - state.transform.origin
 	vector *= speed
-	vector = vector.clamped(max_velocity)
+	vector = vector.limit_length(max_velocity)
 	if negate_current_velocity:
 		vector -= state.linear_velocity
 	apply_central_impulse(vector)

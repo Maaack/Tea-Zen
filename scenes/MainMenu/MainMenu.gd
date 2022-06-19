@@ -31,7 +31,7 @@ func open_menu():
 func close_menu():
 	_disable_menu_buttons()
 
-func _process(delta):
+func _process(_delta):
 	var brush_offset : Vector2 = Vector2.ZERO
 	if steeping_tea:
 		brush_offset += Vector2(rand_range(-0.02, 0.02), 0.0)
@@ -82,7 +82,7 @@ func open_options():
 func close_options():
 	$MenuAnimationPlayer.play("CloseOptions")
 
-func _on_MouseMotionControl_force_released(position):
+func _on_MouseMotionControl_force_released(_position):
 	$FluidSimulator.release_velocity_force_2()
 
 func _on_TopMouseMotionControl_force_applied(position, vector):

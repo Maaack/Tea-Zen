@@ -158,7 +158,7 @@ func _on_Area2D_body_entered(body : TeaBagRigidBody):
 	steeping_state = true
 	steeping_tea_bag = body
 
-func _on_Area2D_body_exited(body):
+func _on_Area2D_body_exited(_body):
 	steeping_state = false
 	steeping_tea_bag = null
 
