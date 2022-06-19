@@ -18,6 +18,12 @@ func set_disabled(value : bool) -> void:
 	for child in $Control/HBoxContainer.get_children():
 		if child is Button:
 			child.disabled = value
+			if value:
+				child.mouse_default_cursor_shape = Button.CURSOR_ARROW
+			else:
+				child.mouse_default_cursor_shape = Button.CURSOR_POINTING_HAND
+	if value:
+		_drop_current_tea()
 
 func _drop_current_tea() -> void:
 	if is_instance_valid(currently_picked_up_tea):
