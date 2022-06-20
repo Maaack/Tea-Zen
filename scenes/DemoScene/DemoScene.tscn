@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -16,11 +16,6 @@
 [ext_resource path="res://assets/audio/Outcomes/LighterChamomileFlavor.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/textures/TeaFluidMask.png" type="Texture" id=15]
 [ext_resource path="res://assets/textures/AssortedTeaBags.png" type="Texture" id=16]
-[ext_resource path="res://resources/teas/RoseTea.tres" type="Resource" id=17]
-[ext_resource path="res://resources/teas/BlueberryTea.tres" type="Resource" id=18]
-[ext_resource path="res://resources/teas/StrawberryTea.tres" type="Resource" id=19]
-[ext_resource path="res://resources/teas/ChamomileTea.tres" type="Resource" id=20]
-[ext_resource path="res://resources/teas/ElderberryTea.tres" type="Resource" id=21]
 [ext_resource path="res://assets/audio/Outcomes/LightSteep.ogg" type="AudioStream" id=22]
 [ext_resource path="res://assets/audio/Outcomes/LongSteep.ogg" type="AudioStream" id=23]
 [ext_resource path="res://assets/audio/Outcomes/LighterElderberryFlavor.ogg" type="AudioStream" id=24]
@@ -2366,7 +2361,7 @@ states/WaitingHostComments/node = SubResource( 97 )
 states/WaitingHostComments/position = Vector2( 684, 239 )
 transitions = [ "Arrival", "Intro", SubResource( 92 ), "WaitingHost", "WaitingHostComments", SubResource( 98 ), "Arrival", "IntroReturning", SubResource( 99 ), "Intro", "WaitingHost", SubResource( 100 ), "IntroReturning", "WaitingHost", SubResource( 101 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ) ]
 start_node = "Arrival"
-graph_offset = Vector2( 1616.46, 3 )
+graph_offset = Vector2( 971.401, -73 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=89]
 
@@ -2707,7 +2702,6 @@ mouse_filter = 2
 [node name="StrawberryButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0
 margin_bottom = 45.0
-tea = ExtResource( 19 )
 
 [node name="TeaBoxBack" type="Sprite" parent="Control/BagOfTeas/TeaTagButtons/StrawberryButton"]
 position = Vector2( 232, 0 )
@@ -2716,22 +2710,18 @@ texture = ExtResource( 48 )
 [node name="RoseButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0
 margin_bottom = 45.0
-tea = ExtResource( 17 )
 
 [node name="ElderberryButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0001
 margin_bottom = 45.0
-tea = ExtResource( 21 )
 
 [node name="ChamomileButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0003
 margin_bottom = 45.0
-tea = ExtResource( 20 )
 
 [node name="BlueberryButton" parent="Control/BagOfTeas/TeaTagButtons" instance=ExtResource( 11 )]
 margin_right = 51.0001
 margin_bottom = 45.0
-tea = ExtResource( 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Control/BagOfTeas/TeaTagButtons"]
 anims/OpenBox = SubResource( 66 )
