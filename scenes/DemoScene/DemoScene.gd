@@ -51,7 +51,7 @@ func _ready():
 		show_second_intro = true
 	else:
 		show_first_intro = true
-	if PersistentData.remembered_intros >= 3:
+	if PersistentData.remembered_intros >= 2:
 		$Control/SkipButton.show()
 	$AnimationTree['parameters/conditions/intro_first'] = show_first_intro
 	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro
