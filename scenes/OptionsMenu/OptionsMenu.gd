@@ -15,6 +15,9 @@ onready var voice_slider = $VoiceControl/VoiceHSlider
 onready var music_slider = $MusicControl/MusicHSlider
 onready var mute_button = $MuteControl/MuteButton
 
+var vocal_audio_stream_iter : int = -1
+var play_audio_streams : bool = false
+
 func _get_bus_volume_2_linear(bus_name : String) -> float:
 	var bus_index : int = AudioServer.get_bus_index(bus_name)
 	var volume_db : float = AudioServer.get_bus_volume_db(bus_index)
@@ -34,6 +37,18 @@ func _set_mute(mute_flag : bool) -> void:
 	var bus_index : int = AudioServer.get_bus_index(MASTER_AUDIO_BUS)
 	AudioServer.set_bus_mute(bus_index, mute_flag)
 	Config.set_config(AUDIO_SECTION, MUTE_SETTING, mute_flag)
+
+func _play_next_vocal_audio_stream() -> void:
+	if not play_audio_streams:
+		return
+	for child in $VocalAudioStreamPlayers.get_children():
+		if child is AudioStreamPlayer and child.playing:
+			return
+	vocal_audio_stream_iter += 1
+	if vocal_audio_stream_iter >= $VocalAudioStreamPlayers.get_child_count():
+		vocal_audio_stream_iter = 0
+	var audio_stream : AudioStreamPlayer = $VocalAudioStreamPlayers.get_child(vocal_audio_stream_iter)
+	audio_stream.play()
 
 func _update_ui():
 	master_slider.value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
@@ -71,6 +86,7 @@ func _sync_with_config():
 
 func _ready():
 	_sync_with_config()
+	play_audio_streams = true
 
 func _on_ReturnButton_pressed():
 	emit_signal("return_button_pressed")
@@ -83,6 +99,7 @@ func _on_SFXHSlider_value_changed(value):
 
 func _on_VoiceHSlider_value_changed(value):
 	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, value)
+	_play_next_vocal_audio_stream()
 
 func _on_MusicHSlider_value_changed(value):
 	_set_bus_linear_2_volume(MUSIC_AUDIO_BUS, value)
