@@ -68,34 +68,32 @@ func pick_up_teabag(tea_data : TeaData) -> void:
 	current_tea_bag_instance = tea_bag_on_string_instance
 	dragging_tea_bag = true
 
+static func _tea_time_custom_sorter(a, b) -> bool:
+	if a[1] > b[1]:
+		return true
+	return false
+
 func _queue_tea_outcome_animations() -> void:
 	if tea_steep_times.size() == 5:
 		animation_queue.append(ANIMATION_STEEPED_ALL)
 		return
-	var tea_name_1 : String = ""
-	var tea_name_2 : String = ""
-	var steep_time_1 : float = 0.0
-	var steep_time_2 : float = 0.0
+	var tea_time_array : Array = []
 	var steep_time_total : float = 0.0
 	for tea_name in tea_steep_times:
 		var steeped_time : float = tea_steep_times[tea_name]
-		if steeped_time > steep_time_1:
-			# This is the strongest tea
-			tea_name_2 = tea_name_1
-			tea_name_1 = tea_name
-			steep_time_2 = steep_time_1
-			steep_time_1 = steeped_time
-		elif steeped_time > steep_time_2:
-			# This is the 2nd strongest tea
-			tea_name_2 = tea_name
-			steep_time_2 = steeped_time
+		tea_time_array.append([tea_name, steeped_time])
 		steep_time_total += steeped_time
-	if tea_steep_times.size() == 1 and steep_time_total < 5.0:
+	tea_time_array.sort_custom(self, "_tea_time_custom_sorter")
+	
+	if tea_time_array.size() == 1 and steep_time_total < 5.0:
 		animation_queue.append(ANIMATION_NO_STEEP)
 		return
-	animation_queue.append("Strong%sFlavor" % tea_name_1)
-	if tea_name_2 != "":
-		animation_queue.append("Lighter%sFlavor" % tea_name_2)
+	animation_queue.append("Strong%sFlavor" % tea_time_array[0][0])
+	if tea_time_array.size() > 1:
+		animation_queue.append("Lighter%sFlavor" % tea_time_array[1][0])
+	if tea_time_array.size() > 2:
+		animation_queue.append("HintOf%s" % tea_time_array[2][0])
+
 	if steep_time_total < 30:
 		animation_queue.append(ANIMATION_LIGHT_STEEP)
 	elif steep_time_total > 70:
