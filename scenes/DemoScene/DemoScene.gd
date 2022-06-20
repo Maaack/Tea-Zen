@@ -6,11 +6,21 @@ const ANIMATION_LIGHT_STEEP = "LightSteep"
 const ANIMATION_LONG_STEEP = "LongSteep"
 const ANIMATION_WELL_STEEPED = "WellSteeped"
 
+enum DEMO_PHASES{
+	NONE,
+	INTRO,
+	WAITING,
+	STEEPING,
+	RETURN,
+	EVALUATION,
+	CONCLUSION
+}
+
 export(int, 0, 15) var show_skip_time : int = 1
 export(int, 0, 15) var wait_time : int = 8
-export(float) var first_skip_point : float = 29.3
 export(Vector2) var velocity_base : Vector2 = Vector2(0.0, 1.0)
 export(float) var velocity_mod : float = 0.002
+export(DEMO_PHASES) var current_phase : int = DEMO_PHASES.NONE setget set_current_phase
 
 var dragging_tea_bag : bool = false
 var started_steeping : bool = false
@@ -23,6 +33,11 @@ var current_tea_data : TeaData
 var steeping_tea_bag
 var animation_state_machine : AnimationNodeStateMachinePlayback
 
+func set_current_phase(value : int) -> void:
+	if current_phase > value:
+		return
+	current_phase = value
+	
 func _ready():
 	$AnimationTree['parameters/conditions/first_intro'] = PersistentData.remembered_intros == 0
 	$AnimationTree['parameters/conditions/second_intro'] = PersistentData.remembered_intros >= 1
@@ -130,13 +145,17 @@ func _on_Timer_minute_passed(minute):
 		_host_returned()
 
 func _on_SkipButton_pressed():
-	if $DemoAnimationPlayer.current_animation == "ReturnOfHost":
-		back_to_main_menu()
-	elif $DemoAnimationPlayer.current_animation == "Intro" and \
-		$DemoAnimationPlayer.current_animation_position < first_skip_point:
-		$DemoAnimationPlayer.seek(first_skip_point)
-	elif $DemoAnimationPlayer.current_animation == "Steeping":
-		_host_returned()
+	match(current_phase):
+		DEMO_PHASES.INTRO:
+			animation_state_machine.travel("SkipToWaitingHostBeforePhase")
+		DEMO_PHASES.STEEPING:
+			_host_returned()
+		DEMO_PHASES.RETURN:
+			animation_state_machine.travel("SkipToHostTastesTea")
+		DEMO_PHASES.EVALUATION:
+			animation_queue = []
+		DEMO_PHASES.CONCLUSION:
+			back_to_main_menu()
 
 func _on_TeaBagButton_button_down():
 	_open_tea_box()
