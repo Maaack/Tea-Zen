@@ -371,7 +371,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 192.0 ],
 "_edit_vertical_guides_": [ 512.0, 320.0 ]
 }
-version_name = "build-20220604"
+version_name = "1.0.0-rc1"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Question"
@@ -477,18 +477,23 @@ text = "no"
 
 [node name="MyApologies" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 6 )
+bus = "Host"
 
 [node name="Question" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 9 )
+bus = "Host"
 
 [node name="RemembersYou" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 7 )
+bus = "Host"
 
 [node name="FirstEncounter" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 5 )
+bus = "Host"
 
 [node name="ComeOnIn" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
 stream = ExtResource( 8 )
+bus = "Host"
 
 [connection signal="pressed" from="Control/ChoiceControl/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="Control/ChoiceControl/NoButton" to="." method="_on_NoButton_pressed"]
