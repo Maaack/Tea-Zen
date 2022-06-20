@@ -116,3 +116,8 @@ func _on_MusicController_play_pressed():
 
 func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayer.play()
+
+func _input(event):
+	if event is InputEventMouseButton or event is InputEventKey:
+		if $MenuAnimationPlayer.is_playing() and $MenuAnimationPlayer.current_animation == "Intro":
+			$MenuAnimationPlayer.seek(4.4)
