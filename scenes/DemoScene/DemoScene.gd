@@ -39,8 +39,24 @@ func set_current_phase(value : int) -> void:
 	current_phase = value
 	
 func _ready():
-	$AnimationTree['parameters/conditions/first_intro'] = PersistentData.remembered_intros == 0
-	$AnimationTree['parameters/conditions/second_intro'] = PersistentData.remembered_intros >= 1
+	var show_first_intro : bool = false
+	var show_second_intro : bool = false
+	var show_many_intro : bool = false
+	var show_many_more_intro : bool = false
+	if PersistentData.remembered_intros >= 10:
+		show_many_more_intro = true
+	elif PersistentData.remembered_intros >= 4:
+		show_many_intro = true
+	elif PersistentData.remembered_intros >= 1:
+		show_second_intro = true
+	else:
+		show_first_intro = true
+	if PersistentData.remembered_intros >= 3:
+		$Control/SkipButton.show()
+	$AnimationTree['parameters/conditions/intro_first'] = show_first_intro
+	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro
+	$AnimationTree['parameters/conditions/intro_many'] = show_many_intro
+	$AnimationTree['parameters/conditions/intro_many_more'] = show_many_more_intro
 	animation_state_machine = $AnimationTree["parameters/playback"]
 
 func _started_steeping() -> void:
