@@ -38,17 +38,23 @@ func _set_mute(mute_flag : bool) -> void:
 	AudioServer.set_bus_mute(bus_index, mute_flag)
 	Config.set_config(AUDIO_SECTION, MUTE_SETTING, mute_flag)
 
-func _play_next_vocal_audio_stream() -> void:
+func _play_next_audio_stream(stream_parent : Node) -> void:
 	if not play_audio_streams:
 		return
-	for child in $VocalAudioStreamPlayers.get_children():
+	for child in stream_parent.get_children():
 		if child is AudioStreamPlayer and child.playing:
 			return
 	vocal_audio_stream_iter += 1
-	if vocal_audio_stream_iter >= $VocalAudioStreamPlayers.get_child_count():
+	if vocal_audio_stream_iter >= stream_parent.get_child_count():
 		vocal_audio_stream_iter = 0
-	var audio_stream : AudioStreamPlayer = $VocalAudioStreamPlayers.get_child(vocal_audio_stream_iter)
+	var audio_stream : AudioStreamPlayer = stream_parent.get_child(vocal_audio_stream_iter)
 	audio_stream.play()
+
+func _play_next_vocal_audio_stream() -> void:
+	_play_next_audio_stream($VocalAudioStreamPlayers)
+
+func _play_next_sfx_audio_stream() -> void:
+	_play_next_audio_stream($SFXAudioStreamPlayers)
 
 func _update_ui():
 	master_slider.value = _get_bus_volume_2_linear(MASTER_AUDIO_BUS)
@@ -96,6 +102,7 @@ func _on_MasterHSlider_value_changed(value):
 
 func _on_SFXHSlider_value_changed(value):
 	_set_bus_linear_2_volume(SFX_AUDIO_BUS, value)
+	_play_next_sfx_audio_stream()
 
 func _on_VoiceHSlider_value_changed(value):
 	_set_bus_linear_2_volume(VOICE_AUDIO_BUS, value)
