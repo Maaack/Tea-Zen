@@ -54,6 +54,14 @@ func _started_steeping() -> void:
 func finished_intro() -> void:
 	PersistentData.played_intro()
 
+func _skip_intro() -> void:
+	PersistentData.skipped_intro()
+	$AnimationTree['parameters/SkipToWaitingHost/conditions/skip_intro_1'] = PersistentData.remembered_skipped_intros == 3
+	$AnimationTree['parameters/SkipToWaitingHost/conditions/skip_intro_2'] = PersistentData.remembered_skipped_intros == 6
+	$AnimationTree['parameters/SkipToWaitingHost/conditions/skip_intro_3'] = PersistentData.remembered_skipped_intros == 7
+	$AnimationTree['parameters/SkipToWaitingHost/conditions/skip_intro_4'] = PersistentData.remembered_skipped_intros == 10
+	animation_state_machine.travel("SkipToWaitingHost")
+
 func _host_returned() -> void:
 	dragging_tea_bag = false
 	animation_state_machine.travel("ReturnOfHost")
@@ -147,7 +155,7 @@ func _on_Timer_minute_passed(minute):
 func _on_SkipButton_pressed():
 	match(current_phase):
 		DEMO_PHASES.INTRO:
-			animation_state_machine.travel("SkipToWaitingHostBeforePhase")
+			_skip_intro()
 		DEMO_PHASES.STEEPING:
 			_host_returned()
 		DEMO_PHASES.RETURN:
