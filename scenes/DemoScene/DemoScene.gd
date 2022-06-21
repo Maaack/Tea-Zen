@@ -150,7 +150,7 @@ func taste_tea() -> void:
 		yield($DemoAnimationPlayer, "animation_finished")
 	yield(get_tree().create_timer(1.0), "timeout")
 	if current_phase == DEMO_PHASES.EVALUATION:
-		animation_state_machine.travel("EndOfDemo")
+		animation_state_machine.travel("Closing")
 
 func _steep_tea() -> void:
 	if not dragging_tea_bag:
@@ -179,7 +179,7 @@ func _on_SkipButton_pressed():
 			animation_state_machine.travel("SkipToHostTastesTea")
 		DEMO_PHASES.EVALUATION:
 			if animation_queue.empty():
-				animation_state_machine.travel("EndOfDemo")
+				animation_state_machine.travel("Closing")
 			else:
 				animation_queue = []
 		DEMO_PHASES.CONCLUSION:

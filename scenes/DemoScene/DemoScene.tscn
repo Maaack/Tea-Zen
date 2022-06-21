@@ -1,4 +1,4 @@
-[gd_scene load_steps=181 format=2]
+[gd_scene load_steps=184 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -178,11 +178,11 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=70]
-resource_name = "EndOfDemo"
-length = 17.0
+[sub_resource type="Animation" id=203]
+resource_name = "Closing"
+length = 1.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayers/HostReturns:playing")
+tracks/0/path = NodePath("AudioStreamPlayers/HostClosing:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -194,7 +194,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AudioStreamPlayers/HostChecks:playing")
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -203,40 +203,16 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ "" ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AudioStreamPlayers/HostClosing:playing")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 12.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Control/CaptionsLabel:text")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4, 1.8, 3.3, 5.4, 8.3, 9.4, 10.2, 11.4, 12.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "", "That’s all I have for now. ", "I was a bit short on time.", "Hope you enjoyed the experience.", "If this is something you’d like to see more of,", "let me know.", "Alright.", "Thank you!", "Bye bye!", "" ]
-}
-tracks/4/type = "method"
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 15.7, 16.7 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
@@ -246,17 +222,57 @@ tracks/4/keys = {
 "method": "back_to_main_menu"
 } ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath("AudioStreamPlayers/Music:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 12.1, 13.1, 15.7, 16.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -10.0, -10.0, 0.0, 0.0, -60.0 ]
+"values": [ 0.0, -60.0 ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "EndOfDemo"
+length = 15.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayers/HostClosing:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/CaptionsLabel:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.8, 3.3, 5.4, 8.3, 9.4, 10.2, 11.4, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That’s all I have for now. ", "I was a bit short on time.", "Hope you enjoyed the experience.", "If this is something you’d like to see more of,", "let me know.", "Alright.", "Thank you!", "Bye bye!", "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 12.1, 13.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=198]
@@ -3172,6 +3188,9 @@ tracks/1/keys = {
 [sub_resource type="AnimationNodeAnimation" id=91]
 animation = "Arrival"
 
+[sub_resource type="AnimationNodeAnimation" id=204]
+animation = "Closing"
+
 [sub_resource type="AnimationNodeAnimation" id=149]
 animation = "EndOfDemo"
 
@@ -3408,9 +3427,15 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id=202]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=205]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=88]
 states/Arrival/node = SubResource( 91 )
 states/Arrival/position = Vector2( -329, 92 )
+states/Closing/node = SubResource( 204 )
+states/Closing/position = Vector2( 3160.59, 92 )
 states/EndOfDemo/node = SubResource( 149 )
 states/EndOfDemo/position = Vector2( 2918.64, 92 )
 states/EndOfDemoBeforePhase/node = SubResource( 199 )
@@ -3451,9 +3476,10 @@ states/WaitingHostEvenLonger/node = SubResource( 138 )
 states/WaitingHostEvenLonger/position = Vector2( 684, 685.025 )
 states/WaitingHostLonger/node = SubResource( 139 )
 states/WaitingHostLonger/position = Vector2( 684, 385.025 )
-transitions = [ "WaitingHost", "WaitingHostComments", SubResource( 98 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ), "WaitingHostBeforePhase", "WaitingHost", SubResource( 128 ), "WaitingHostComments", "WaitingHostLonger", SubResource( 140 ), "WaitingHostLonger", "WaitingHostCommentsAgain", SubResource( 141 ), "WaitingHostCommentsAgain", "WaitingHostEvenLonger", SubResource( 142 ), "WaitingHostEvenLonger", "WaitingHostCommentsLastTime", SubResource( 143 ), "WaitingHostLonger", "SteepingBeforePhase", SubResource( 144 ), "WaitingHostCommentsAgain", "SteepingBeforePhase", SubResource( 145 ), "WaitingHostEvenLonger", "SteepingBeforePhase", SubResource( 146 ), "WaitingHostCommentsLastTime", "SteepingBeforePhase", SubResource( 147 ), "ReturnOfHost", "HostTastesTea", SubResource( 151 ), "ReturnOfHost", "SkipToHostTastesTea", SubResource( 154 ), "SkipToWaitingHost", "WaitingHost", SubResource( 179 ), "Arrival", "IntroManyTimes", SubResource( 184 ), "Arrival", "IntroManyMoreTimes", SubResource( 185 ), "IntroManyTimes", "SkipToWaitingHost", SubResource( 186 ), "IntroManyMoreTimes", "SkipToWaitingHost", SubResource( 187 ), "IntroManyTimes", "WaitingHostBeforePhase", SubResource( 188 ), "IntroManyMoreTimes", "WaitingHostBeforePhase", SubResource( 189 ), "Arrival", "IntroFirstTime", SubResource( 191 ), "IntroFirstTime", "WaitingHostBeforePhase", SubResource( 192 ), "IntroFirstTime", "SkipToWaitingHost", SubResource( 193 ), "Arrival", "IntroSecondTime", SubResource( 195 ), "IntroSecondTime", "WaitingHostBeforePhase", SubResource( 196 ), "IntroSecondTime", "SkipToWaitingHost", SubResource( 197 ), "EndOfDemoBeforePhase", "EndOfDemo", SubResource( 200 ), "HostTastesTea", "EndOfDemoBeforePhase", SubResource( 201 ), "SkipToHostTastesTea", "EndOfDemoBeforePhase", SubResource( 202 ) ]
+transitions = [ "WaitingHost", "WaitingHostComments", SubResource( 98 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ), "WaitingHostBeforePhase", "WaitingHost", SubResource( 128 ), "WaitingHostComments", "WaitingHostLonger", SubResource( 140 ), "WaitingHostLonger", "WaitingHostCommentsAgain", SubResource( 141 ), "WaitingHostCommentsAgain", "WaitingHostEvenLonger", SubResource( 142 ), "WaitingHostEvenLonger", "WaitingHostCommentsLastTime", SubResource( 143 ), "WaitingHostLonger", "SteepingBeforePhase", SubResource( 144 ), "WaitingHostCommentsAgain", "SteepingBeforePhase", SubResource( 145 ), "WaitingHostEvenLonger", "SteepingBeforePhase", SubResource( 146 ), "WaitingHostCommentsLastTime", "SteepingBeforePhase", SubResource( 147 ), "ReturnOfHost", "HostTastesTea", SubResource( 151 ), "ReturnOfHost", "SkipToHostTastesTea", SubResource( 154 ), "SkipToWaitingHost", "WaitingHost", SubResource( 179 ), "Arrival", "IntroManyTimes", SubResource( 184 ), "Arrival", "IntroManyMoreTimes", SubResource( 185 ), "IntroManyTimes", "SkipToWaitingHost", SubResource( 186 ), "IntroManyMoreTimes", "SkipToWaitingHost", SubResource( 187 ), "IntroManyTimes", "WaitingHostBeforePhase", SubResource( 188 ), "IntroManyMoreTimes", "WaitingHostBeforePhase", SubResource( 189 ), "Arrival", "IntroFirstTime", SubResource( 191 ), "IntroFirstTime", "WaitingHostBeforePhase", SubResource( 192 ), "IntroFirstTime", "SkipToWaitingHost", SubResource( 193 ), "Arrival", "IntroSecondTime", SubResource( 195 ), "IntroSecondTime", "WaitingHostBeforePhase", SubResource( 196 ), "IntroSecondTime", "SkipToWaitingHost", SubResource( 197 ), "EndOfDemoBeforePhase", "EndOfDemo", SubResource( 200 ), "HostTastesTea", "EndOfDemoBeforePhase", SubResource( 201 ), "SkipToHostTastesTea", "EndOfDemoBeforePhase", SubResource( 202 ), "EndOfDemo", "Closing", SubResource( 205 ) ]
 start_node = "Arrival"
-graph_offset = Vector2( 1686.53, -91.9803 )
+end_node = "Closing"
+graph_offset = Vector2( 2106.07, -91.9803 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=89]
 
@@ -3673,6 +3699,7 @@ dye_resolution = Vector2( 420, 472 )
 
 [node name="DemoAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Arrival = SubResource( 86 )
+anims/Closing = SubResource( 203 )
 anims/EndOfDemo = SubResource( 70 )
 anims/EndOfDemoBeforePhase = SubResource( 198 )
 anims/HintOfBlueberry = SubResource( 116 )
