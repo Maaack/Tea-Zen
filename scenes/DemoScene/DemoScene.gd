@@ -86,6 +86,9 @@ func _started_steeping() -> void:
 func finished_intro() -> void:
 	PersistentData.played_intro()
 
+func finished_return() -> void:
+	PersistentData.played_return()
+
 func finished_outro() -> void:
 	PersistentData.played_outro()
 
