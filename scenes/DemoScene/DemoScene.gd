@@ -43,10 +43,14 @@ func _ready():
 	var show_second_intro : bool = false
 	var show_many_intro : bool = false
 	var show_many_more_intro : bool = false
+	var show_first_return : bool = false
+	var show_second_return : bool = false
+	var show_third_return : bool = false
 	var show_first_outro : bool = false
 	var show_second_outro : bool = false
 	var show_third_outro : bool = false
 	var show_fourth_outro : bool = false
+	# Intros
 	if PersistentData.remembered_intros >= 2:
 		$Control/SkipButton.show()
 	if PersistentData.remembered_intros >= 10:
@@ -57,6 +61,14 @@ func _ready():
 		show_second_intro = true
 	else:
 		show_first_intro = true
+	# Returns
+	if PersistentData.remembered_returns >= 2:
+		show_third_return = true
+	elif PersistentData.remembered_returns >= 1:
+		show_second_return = true
+	else:
+		show_first_return = true
+	# Outros
 	if PersistentData.remembered_outros >= 6:
 		show_fourth_outro = true
 	elif PersistentData.remembered_outros >= 5:
@@ -69,6 +81,9 @@ func _ready():
 	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro
 	$AnimationTree['parameters/conditions/intro_many'] = show_many_intro
 	$AnimationTree['parameters/conditions/intro_many_more'] = show_many_more_intro
+	$AnimationTree['parameters/conditions/return_first'] = show_first_return
+	$AnimationTree['parameters/conditions/return_second'] = show_second_return
+	$AnimationTree['parameters/conditions/return_third'] = show_third_return
 	$AnimationTree['parameters/conditions/outro_first'] = show_first_outro
 	$AnimationTree['parameters/conditions/outro_second'] = show_second_outro
 	$AnimationTree['parameters/conditions/outro_third'] = show_third_outro
@@ -102,7 +117,7 @@ func _skip_intro() -> void:
 
 func _host_returned() -> void:
 	dragging_tea_bag = false
-	animation_state_machine.travel("ReturnOfHost")
+	animation_state_machine.travel("ReturnOfHostBeforePhase")
 
 func _open_tea_box() -> void:
 	if $Control/BagOfTeas/TeaTagButtons/AnimationPlayer.is_playing():
