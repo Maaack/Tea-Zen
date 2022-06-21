@@ -50,12 +50,15 @@ func _ready():
 	var show_second_outro : bool = false
 	var show_third_outro : bool = false
 	var show_fourth_outro : bool = false
+	var suggest_blend : bool = false
 	# Intros
+	if PersistentData.remembered_steepings >= 2 and PersistentData.remembered_mixed_teas == 0:
+		suggest_blend = true
 	if PersistentData.remembered_intros >= 2:
 		$Control/SkipButton.show()
 	if PersistentData.remembered_intros >= 10:
 		show_many_more_intro = true
-	elif PersistentData.remembered_intros >= 4:
+	elif PersistentData.remembered_intros >= 5:
 		show_many_intro = true
 	elif PersistentData.remembered_intros >= 1:
 		show_second_intro = true
@@ -78,7 +81,8 @@ func _ready():
 	else:
 		show_first_outro = true
 	$AnimationTree['parameters/conditions/intro_first'] = show_first_intro
-	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro
+	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro and not suggest_blend
+	$AnimationTree['parameters/conditions/intro_second_suggest_blend'] = show_second_intro and suggest_blend
 	$AnimationTree['parameters/conditions/intro_many'] = show_many_intro
 	$AnimationTree['parameters/conditions/intro_many_more'] = show_many_more_intro
 	$AnimationTree['parameters/conditions/return_first'] = show_first_return
@@ -106,6 +110,9 @@ func finished_return() -> void:
 
 func finished_outro() -> void:
 	PersistentData.played_outro()
+
+func mixed_teas() -> void:
+	PersistentData.mixed_teas()
 
 func _skip_intro() -> void:
 	PersistentData.skipped_intro()
@@ -166,6 +173,7 @@ func _queue_tea_outcome_animations() -> void:
 		return
 	animation_queue.append("Strong%sFlavor" % tea_time_array[0][0])
 	if tea_time_array.size() > 1:
+		mixed_teas()
 		animation_queue.append("Lighter%sFlavor" % tea_time_array[1][0])
 	if tea_time_array.size() > 2:
 		animation_queue.append("HintOf%s" % tea_time_array[2][0])
