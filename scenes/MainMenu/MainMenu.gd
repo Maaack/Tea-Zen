@@ -1,6 +1,8 @@
 extends Node
 
 enum States{
+	NONE,
+	INTRO,
 	MENU,
 	CREDITS,
 	OPTIONS,
@@ -10,7 +12,7 @@ enum States{
 var steeping_tea : bool = true setget set_steeping_tea
 var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
-var menu_state : int = States.MENU
+var menu_state : int = States.NONE
 
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
@@ -23,6 +25,9 @@ func _disable_menu_buttons(disabled : bool = true) -> void:
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
+
+func start_intro():
+	menu_state = States.INTRO
 
 func open_menu():
 	menu_state = States.MENU
@@ -118,6 +123,7 @@ func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayer.play()
 
 func _input(event):
-	if event is InputEventMouseButton or event is InputEventKey:
-		if $MenuAnimationPlayer.is_playing() and $MenuAnimationPlayer.current_animation == "Intro":
-			$MenuAnimationPlayer.seek(4.4)
+	if menu_state == States.INTRO and \
+	(event is InputEventMouseButton or \
+	event is InputEventKey):
+		$MenuAnimationPlayer.seek(4.4)
