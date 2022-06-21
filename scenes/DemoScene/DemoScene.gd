@@ -125,12 +125,6 @@ func _skip_intro() -> void:
 func _host_returned() -> void:
 	dragging_tea_bag = false
 	animation_state_machine.travel("ReturnOfHostBeforePhase")
-
-func _open_tea_box() -> void:
-	if $Control/BagOfTeas/TeaTagButtons/AnimationPlayer.is_playing():
-		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.seek(1.5)
-	else:
-		$Control/BagOfTeas/TeaTagButtons/AnimationPlayer.play("OpenBox")
 	
 func back_to_main_menu() -> void:
 	get_tree().change_scene("res://scenes/MainMenu/MainMenu.tscn")
@@ -168,7 +162,7 @@ func _queue_tea_outcome_animations() -> void:
 		steep_time_total += steeped_time
 	tea_time_array.sort_custom(self, "_tea_time_custom_sorter")
 	
-	if tea_time_array.size() == 1 and steep_time_total < 5.0:
+	if steep_time_total < 5.0:
 		animation_queue.append(ANIMATION_NO_STEEP)
 		return
 	animation_queue.append("Strong%sFlavor" % tea_time_array[0][0])
@@ -230,9 +224,6 @@ func _on_SkipButton_pressed():
 		DEMO_PHASES.CONCLUSION:
 			back_to_main_menu()
 
-func _on_TeaBagButton_button_down():
-	_open_tea_box()
-
 func _add_steeping_time(seconds : float) -> void:
 	var tea_name : String = current_tea_data.name
 	if not tea_name in tea_steep_times:
@@ -251,10 +242,6 @@ func _on_Area2D_body_entered(body : TeaBagRigidBody):
 func _on_Area2D_body_exited(_body):
 	steeping_state = false
 	steeping_tea_bag = null
-
-func _on_TeaTagButton_pressed(tea_data):
-	_open_tea_box()
-	pick_up_teabag(tea_data)
 
 func _on_MusicController_pause_pressed():
 	$AudioStreamPlayers/Music.stream_paused = true
