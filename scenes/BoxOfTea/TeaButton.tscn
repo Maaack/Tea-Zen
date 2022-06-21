@@ -21,4 +21,5 @@ custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 3 )
 script = ExtResource( 1 )
 
+[connection signal="button_down" from="." to="." method="_on_TeaButton_button_down"]
 [connection signal="mouse_entered" from="." to="." method="_on_TeaButton_mouse_entered"]

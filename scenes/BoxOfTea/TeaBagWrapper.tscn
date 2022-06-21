@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://assets/audio/SFX/tea-wrapper-pickup-2.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperPickup.ogg" type="AudioStream" id=1]
 [ext_resource path="res://scenes/BoxOfTea/TeaBagWrapper.gd" type="Script" id=2]
-[ext_resource path="res://assets/audio/SFX/tea-wrapper-tear-open-2.ogg" type="AudioStream" id=3]
-[ext_resource path="res://assets/audio/SFX/tea-wrapper-drop-3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperTearOpen.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperDrop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/SFX/TeaBagRemoveWrapper.ogg" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DropDown"
@@ -138,7 +139,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=14]
 resource_name = "TearOpen"
-length = 0.1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("../StreamPlayer2Ds/TearOpen:playing")
 tracks/0/interp = 1
@@ -162,6 +163,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -6, -3 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../StreamPlayer2Ds/RemoveWrapper:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=4]
@@ -211,6 +224,9 @@ audio_stream = ExtResource( 4 )
 [sub_resource type="AudioStreamRandomPitch" id=17]
 audio_stream = ExtResource( 3 )
 
+[sub_resource type="AudioStreamRandomPitch" id=18]
+audio_stream = ExtResource( 5 )
+
 [node name="TeaBagWrapper" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -246,3 +262,8 @@ bus = "SFX"
 
 [node name="TearOpen" type="AudioStreamPlayer2D" parent="StreamPlayer2Ds"]
 stream = SubResource( 17 )
+bus = "SFX"
+
+[node name="RemoveWrapper" type="AudioStreamPlayer2D" parent="StreamPlayer2Ds"]
+stream = SubResource( 18 )
+bus = "SFX"

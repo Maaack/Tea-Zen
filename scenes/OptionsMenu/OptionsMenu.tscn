@@ -1,7 +1,32 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://theme/main_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/OptionsMenu/OptionsMenu.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/WhisperNotGoingToTell.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/OkayBackToTesting.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/ThisIsNotATest.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/IHopeYourePayingAttention.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/AreYouTryingToListen.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/TestingTesting123.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/ThisIsTheRealDeal.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/BecauseIWillOnlySayThis.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/Vocals/OptionsMenu/WhisperOfCourseTheyDont.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/SFX/TeaBagRemoveWrapper.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperTearOpen.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperDrop.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/audio/SFX/TeaWrapperPickup.ogg" type="AudioStream" id=15]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 15 )
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 14 )
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 13 )
+
+[sub_resource type="AudioStreamRandomPitch" id=4]
+audio_stream = ExtResource( 12 )
 
 [node name="OptionsMenu" type="VBoxContainer"]
 margin_left = 170.0
@@ -207,6 +232,66 @@ margin_top = 9.0
 margin_right = 206.0
 margin_bottom = 23.0
 text = "reset!"
+
+[node name="VocalAudioStreamPlayers" type="Node" parent="."]
+
+[node name="TestingTesting123" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 8 )
+bus = "Host"
+
+[node name="TestingTesting124" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 8 )
+bus = "Host"
+
+[node name="ThisIsNotATest" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 5 )
+bus = "Host"
+
+[node name="ThisIsTheRealDeal" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 9 )
+bus = "Host"
+
+[node name="IHopeYourePayingAttention" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 6 )
+bus = "Host"
+
+[node name="BecauseIWillOnlySayThis" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 10 )
+bus = "Host"
+
+[node name="OfCourseTheyDontKnow" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 11 )
+bus = "Host"
+
+[node name="NoImNotGoingToTellThem" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 3 )
+bus = "Host"
+
+[node name="AreYouTryingToListenIn" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 7 )
+bus = "Host"
+
+[node name="OkayBackToTesting" type="AudioStreamPlayer" parent="VocalAudioStreamPlayers"]
+stream = ExtResource( 4 )
+bus = "Host"
+
+[node name="SFXAudioStreamPlayers" type="Node" parent="."]
+
+[node name="TeaWrapperPickUp" type="AudioStreamPlayer" parent="SFXAudioStreamPlayers"]
+stream = SubResource( 1 )
+bus = "SFX"
+
+[node name="TeaWrapperDropDown" type="AudioStreamPlayer" parent="SFXAudioStreamPlayers"]
+stream = SubResource( 2 )
+bus = "SFX"
+
+[node name="TeaWrapperTearOpen" type="AudioStreamPlayer" parent="SFXAudioStreamPlayers"]
+stream = SubResource( 3 )
+bus = "SFX"
+
+[node name="TeaWrapperRemove" type="AudioStreamPlayer" parent="SFXAudioStreamPlayers"]
+stream = SubResource( 4 )
+bus = "SFX"
 
 [connection signal="value_changed" from="MasterControl/MasterHSlider" to="." method="_on_MasterHSlider_value_changed"]
 [connection signal="value_changed" from="SFXControl/SFXHSlider" to="." method="_on_SFXHSlider_value_changed"]

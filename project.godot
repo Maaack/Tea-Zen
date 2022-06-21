@@ -68,7 +68,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Tea Time"
+config/name="Tea Time: Short on Time"
 run/main_scene="res://scenes/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 

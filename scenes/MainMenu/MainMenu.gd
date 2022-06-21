@@ -1,6 +1,8 @@
 extends Node
 
 enum States{
+	NONE,
+	INTRO,
 	MENU,
 	CREDITS,
 	OPTIONS,
@@ -10,7 +12,7 @@ enum States{
 var steeping_tea : bool = true setget set_steeping_tea
 var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
-var menu_state : int = States.MENU
+var menu_state : int = States.NONE
 
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
@@ -24,6 +26,9 @@ func _disable_menu_buttons(disabled : bool = true) -> void:
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
 
+func start_intro():
+	menu_state = States.INTRO
+
 func open_menu():
 	menu_state = States.MENU
 	_disable_menu_buttons(false)
@@ -31,7 +36,7 @@ func open_menu():
 func close_menu():
 	_disable_menu_buttons()
 
-func _process(delta):
+func _process(_delta):
 	var brush_offset : Vector2 = Vector2.ZERO
 	if steeping_tea:
 		brush_offset += Vector2(rand_range(-0.02, 0.02), 0.0)
@@ -82,7 +87,7 @@ func open_options():
 func close_options():
 	$MenuAnimationPlayer.play("CloseOptions")
 
-func _on_MouseMotionControl_force_released(position):
+func _on_MouseMotionControl_force_released(_position):
 	$FluidSimulator.release_velocity_force_2()
 
 func _on_TopMouseMotionControl_force_applied(position, vector):
@@ -116,3 +121,9 @@ func _on_MusicController_play_pressed():
 
 func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayer.play()
+
+func _input(event):
+	if menu_state == States.INTRO and \
+	(event is InputEventMouseButton or \
+	event is InputEventKey):
+		$MenuAnimationPlayer.seek(4.4)
