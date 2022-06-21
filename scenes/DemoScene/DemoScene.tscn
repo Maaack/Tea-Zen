@@ -21,21 +21,21 @@
 [ext_resource path="res://assets/audio/Vocals/Evaluation/HintOfMint.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/HintOfBlueberry.ogg" type="AudioStream" id=20]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/HintOfElderberry.ogg" type="AudioStream" id=21]
-[ext_resource path="res://assets/audio/Outcomes/LightSteep.ogg" type="AudioStream" id=22]
-[ext_resource path="res://assets/audio/Outcomes/LongSteep.ogg" type="AudioStream" id=23]
+[ext_resource path="res://assets/audio/Vocals/Evaluation/SeemsALittleLight.ogg" type="AudioStream" id=22]
+[ext_resource path="res://assets/audio/Vocals/Evaluation/DidYouSteepTheWholeTime.ogg" type="AudioStream" id=23]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/LighterElderberryFlavor.ogg" type="AudioStream" id=24]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/TheresAlsoSomethingElse.ogg" type="AudioStream" id=25]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/StrongRoseFlavor.ogg" type="AudioStream" id=26]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/Mmmm.ogg" type="AudioStream" id=27]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/LighterRoseFlavor.ogg" type="AudioStream" id=28]
-[ext_resource path="res://assets/audio/Outcomes/NoSteep.ogg" type="AudioStream" id=29]
+[ext_resource path="res://assets/audio/Vocals/Evaluation/WaterWithHintOfTea.ogg" type="AudioStream" id=29]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/HintOfRose.ogg" type="AudioStream" id=30]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/StrongElderberryFlavor.ogg" type="AudioStream" id=31]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/StrongChamomileFlavor.ogg" type="AudioStream" id=32]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/StrongBlueberryFlavor.ogg" type="AudioStream" id=33]
-[ext_resource path="res://assets/audio/Outcomes/SteepedEveryFlavor.ogg" type="AudioStream" id=34]
+[ext_resource path="res://assets/audio/Vocals/Evaluation/SteepedEveryFlavor.ogg" type="AudioStream" id=34]
 [ext_resource path="res://assets/audio/Vocals/SoWhatAreWeDoingHere.ogg" type="AudioStream" id=35]
-[ext_resource path="res://assets/audio/Outcomes/WellSteeped.ogg" type="AudioStream" id=36]
+[ext_resource path="res://assets/audio/Vocals/Evaluation/WellSteepedTea.ogg" type="AudioStream" id=36]
 [ext_resource path="res://assets/audio/Vocals/AreWeJustWaitingForever.ogg" type="AudioStream" id=37]
 [ext_resource path="res://scenes/MusicController/MusicController.tscn" type="PackedScene" id=38]
 [ext_resource path="res://assets/textures/TeaKettleBack.png" type="Texture" id=39]
@@ -1621,7 +1621,7 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id=84]
 resource_name = "LightSteep"
-length = 6.0
+length = 8.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/LightSteep:playing")
 tracks/0/interp = 1
@@ -1629,7 +1629,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 5.8 ),
+"times": PoolRealArray( 0, 0.1, 8.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -1641,10 +1641,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 2.5, 5.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 3, 4.8, 6.3, 8.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "", "That seems a little light, but still fine.", "Typically, five minutes is the steep time for herbal teas.", "" ]
+"values": [ "", "That seems a little light, but still fine.", "Shorter steep times are appropriate for... ", "green and white teas, but...", "You can steep herbal teas a little longer.", "" ]
 }
 
 [sub_resource type="Animation" id=76]
@@ -1878,7 +1878,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=83]
 resource_name = "LongSteep"
-length = 12.0
+length = 11.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/LongSteep:playing")
 tracks/0/interp = 1
@@ -1886,7 +1886,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 0.1, 11.9 ),
+"times": PoolRealArray( -0.1, 0.1, 11.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -1898,16 +1898,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 2.6, 6.4, 9.4, 11.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 2.4, 5.7, 6.6, 9.1, 11.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "", "Did you steep this the whole time?", "Typically, five minutes is enough for herbal teas,
-but...", "I did say, \"you can't go too off the rails.\"", "Other teas are less forgiving, though.", "" ]
+"values": [ "", "Did you steep this the whole time?", "Typically, five minutes is enough for herbal teas,", "But I did say, ", "\"you can't mess it up too badly.\"", "Please, try a little shorter next time, though.", "" ]
 }
 
 [sub_resource type="Animation" id=82]
 resource_name = "NoSteep"
-length = 10.0
+length = 9.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("AudioStreamPlayers/Outcomes/NoSteep:playing")
 tracks/0/interp = 1
@@ -1915,7 +1914,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 9.4 ),
+"times": PoolRealArray( 0, 0.1, 9.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -1927,10 +1926,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 2.2, 4, 6.1, 7.7, 9.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 2.6, 5.2, 7.2, 9.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "", "That's just water with a hint of tea.", "What are you, some kind of purist?", "Did you want to see if I would notice?", "Well I've noticed!", "Please, steep it longer next time.", "" ]
+"values": [ "", "That's just water with a hint of tea.", "Did you want to see if I would notice?", "It's pretty obvious.", "Please, actually steep the tea next time.", "" ]
 }
 
 [sub_resource type="Animation" id=61]
@@ -3224,7 +3223,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 12.5 ),
+"times": PoolRealArray( 0, 0.1, 12.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -3236,10 +3235,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 1.4, 4.5, 7, 8.2, 9.4, 10.9, 11.7, 12.5 ),
+"times": PoolRealArray( 0, 0.1, 1.4, 4.2, 6.5, 7.8, 9.7, 10.8, 11.5, 13 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "", "Oh my...", "Did you steep every flavor of tea in the box?", "Because that's what it tastes like.", "I've done that once.", "Just the once though,", "because it tasted like...", "", "well like this.", "
+"values": [ "", "Oh my...", "Did you steep every flavor of tea in the box?", "Because that's what it tastes like.", "I've done that before,", "but just once,", "because it tasted...", "", "well it tasted like this.", "
 " ]
 }
 
@@ -3853,7 +3852,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 5.2 ),
+"times": PoolRealArray( 0, 0.1, 5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -3865,10 +3864,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 2, 4.3, 5.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 1.7, 2.7, 4.2, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "", "That's a well steeped tea!", "Not too strong, not too light...", "Good work!", "" ]
+"values": [ "", "That's a well steeped tea!", "Not too strong,", "Not too light.", "Good work!", "" ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=91]
