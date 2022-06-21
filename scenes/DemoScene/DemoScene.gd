@@ -43,6 +43,12 @@ func _ready():
 	var show_second_intro : bool = false
 	var show_many_intro : bool = false
 	var show_many_more_intro : bool = false
+	var show_first_outro : bool = false
+	var show_second_outro : bool = false
+	var show_third_outro : bool = false
+	var show_fourth_outro : bool = false
+	if PersistentData.remembered_intros >= 2:
+		$Control/SkipButton.show()
 	if PersistentData.remembered_intros >= 10:
 		show_many_more_intro = true
 	elif PersistentData.remembered_intros >= 4:
@@ -51,12 +57,22 @@ func _ready():
 		show_second_intro = true
 	else:
 		show_first_intro = true
-	if PersistentData.remembered_intros >= 2:
-		$Control/SkipButton.show()
+	if PersistentData.remembered_outros >= 6:
+		show_fourth_outro = true
+	elif PersistentData.remembered_outros >= 5:
+		show_third_outro = true
+	elif PersistentData.remembered_outros >= 1:
+		show_second_outro = true
+	else:
+		show_first_outro = true
 	$AnimationTree['parameters/conditions/intro_first'] = show_first_intro
 	$AnimationTree['parameters/conditions/intro_second'] = show_second_intro
 	$AnimationTree['parameters/conditions/intro_many'] = show_many_intro
 	$AnimationTree['parameters/conditions/intro_many_more'] = show_many_more_intro
+	$AnimationTree['parameters/conditions/outro_first'] = show_first_outro
+	$AnimationTree['parameters/conditions/outro_second'] = show_second_outro
+	$AnimationTree['parameters/conditions/outro_third'] = show_third_outro
+	$AnimationTree['parameters/conditions/outro_fourth'] = show_fourth_outro
 	animation_state_machine = $AnimationTree["parameters/playback"]
 
 func _started_steeping() -> void:
@@ -69,6 +85,9 @@ func _started_steeping() -> void:
 
 func finished_intro() -> void:
 	PersistentData.played_intro()
+
+func finished_outro() -> void:
+	PersistentData.played_outro()
 
 func _skip_intro() -> void:
 	PersistentData.skipped_intro()
@@ -150,7 +169,7 @@ func taste_tea() -> void:
 		yield($DemoAnimationPlayer, "animation_finished")
 	yield(get_tree().create_timer(1.0), "timeout")
 	if current_phase == DEMO_PHASES.EVALUATION:
-		animation_state_machine.travel("Closing")
+		animation_state_machine.travel("EndOfDemoBeforePhase")
 
 func _steep_tea() -> void:
 	if not dragging_tea_bag:
@@ -179,7 +198,7 @@ func _on_SkipButton_pressed():
 			animation_state_machine.travel("SkipToHostTastesTea")
 		DEMO_PHASES.EVALUATION:
 			if animation_queue.empty():
-				animation_state_machine.travel("Closing")
+				animation_state_machine.travel("EndOfDemoBeforePhase")
 			else:
 				animation_queue = []
 		DEMO_PHASES.CONCLUSION:
@@ -219,7 +238,6 @@ func _on_MusicController_play_pressed():
 
 func _on_MusicController_repeat_pressed():
 	$AudioStreamPlayers/Music.play()
-
 
 func _on_BoxOfTea_tea_selected(tea_data):
 	pick_up_teabag(tea_data)

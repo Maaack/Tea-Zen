@@ -2,10 +2,12 @@ extends Node
 
 const PERSISTENT_SECTION = "PersistentData"
 const REMEMBERED_INTROS = "RememberedIntros"
+const REMEMBERED_OUTROS = "RememberedOutros"
 const REMEMBERED_STEEPINGS = "RememberedSteepings"
 const REMEMBERED_SKIPPED_INTROS = "RememberedSkippedIntros"
 const REMEMBERED_TIME_PLAYED = "RememberedTimePlayed"
 const TOTAL_INTROS = "TotalIntros"
+const TOTAL_OUTROS = "TotalOutros"
 const TOTAL_STEEPINGS = "TotalSteepings"
 const TOTAL_SKIPPED_INTROS = "TotalSkippedIntros"
 const TOTAL_TIME_PLAYED = "TotalTimePlayed"
@@ -14,10 +16,12 @@ const UPDATE_COUNTER_RESET = 3.0
 const UNKNOWN_VERSION = "unknown"
 
 var remembered_intros : int = 0
+var remembered_outros : int = 0
 var remembered_steepings : int = 0
 var remembered_skipped_intros : int = 0
 var remembered_time_played : float = 0.0
 var total_intros : int = 0
+var total_outros : int = 0
 var total_steepings : int = 0
 var total_skipped_intros : int = 0
 var total_time_played : float = 0.0
@@ -35,10 +39,12 @@ func _process(delta):
 
 func _sync_with_config() -> void:
 	remembered_intros = Config.get_config(PERSISTENT_SECTION, REMEMBERED_INTROS, remembered_intros)
+	remembered_outros = Config.get_config(PERSISTENT_SECTION, REMEMBERED_OUTROS, remembered_outros)
 	remembered_steepings = Config.get_config(PERSISTENT_SECTION, REMEMBERED_STEEPINGS, remembered_steepings)
 	remembered_skipped_intros = Config.get_config(PERSISTENT_SECTION, REMEMBERED_SKIPPED_INTROS, remembered_skipped_intros)
 	remembered_time_played = Config.get_config(PERSISTENT_SECTION, REMEMBERED_TIME_PLAYED, remembered_time_played)
 	total_intros = Config.get_config(PERSISTENT_SECTION, TOTAL_INTROS, total_intros)
+	total_outros = Config.get_config(PERSISTENT_SECTION, TOTAL_OUTROS, total_outros)
 	total_steepings = Config.get_config(PERSISTENT_SECTION, TOTAL_STEEPINGS, total_steepings)
 	total_time_played = Config.get_config(PERSISTENT_SECTION, TOTAL_TIME_PLAYED, total_time_played)
 	total_skipped_intros = Config.get_config(PERSISTENT_SECTION, TOTAL_SKIPPED_INTROS, total_skipped_intros)
@@ -64,13 +70,21 @@ func skipped_intro():
 	total_skipped_intros += 1
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_SKIPPED_INTROS, remembered_skipped_intros)
 	Config.set_config(PERSISTENT_SECTION, TOTAL_SKIPPED_INTROS, total_skipped_intros)
-	
+
+func played_outro():
+	remembered_outros += 1
+	total_outros += 1
+	Config.set_config(PERSISTENT_SECTION, REMEMBERED_OUTROS, remembered_outros)
+	Config.set_config(PERSISTENT_SECTION, TOTAL_OUTROS, total_outros)
+
 func reset_memory():
 	remembered_intros = 0
+	remembered_outros = 0
 	remembered_steepings = 0
 	remembered_skipped_intros = 0
 	remembered_time_played = 0.0
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_INTROS, remembered_intros)
+	Config.set_config(PERSISTENT_SECTION, REMEMBERED_OUTROS, remembered_outros)
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_STEEPINGS, remembered_steepings)
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_SKIPPED_INTROS, remembered_skipped_intros)
 	Config.set_config(PERSISTENT_SECTION, REMEMBERED_TIME_PLAYED, remembered_time_played)

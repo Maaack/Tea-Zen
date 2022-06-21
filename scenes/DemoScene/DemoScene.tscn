@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=2]
+[gd_scene load_steps=200 format=2]
 
 [ext_resource path="res://scenes/DemoScene/DemoScene.gd" type="Script" id=1]
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/audio/HostReturnsAndChecks2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://scenes/TeaBag/TeaTagButton.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/audio/Quantum-Jazz-Intro.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/Vocals/Outros/SecondOutro.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/audio/Vocals/Evaluation/LighterChamomileFlavor.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/textures/TeaFluidMask.png" type="Texture" id=15]
 [ext_resource path="res://assets/textures/AssortedTeaBags.png" type="Texture" id=16]
@@ -49,10 +50,13 @@
 [ext_resource path="res://assets/textures/TeaBoxBack.png" type="Texture" id=48]
 [ext_resource path="res://assets/audio/Vocals/SkippedIntro/LookAtMeIKnowAll.ogg" type="AudioStream" id=49]
 [ext_resource path="res://assets/audio/Vocals/SkippedIntro/NoYouShutUp.ogg" type="AudioStream" id=50]
+[ext_resource path="res://assets/audio/Vocals/Outros/FirstOutro.ogg" type="AudioStream" id=51]
 [ext_resource path="res://assets/audio/Vocals/Intros/FirstIntro.ogg" type="AudioStream" id=52]
 [ext_resource path="res://assets/audio/Vocals/Intros/FourthIntro.ogg" type="AudioStream" id=53]
 [ext_resource path="res://assets/audio/Vocals/Intros/ThirdIntro.ogg" type="AudioStream" id=54]
 [ext_resource path="res://assets/audio/Vocals/Intros/SecondIntro.ogg" type="AudioStream" id=55]
+[ext_resource path="res://assets/audio/Vocals/Outros/ThirdOutro.ogg" type="AudioStream" id=56]
+[ext_resource path="res://assets/audio/Vocals/Outros/AlrightThatsItThanks.ogg" type="AudioStream" id=57]
 
 [sub_resource type="Animation" id=86]
 resource_name = "Arrival"
@@ -233,46 +237,6 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -60.0 ]
-}
-
-[sub_resource type="Animation" id=70]
-resource_name = "EndOfDemo"
-length = 15.7
-tracks/0/type = "value"
-tracks/0/path = NodePath("AudioStreamPlayers/HostClosing:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 12.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Control/CaptionsLabel:text")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4, 1.8, 3.3, 5.4, 8.3, 9.4, 10.2, 11.4, 12.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ "", "That’s all I have for now. ", "I was a bit short on time.", "Hope you enjoyed the experience.", "If this is something you’d like to see more of,", "let me know.", "Alright.", "Thank you!", "Bye bye!", "" ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AudioStreamPlayers/Music:volume_db")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 12.1, 13.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ -10.0, -10.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=198]
@@ -601,6 +565,222 @@ tracks/26/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "EndOfDemoFirst"
+length = 15.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CaptionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.8, 3.9, 5.9, 8.3, 9.6, 10.4, 11.6, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That’s all I have for now. ", "I was a bit short on time.", "Hope you enjoyed the experience.", "If this is something you’d like to see more of,", "let me know.", "Alright.", "Thank you!", "Bye bye!", "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 12.2, 13.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/Outros/FirstOutro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 12.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 12.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_outro"
+} ]
+}
+
+[sub_resource type="Animation" id=208]
+resource_name = "EndOfDemoFourth"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CaptionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1, 1.9, 3.7, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Alright,", "That's it.", "Thanks for making me tea. ", "Bye bye!", "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.2, 5.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/Outros/FourthOutro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 4.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_outro"
+} ]
+}
+
+[sub_resource type="Animation" id=206]
+resource_name = "EndOfDemoSecond"
+length = 13.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CaptionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 2.5, 4.5, 6.9, 7.7, 8.9, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "That’s it for tea time, this time.", "You're more than welcome to come back again.", "And leave feedback if you have any.", "Alright.", "Thank you!", "Bye bye!", "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 9.6, 10.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/Outros/SecondOutro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 9.9 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_outro"
+} ]
+}
+
+[sub_resource type="Animation" id=207]
+resource_name = "EndOfDemoThird"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/CaptionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 3.2, 4.3, 6.5, 8.9, 10.4, 12.1, 13.1, 13.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "Would you like to make tea for someone besides me?", "That's blasphemous, ", "but I'll allow you to suggest it.", "The suggestion bin is...", "In your butt.", "I'm sure you can find it.", "Alright?", "Bye.", "" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayers/Music:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 13.4, 14.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, -10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayers/Outros/ThirdOutro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 13.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 14 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "finished_outro"
+} ]
 }
 
 [sub_resource type="Animation" id=116]
@@ -2115,6 +2295,18 @@ tracks/40/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/41/type = "value"
+tracks/41/path = NodePath("AudioStreamPlayers/Outros/ThirdOutro:playing")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=63]
 resource_name = "ReturnOfHost"
@@ -3191,11 +3383,20 @@ animation = "Arrival"
 [sub_resource type="AnimationNodeAnimation" id=204]
 animation = "Closing"
 
-[sub_resource type="AnimationNodeAnimation" id=149]
-animation = "EndOfDemo"
-
 [sub_resource type="AnimationNodeAnimation" id=199]
 animation = "EndOfDemoBeforePhase"
+
+[sub_resource type="AnimationNodeAnimation" id=209]
+animation = "EndOfDemoFirst"
+
+[sub_resource type="AnimationNodeAnimation" id=210]
+animation = "EndOfDemoFourth"
+
+[sub_resource type="AnimationNodeAnimation" id=211]
+animation = "EndOfDemoSecond"
+
+[sub_resource type="AnimationNodeAnimation" id=212]
+animation = "EndOfDemoThird"
 
 [sub_resource type="AnimationNodeAnimation" id=150]
 animation = "HostTastesTea"
@@ -3417,17 +3618,41 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=197]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=200]
-switch_mode = 2
-auto_advance = true
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=201]
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=202]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=205]
+[sub_resource type="AnimationNodeStateMachineTransition" id=213]
+switch_mode = 2
+advance_condition = "outro_first"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=214]
+switch_mode = 2
+advance_condition = "outro_second"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=215]
+switch_mode = 2
+advance_condition = "outro_third"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=216]
+switch_mode = 2
+advance_condition = "outro_fourth"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=217]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=218]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=219]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=220]
 switch_mode = 2
 auto_advance = true
 
@@ -3436,10 +3661,16 @@ states/Arrival/node = SubResource( 91 )
 states/Arrival/position = Vector2( -329, 92 )
 states/Closing/node = SubResource( 204 )
 states/Closing/position = Vector2( 3160.59, 92 )
-states/EndOfDemo/node = SubResource( 149 )
-states/EndOfDemo/position = Vector2( 2918.64, 92 )
 states/EndOfDemoBeforePhase/node = SubResource( 199 )
 states/EndOfDemoBeforePhase/position = Vector2( 2602.05, 92 )
+states/EndOfDemoFirst/node = SubResource( 209 )
+states/EndOfDemoFirst/position = Vector2( 2918.64, 92 )
+states/EndOfDemoFourth/node = SubResource( 210 )
+states/EndOfDemoFourth/position = Vector2( 2918.64, 400.025 )
+states/EndOfDemoSecond/node = SubResource( 211 )
+states/EndOfDemoSecond/position = Vector2( 2918.64, 192.546 )
+states/EndOfDemoThird/node = SubResource( 212 )
+states/EndOfDemoThird/position = Vector2( 2918.64, 297.025 )
 states/HostTastesTea/node = SubResource( 150 )
 states/HostTastesTea/position = Vector2( 2268.64, 92 )
 states/IntroFirstTime/node = SubResource( 190 )
@@ -3455,7 +3686,7 @@ states/ReturnOfHost/position = Vector2( 1988.51, 92 )
 states/ReturnOfHostBeforePhase/node = SubResource( 112 )
 states/ReturnOfHostBeforePhase/position = Vector2( 1667.51, 92 )
 states/SkipToHostTastesTea/node = SubResource( 153 )
-states/SkipToHostTastesTea/position = Vector2( 2268.64, 218.546 )
+states/SkipToHostTastesTea/position = Vector2( 2268.64, 192.546 )
 states/SkipToWaitingHost/node = SubResource( 158 )
 states/SkipToWaitingHost/position = Vector2( 331.35, 239 )
 states/Steeping/node = SubResource( 105 )
@@ -3476,10 +3707,10 @@ states/WaitingHostEvenLonger/node = SubResource( 138 )
 states/WaitingHostEvenLonger/position = Vector2( 684, 685.025 )
 states/WaitingHostLonger/node = SubResource( 139 )
 states/WaitingHostLonger/position = Vector2( 684, 385.025 )
-transitions = [ "WaitingHost", "WaitingHostComments", SubResource( 98 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ), "WaitingHostBeforePhase", "WaitingHost", SubResource( 128 ), "WaitingHostComments", "WaitingHostLonger", SubResource( 140 ), "WaitingHostLonger", "WaitingHostCommentsAgain", SubResource( 141 ), "WaitingHostCommentsAgain", "WaitingHostEvenLonger", SubResource( 142 ), "WaitingHostEvenLonger", "WaitingHostCommentsLastTime", SubResource( 143 ), "WaitingHostLonger", "SteepingBeforePhase", SubResource( 144 ), "WaitingHostCommentsAgain", "SteepingBeforePhase", SubResource( 145 ), "WaitingHostEvenLonger", "SteepingBeforePhase", SubResource( 146 ), "WaitingHostCommentsLastTime", "SteepingBeforePhase", SubResource( 147 ), "ReturnOfHost", "HostTastesTea", SubResource( 151 ), "ReturnOfHost", "SkipToHostTastesTea", SubResource( 154 ), "SkipToWaitingHost", "WaitingHost", SubResource( 179 ), "Arrival", "IntroManyTimes", SubResource( 184 ), "Arrival", "IntroManyMoreTimes", SubResource( 185 ), "IntroManyTimes", "SkipToWaitingHost", SubResource( 186 ), "IntroManyMoreTimes", "SkipToWaitingHost", SubResource( 187 ), "IntroManyTimes", "WaitingHostBeforePhase", SubResource( 188 ), "IntroManyMoreTimes", "WaitingHostBeforePhase", SubResource( 189 ), "Arrival", "IntroFirstTime", SubResource( 191 ), "IntroFirstTime", "WaitingHostBeforePhase", SubResource( 192 ), "IntroFirstTime", "SkipToWaitingHost", SubResource( 193 ), "Arrival", "IntroSecondTime", SubResource( 195 ), "IntroSecondTime", "WaitingHostBeforePhase", SubResource( 196 ), "IntroSecondTime", "SkipToWaitingHost", SubResource( 197 ), "EndOfDemoBeforePhase", "EndOfDemo", SubResource( 200 ), "HostTastesTea", "EndOfDemoBeforePhase", SubResource( 201 ), "SkipToHostTastesTea", "EndOfDemoBeforePhase", SubResource( 202 ), "EndOfDemo", "Closing", SubResource( 205 ) ]
+transitions = [ "WaitingHost", "WaitingHostComments", SubResource( 98 ), "WaitingHost", "SteepingBeforePhase", SubResource( 107 ), "WaitingHostComments", "SteepingBeforePhase", SubResource( 108 ), "SteepingBeforePhase", "Steeping", SubResource( 109 ), "Steeping", "ReturnOfHostBeforePhase", SubResource( 113 ), "ReturnOfHostBeforePhase", "ReturnOfHost", SubResource( 114 ), "WaitingHostBeforePhase", "WaitingHost", SubResource( 128 ), "WaitingHostComments", "WaitingHostLonger", SubResource( 140 ), "WaitingHostLonger", "WaitingHostCommentsAgain", SubResource( 141 ), "WaitingHostCommentsAgain", "WaitingHostEvenLonger", SubResource( 142 ), "WaitingHostEvenLonger", "WaitingHostCommentsLastTime", SubResource( 143 ), "WaitingHostLonger", "SteepingBeforePhase", SubResource( 144 ), "WaitingHostCommentsAgain", "SteepingBeforePhase", SubResource( 145 ), "WaitingHostEvenLonger", "SteepingBeforePhase", SubResource( 146 ), "WaitingHostCommentsLastTime", "SteepingBeforePhase", SubResource( 147 ), "ReturnOfHost", "HostTastesTea", SubResource( 151 ), "ReturnOfHost", "SkipToHostTastesTea", SubResource( 154 ), "SkipToWaitingHost", "WaitingHost", SubResource( 179 ), "Arrival", "IntroManyTimes", SubResource( 184 ), "Arrival", "IntroManyMoreTimes", SubResource( 185 ), "IntroManyTimes", "SkipToWaitingHost", SubResource( 186 ), "IntroManyMoreTimes", "SkipToWaitingHost", SubResource( 187 ), "IntroManyTimes", "WaitingHostBeforePhase", SubResource( 188 ), "IntroManyMoreTimes", "WaitingHostBeforePhase", SubResource( 189 ), "Arrival", "IntroFirstTime", SubResource( 191 ), "IntroFirstTime", "WaitingHostBeforePhase", SubResource( 192 ), "IntroFirstTime", "SkipToWaitingHost", SubResource( 193 ), "Arrival", "IntroSecondTime", SubResource( 195 ), "IntroSecondTime", "WaitingHostBeforePhase", SubResource( 196 ), "IntroSecondTime", "SkipToWaitingHost", SubResource( 197 ), "HostTastesTea", "EndOfDemoBeforePhase", SubResource( 201 ), "SkipToHostTastesTea", "EndOfDemoBeforePhase", SubResource( 202 ), "EndOfDemoBeforePhase", "EndOfDemoFirst", SubResource( 213 ), "EndOfDemoBeforePhase", "EndOfDemoSecond", SubResource( 214 ), "EndOfDemoBeforePhase", "EndOfDemoThird", SubResource( 215 ), "EndOfDemoBeforePhase", "EndOfDemoFourth", SubResource( 216 ), "EndOfDemoFirst", "Closing", SubResource( 217 ), "EndOfDemoSecond", "Closing", SubResource( 218 ), "EndOfDemoThird", "Closing", SubResource( 219 ), "EndOfDemoFourth", "Closing", SubResource( 220 ) ]
 start_node = "Arrival"
 end_node = "Closing"
-graph_offset = Vector2( 2106.07, -91.9803 )
+graph_offset = Vector2( 2182.03, 67.0197 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=89]
 
@@ -3700,8 +3931,11 @@ dye_resolution = Vector2( 420, 472 )
 [node name="DemoAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Arrival = SubResource( 86 )
 anims/Closing = SubResource( 203 )
-anims/EndOfDemo = SubResource( 70 )
 anims/EndOfDemoBeforePhase = SubResource( 198 )
+anims/EndOfDemoFirst = SubResource( 70 )
+anims/EndOfDemoFourth = SubResource( 208 )
+anims/EndOfDemoSecond = SubResource( 206 )
+anims/EndOfDemoThird = SubResource( 207 )
 anims/HintOfBlueberry = SubResource( 116 )
 anims/HintOfChamomile = SubResource( 117 )
 anims/HintOfElderberry = SubResource( 118 )
@@ -3759,6 +3993,10 @@ parameters/conditions/intro_first = false
 parameters/conditions/intro_many = false
 parameters/conditions/intro_many_more = false
 parameters/conditions/intro_second = false
+parameters/conditions/outro_first = false
+parameters/conditions/outro_fourth = false
+parameters/conditions/outro_second = false
+parameters/conditions/outro_third = false
 parameters/SkipToWaitingHost/playback = SubResource( 180 )
 parameters/SkipToWaitingHost/conditions/skip_intro_1 = false
 parameters/SkipToWaitingHost/conditions/skip_intro_2 = false
@@ -4084,6 +4322,24 @@ bus = "Host"
 
 [node name="WellSteeped" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outcomes"]
 stream = ExtResource( 36 )
+bus = "Host"
+
+[node name="Outros" type="Node" parent="AudioStreamPlayers"]
+
+[node name="FirstOutro" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outros"]
+stream = ExtResource( 51 )
+bus = "Host"
+
+[node name="SecondOutro" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outros"]
+stream = ExtResource( 13 )
+bus = "Host"
+
+[node name="ThirdOutro" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outros"]
+stream = ExtResource( 56 )
+bus = "Host"
+
+[node name="FourthOutro" type="AudioStreamPlayer" parent="AudioStreamPlayers/Outros"]
+stream = ExtResource( 57 )
 bus = "Host"
 
 [node name="Music" type="AudioStreamPlayer" parent="AudioStreamPlayers"]
