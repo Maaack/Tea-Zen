@@ -4,11 +4,11 @@
 [ext_resource path="res://theme/main_theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/textures/P1020509_Standard.jpg" type="Texture" id=3]
 [ext_resource path="res://theme/main_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/audio/Vocals/AlwaysNiceNewFace.ogg" type="AudioStream" id=5]
-[ext_resource path="res://assets/audio/Vocals/MyApologiesNewFaces.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/audio/Vocals/OkayIThoughtYouLooked.ogg" type="AudioStream" id=7]
-[ext_resource path="res://assets/audio/Vocals/ComeOnIn.ogg" type="AudioStream" id=8]
-[ext_resource path="res://assets/audio/Vocals/HaveYouBeenHereBefore.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/Vocals/PreviousPlayCheck/AlwaysNiceNewFace.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/Vocals/PreviousPlayCheck/MyApologiesNewFaces.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/Vocals/PreviousPlayCheck/OkayIThoughtYouLooked.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Vocals/PreviousPlayCheck/ComeOnIn.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/Vocals/PreviousPlayCheck/HaveYouBeenHereBefore.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Question"
