@@ -27,7 +27,7 @@ func _integrate_forces(state):
 		return
 	var vector = move_to_target - state.transform.origin
 	vector *= speed
-	vector = vector.clamped(max_velocity)
+	vector = vector.limit_length(max_velocity)
 	if negate_current_velocity:
 		vector -= state.linear_velocity
 	apply_central_impulse(vector)
