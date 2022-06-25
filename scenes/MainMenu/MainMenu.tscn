@@ -977,6 +977,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_vertical_guides_": [ 320.0 ]
 }
+version_name = "1.0.0"
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 18 )]
 

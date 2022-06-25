@@ -9,6 +9,7 @@ enum States{
 	EXIT
 }
 
+export(String) var version_name : String
 var steeping_tea : bool = true setget set_steeping_tea
 var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
@@ -59,9 +60,7 @@ func _on_StartButton_pressed():
 	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
-	if PersistentData.first_version_played == PersistentData.UNKNOWN_VERSION:
-		get_tree().change_scene("res://scenes/PreviousPlayCheck/PreviousPlayCheck.tscn")
-		return
+	PersistentData.set_first_version_played(version_name)
 	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
 func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Sprite) -> void:
