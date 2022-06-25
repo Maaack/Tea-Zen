@@ -15,6 +15,10 @@ var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
 var menu_state : int = States.NONE
 
+func _ready() -> void:
+	if version_name != "":
+		$Control/BordersMarginContainer/Control/VersionName.text = "v %s" % version_name
+
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
 	

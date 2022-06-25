@@ -1134,8 +1134,19 @@ mouse_filter = 2
 
 [node name="MusicController" parent="Control/BordersMarginContainer/Control" instance=ExtResource( 22 )]
 margin_top = -52.0
-margin_right = 612.0
+margin_right = 309.0
 song_name = "Valley Sunrise - Eric Matyas"
+
+[node name="VersionName" type="Label" parent="Control/BordersMarginContainer/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -22.0
+custom_colors/font_color = Color( 0, 0, 0, 0.215686 )
+text = "1.0.0"
+align = 2
 
 [node name="CenterMarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
