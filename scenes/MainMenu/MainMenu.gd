@@ -60,7 +60,7 @@ func _on_StartButton_pressed():
 	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
-	PersistentData.set_first_version_played(version_name)
+	PersistentData.set_version_played(version_name)
 	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
 func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Sprite) -> void:
