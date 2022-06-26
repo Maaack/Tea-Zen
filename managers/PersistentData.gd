@@ -1,6 +1,7 @@
 extends Node
 
 const PERSISTENT_SECTION = "PersistentData"
+const APP_OPENED = "AppOpened"
 const REMEMBERED_INTROS = "RememberedIntros"
 const REMEMBERED_OUTROS = "RememberedOutros"
 const REMEMBERED_STEEPINGS = "RememberedSteepings"
@@ -16,9 +17,11 @@ const TOTAL_SKIPPED_INTROS = "TotalSkippedIntros"
 const TOTAL_MIXED_TEAS = "TotalMixedTeas"
 const TOTAL_TIME_PLAYED = "TotalTimePlayed"
 const FIRST_VERSION_PLAYED = "FirstVersionPlayed"
+const LAST_VERSION_PLAYED = "LastVersionPlayed"
 const UPDATE_COUNTER_RESET = 3.0
 const UNKNOWN_VERSION = "unknown"
 
+var app_opened : int = 0
 var remembered_intros : int = 0
 var remembered_outros : int = 0
 var remembered_steepings : int = 0
@@ -34,6 +37,7 @@ var total_skipped_intros : int = 0
 var total_mixed_teas : int = 0
 var total_time_played : float = 0.0
 var first_version_played : String = UNKNOWN_VERSION setget set_first_version_played
+var last_version_played : String = UNKNOWN_VERSION setget set_last_version_played
 var update_counter : float = 0.0
 
 func _process(delta):
@@ -46,6 +50,7 @@ func _process(delta):
 		Config.set_config(PERSISTENT_SECTION, TOTAL_TIME_PLAYED, total_time_played)
 
 func _sync_with_config() -> void:
+	app_opened = Config.get_config(PERSISTENT_SECTION, APP_OPENED, app_opened)
 	remembered_intros = Config.get_config(PERSISTENT_SECTION, REMEMBERED_INTROS, remembered_intros)
 	remembered_outros = Config.get_config(PERSISTENT_SECTION, REMEMBERED_OUTROS, remembered_outros)
 	remembered_steepings = Config.get_config(PERSISTENT_SECTION, REMEMBERED_STEEPINGS, remembered_steepings)
@@ -61,9 +66,14 @@ func _sync_with_config() -> void:
 	total_skipped_intros = Config.get_config(PERSISTENT_SECTION, TOTAL_SKIPPED_INTROS, total_skipped_intros)
 	total_mixed_teas = Config.get_config(PERSISTENT_SECTION, TOTAL_MIXED_TEAS, total_mixed_teas)
 	first_version_played = Config.get_config(PERSISTENT_SECTION, FIRST_VERSION_PLAYED, first_version_played)
+	last_version_played = Config.get_config(PERSISTENT_SECTION, LAST_VERSION_PLAYED, last_version_played)
 
 func _init():
 	_sync_with_config()
+
+func _ready():
+	app_opened += 1
+	Config.set_config(PERSISTENT_SECTION, APP_OPENED, app_opened)
 
 func played_intro():
 	remembered_intros += 1
@@ -122,3 +132,12 @@ func set_first_version_played(value : String) -> void:
 		return
 	first_version_played = value
 	Config.set_config(PERSISTENT_SECTION, FIRST_VERSION_PLAYED, first_version_played)
+
+func set_last_version_played(value : String) -> void:
+	last_version_played = value
+	Config.set_config(PERSISTENT_SECTION, LAST_VERSION_PLAYED, last_version_played)
+
+func set_version_played(value : String) -> void:
+	self.first_version_played = value
+	self.last_version_played = value
+

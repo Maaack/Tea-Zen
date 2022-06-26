@@ -977,6 +977,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_vertical_guides_": [ 320.0 ]
 }
+version_name = "1.0.0"
 
 [node name="FluidSimulator" parent="." instance=ExtResource( 18 )]
 
@@ -1133,8 +1134,19 @@ mouse_filter = 2
 
 [node name="MusicController" parent="Control/BordersMarginContainer/Control" instance=ExtResource( 22 )]
 margin_top = -52.0
-margin_right = 612.0
+margin_right = 309.0
 song_name = "Valley Sunrise - Eric Matyas"
+
+[node name="VersionName" type="Label" parent="Control/BordersMarginContainer/Control"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -126.0
+margin_top = -22.0
+custom_colors/font_color = Color( 0, 0, 0, 0.215686 )
+text = "1.0.0"
+align = 2
 
 [node name="CenterMarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
@@ -1183,6 +1195,15 @@ margin_bottom = 168.0
 rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Credits"
+
+[node name="JoinDiscordButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 192.0
+margin_right = 196.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 0, 40 )
+disabled = true
+text = "Join Discord"
 
 [node name="QuitButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 192.0
@@ -1235,6 +1256,7 @@ bus = "Music"
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton" to="." method="_on_JoinDiscordButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="end_reached" from="Control/CenterMarginContainer/Credits" to="." method="_on_Credits_end_reached"]
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_BackButton_pressed"]

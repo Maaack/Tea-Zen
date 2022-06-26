@@ -9,10 +9,17 @@ enum States{
 	EXIT
 }
 
+export(String) var version_name : String
 var steeping_tea : bool = true setget set_steeping_tea
 var dye_brush_position : Vector2 = Vector2(0.5, 0.0)
 var velocity_brush_position : Vector2 = Vector2(0.5, 0.5) setget set_velocity_brush_position
 var menu_state : int = States.NONE
+
+func _ready() -> void:
+	if version_name != "":
+		$Control/BordersMarginContainer/Control/VersionName.text = "v %s" % version_name
+	if PersistentData.remembered_outros > 1:
+		$Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton.show()
 
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
@@ -24,6 +31,7 @@ func _disable_menu_buttons(disabled : bool = true) -> void:
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
 
 func start_intro():
@@ -59,9 +67,7 @@ func _on_StartButton_pressed():
 	$PanningTeaAnimationPlayer.stop()
 	$MenuAnimationPlayer.play("Outro")
 	yield($MenuAnimationPlayer, "animation_finished")
-	if PersistentData.first_version_played == PersistentData.UNKNOWN_VERSION:
-		get_tree().change_scene("res://scenes/PreviousPlayCheck/PreviousPlayCheck.tscn")
-		return
+	PersistentData.set_version_played(version_name)
 	get_tree().change_scene("res://scenes/DemoScene/DemoScene.tscn")
 
 func _apply_force_to_sim(position : Vector2, vector : Vector2, sprite_node : Sprite) -> void:
@@ -127,3 +133,6 @@ func _input(event):
 	(event is InputEventMouseButton or \
 	event is InputEventKey):
 		$MenuAnimationPlayer.seek(4.4)
+
+func _on_JoinDiscordButton_pressed():
+	OS.shell_open("https://discord.gg/C4ArFxDDwP")
