@@ -18,6 +18,8 @@ var menu_state : int = States.NONE
 func _ready() -> void:
 	if version_name != "":
 		$Control/BordersMarginContainer/Control/VersionName.text = "v %s" % version_name
+	if PersistentData.remembered_outros > 1:
+		$Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton.show()
 
 func set_steeping_tea(value : bool) -> void:
 	steeping_tea = value
@@ -29,6 +31,7 @@ func _disable_menu_buttons(disabled : bool = true) -> void:
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton.disabled = disabled
+	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton.disabled = disabled
 	$Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton.disabled = disabled
 
 func start_intro():
@@ -130,3 +133,6 @@ func _input(event):
 	(event is InputEventMouseButton or \
 	event is InputEventKey):
 		$MenuAnimationPlayer.seek(4.4)
+
+func _on_JoinDiscordButton_pressed():
+	OS.shell_open("https://discord.gg/C4ArFxDDwP")

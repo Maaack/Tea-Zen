@@ -1196,6 +1196,15 @@ rect_min_size = Vector2( 0, 40 )
 disabled = true
 text = "Credits"
 
+[node name="JoinDiscordButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 192.0
+margin_right = 196.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 0, 40 )
+disabled = true
+text = "Join Discord"
+
 [node name="QuitButton" type="Button" parent="Control/CenterMarginContainer/CenterContainer/VBoxContainer"]
 margin_top = 192.0
 margin_right = 196.0
@@ -1247,6 +1256,7 @@ bus = "Music"
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/JoinDiscordButton" to="." method="_on_JoinDiscordButton_pressed"]
 [connection signal="pressed" from="Control/CenterMarginContainer/CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="end_reached" from="Control/CenterMarginContainer/Credits" to="." method="_on_Credits_end_reached"]
 [connection signal="pressed" from="Control/BackButton" to="." method="_on_BackButton_pressed"]
